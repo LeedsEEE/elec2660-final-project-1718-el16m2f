@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,14 +16,37 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RunningWoman.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-gF-OUp"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fitness Tracker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy1-4H-RlK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="522" id="XhO-jE-JTe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="120"/>
+                                <color key="textColor" red="0.30196078431372547" green="0.086274509803921567" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wy1-4H-RlK" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="243" id="1HD-dG-dO9"/>
+                            <constraint firstItem="oVz-gF-OUp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="2ff-lH-fDE"/>
+                            <constraint firstItem="oVz-gF-OUp" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="7IE-y8-3Sn"/>
+                            <constraint firstItem="oVz-gF-OUp" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="BwK-ed-WYi"/>
+                            <constraint firstItem="wy1-4H-RlK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="bFp-51-4L1"/>
+                            <constraint firstItem="oVz-gF-OUp" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="rUX-bd-ltL"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.34375" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RunningWoman.jpg" width="1541" height="1388"/>
+    </resources>
 </document>

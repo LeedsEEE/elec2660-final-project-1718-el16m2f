@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		3D75B0621FC302E6003D3A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0611FC302E6003D3A5C /* main.m */; };
 		3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0641FC302E6003D3A5C /* AppDelegate.m */; };
-		3D75B0681FC302E6003D3A5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0671FC302E6003D3A5C /* ViewController.m */; };
 		3D75B06B1FC302E6003D3A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B0691FC302E6003D3A5C /* Main.storyboard */; };
 		3D75B06D1FC302E6003D3A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B06C1FC302E6003D3A5C /* Assets.xcassets */; };
 		3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */; };
 		3D75B07B1FC302E6003D3A5C /* Fitness_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B07A1FC302E6003D3A5C /* Fitness_TrackerTests.m */; };
 		3D75B0861FC302E6003D3A5C /* Fitness_TrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0851FC302E6003D3A5C /* Fitness_TrackerUITests.m */; };
+		3DE3A1EA1FC32F90007FDBCA /* Heart_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3A1E91FC32F90007FDBCA /* Heart_Icon.png */; };
+		3DE3A1EC1FC3340C007FDBCA /* Location_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3A1EB1FC3340C007FDBCA /* Location_Icon.png */; };
+		3DE3A1EE1FC33415007FDBCA /* Adder_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3A1ED1FC33415007FDBCA /* Adder_Icon.png */; };
+		3DE3A1F01FC3341E007FDBCA /* Swimming_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3A1EF1FC3341E007FDBCA /* Swimming_Icon.png */; };
+		3DE3A1F31FC33824007FDBCA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE3A1F21FC33824007FDBCA /* AddressBook.framework */; };
+		3DE3A1F51FC33830007FDBCA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE3A1F41FC33830007FDBCA /* CoreLocation.framework */; };
+		3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3A1F71FC33A98007FDBCA /* FacilityLocator.m */; };
+		3DE3A1FA1FC33C89007FDBCA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE3A1F91FC33C89007FDBCA /* MapKit.framework */; };
+		3DF0C6801FC319D40066D6C5 /* RepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0C67F1FC319D40066D6C5 /* RepCounter.m */; };
+		3DF0C6871FC31FFC0066D6C5 /* RunningWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DF0C6861FC31FFC0066D6C5 /* RunningWoman.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +48,6 @@
 		3D75B0611FC302E6003D3A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D75B0631FC302E6003D3A5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D75B0641FC302E6003D3A5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3D75B0661FC302E6003D3A5C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3D75B0671FC302E6003D3A5C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3D75B06A1FC302E6003D3A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D75B06C1FC302E6003D3A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D75B06F1FC302E6003D3A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +58,18 @@
 		3D75B0811FC302E6003D3A5C /* Fitness TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitness TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75B0851FC302E6003D3A5C /* Fitness_TrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fitness_TrackerUITests.m; sourceTree = "<group>"; };
 		3D75B0871FC302E7003D3A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE3A1E91FC32F90007FDBCA /* Heart_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heart_Icon.png; sourceTree = "<group>"; };
+		3DE3A1EB1FC3340C007FDBCA /* Location_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location_Icon.png; sourceTree = "<group>"; };
+		3DE3A1ED1FC33415007FDBCA /* Adder_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adder_Icon.png; sourceTree = "<group>"; };
+		3DE3A1EF1FC3341E007FDBCA /* Swimming_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Swimming_Icon.png; sourceTree = "<group>"; };
+		3DE3A1F21FC33824007FDBCA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3DE3A1F41FC33830007FDBCA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3DE3A1F61FC33A98007FDBCA /* FacilityLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacilityLocator.h; sourceTree = "<group>"; };
+		3DE3A1F71FC33A98007FDBCA /* FacilityLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacilityLocator.m; sourceTree = "<group>"; };
+		3DE3A1F91FC33C89007FDBCA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3DF0C67E1FC319D40066D6C5 /* RepCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepCounter.h; path = ../RepCounter.h; sourceTree = "<group>"; };
+		3DF0C67F1FC319D40066D6C5 /* RepCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RepCounter.m; path = ../RepCounter.m; sourceTree = "<group>"; };
+		3DF0C6861FC31FFC0066D6C5 /* RunningWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RunningWoman.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE3A1FA1FC33C89007FDBCA /* MapKit.framework in Frameworks */,
+				3DE3A1F51FC33830007FDBCA /* CoreLocation.framework in Frameworks */,
+				3DE3A1F31FC33824007FDBCA /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +107,7 @@
 				3D75B0791FC302E6003D3A5C /* Fitness TrackerTests */,
 				3D75B0841FC302E6003D3A5C /* Fitness TrackerUITests */,
 				3D75B05E1FC302E6003D3A5C /* Products */,
+				3DE3A1F11FC33824007FDBCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +124,16 @@
 		3D75B05F1FC302E6003D3A5C /* Fitness Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				3D75B0931FC3058F003D3A5C /* Images */,
 				3D75B0631FC302E6003D3A5C /* AppDelegate.h */,
 				3D75B0641FC302E6003D3A5C /* AppDelegate.m */,
-				3D75B0661FC302E6003D3A5C /* ViewController.h */,
-				3D75B0671FC302E6003D3A5C /* ViewController.m */,
+				3DF0C67E1FC319D40066D6C5 /* RepCounter.h */,
+				3DF0C67F1FC319D40066D6C5 /* RepCounter.m */,
+				3DE3A1F61FC33A98007FDBCA /* FacilityLocator.h */,
+				3DE3A1F71FC33A98007FDBCA /* FacilityLocator.m */,
 				3D75B0691FC302E6003D3A5C /* Main.storyboard */,
 				3D75B06C1FC302E6003D3A5C /* Assets.xcassets */,
 				3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */,
-				3D75B0711FC302E6003D3A5C /* Info.plist */,
 				3D75B0601FC302E6003D3A5C /* Supporting Files */,
 			);
 			path = "Fitness Tracker";
@@ -117,6 +142,7 @@
 		3D75B0601FC302E6003D3A5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D75B0711FC302E6003D3A5C /* Info.plist */,
 				3D75B0611FC302E6003D3A5C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +164,36 @@
 				3D75B0871FC302E7003D3A5C /* Info.plist */,
 			);
 			path = "Fitness TrackerUITests";
+			sourceTree = "<group>";
+		};
+		3D75B0931FC3058F003D3A5C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0C6861FC31FFC0066D6C5 /* RunningWoman.jpg */,
+				3D75B0941FC3059A003D3A5C /* Icons */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		3D75B0941FC3059A003D3A5C /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3DE3A1EB1FC3340C007FDBCA /* Location_Icon.png */,
+				3DE3A1E91FC32F90007FDBCA /* Heart_Icon.png */,
+				3DE3A1ED1FC33415007FDBCA /* Adder_Icon.png */,
+				3DE3A1EF1FC3341E007FDBCA /* Swimming_Icon.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		3DE3A1F11FC33824007FDBCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DE3A1F91FC33C89007FDBCA /* MapKit.framework */,
+				3DE3A1F41FC33830007FDBCA /* CoreLocation.framework */,
+				3DE3A1F21FC33824007FDBCA /* AddressBook.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +303,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */,
+				3DF0C6871FC31FFC0066D6C5 /* RunningWoman.jpg in Resources */,
+				3DE3A1EE1FC33415007FDBCA /* Adder_Icon.png in Resources */,
 				3D75B06D1FC302E6003D3A5C /* Assets.xcassets in Resources */,
+				3DE3A1EA1FC32F90007FDBCA /* Heart_Icon.png in Resources */,
 				3D75B06B1FC302E6003D3A5C /* Main.storyboard in Resources */,
+				3DE3A1EC1FC3340C007FDBCA /* Location_Icon.png in Resources */,
+				3DE3A1F01FC3341E007FDBCA /* Swimming_Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +334,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D75B0681FC302E6003D3A5C /* ViewController.m in Sources */,
 				3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */,
+				3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */,
+				3DF0C6801FC319D40066D6C5 /* RepCounter.m in Sources */,
 				3D75B0621FC302E6003D3A5C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +569,7 @@
 				3D75B08C1FC302E7003D3A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D75B08D1FC302E7003D3A5C /* Build configuration list for PBXNativeTarget "Fitness TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +578,7 @@
 				3D75B08F1FC302E7003D3A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D75B0901FC302E7003D3A5C /* Build configuration list for PBXNativeTarget "Fitness TrackerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +587,7 @@
 				3D75B0921FC302E7003D3A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
