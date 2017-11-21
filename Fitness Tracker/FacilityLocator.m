@@ -36,7 +36,7 @@
     CLLocation *CurrentLocation = self.Location.location;
     CurrentLocationCoords = CurrentLocation.coordinate;
     
-    self.Map.region = MKCoordinateRegionMake(CurrentLocationCoords, MKCoordinateSpanMake(Radius/ConversionToLongAndLat, Radius/ConversionToLongAndLat)); //Zooming the map into current location spanning to delta longitude and delta latitude
+    self.Map.region = MKCoordinateRegionMake(CurrentLocationCoords, MKCoordinateSpanMake((Radius+0.5)/ConversionToLongAndLat, (Radius+0.5)/ConversionToLongAndLat)); //Zooming the map into current location spanning to delta longitude and delta latitude
     
 }
 
@@ -47,7 +47,9 @@
 
 - (IBAction)SearchButtonPressed:(id)sender {
     
-        self.Map.region = MKCoordinateRegionMake(CurrentLocationCoords, MKCoordinateSpanMake(Radius/ConversionToLongAndLat, Radius/ConversionToLongAndLat)); //Zooming the map into current location spanning to delta longitude and delta latitude
+    self.Map.region = MKCoordinateRegionMake(CurrentLocationCoords, MKCoordinateSpanMake((Radius+0.5)/ConversionToLongAndLat, (Radius+0.5)/ConversionToLongAndLat)); //Zooming the map into current location spanning to delta longitude and delta latitude
+    
+    [self QueryGooglePlaces];
     
 }
 
@@ -58,20 +60,38 @@
     
 }
 
-/*
 
 #pragma Creating a query for Google to find POIs
-- (void) QueryGooglePlaces: (NSString *) GoogleType {
+- (void) QueryGooglePlaces {
     
-    NSString *URL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", CurrentLocationCoords.latitude, CurrentLocationCoords.longitude,[NSString stringWithFormat:@"%li", Radius/ConversionToLongAndLat], GoogleType, GOOGLE_MAPS_API_KEY];
-                     
-    //Turn The string into a URL format
+    NSString *URL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=gym&sensor=true&key=%@", CurrentLocationCoords.latitude, CurrentLocationCoords.longitude,[NSString stringWithFormat:@"%f", Radius/ConversionToLongAndLat], GOOGLE_MAPS_API_KEY];
+    
+    //Turn the string above into a URL format which is required to send the request
     NSURL *GoogleRequestURL = [NSURL URLWithString:URL];
     
     //Retreiving the results
     
+    
+    dispatch_async(GoogleKeyQueue, ^ {NSData *Data = [NSData dataWithContentsOfURL:GoogleRequestURL];
+        [self performSelectorOnMainThread:@selector(FetchedData:)  withObject:Data waitUntilDone:YES];
+                });
+    
 }
  
- */
+
+-(void)FetchedData: (NSData *)responseData {
+    
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization
+                          JSONObjectWithData:responseData
+                          options:kNilOptions
+                          error:&error];
+    
+    //Results retrieved from Google will be placed into an array.
+    NSArray* Gyms = [json objectForKey:@"Results"];
+    
+    //Printing the data to the console
+    NSLog(@"Gym Data - %@", Gyms);
+}
 
 @end

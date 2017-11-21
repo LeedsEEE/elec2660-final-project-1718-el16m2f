@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */; };
 		3D75B0621FC302E6003D3A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0611FC302E6003D3A5C /* main.m */; };
 		3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0641FC302E6003D3A5C /* AppDelegate.m */; };
 		3D75B06B1FC302E6003D3A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B0691FC302E6003D3A5C /* Main.storyboard */; };
@@ -14,6 +15,10 @@
 		3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */; };
 		3D75B07B1FC302E6003D3A5C /* Fitness_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B07A1FC302E6003D3A5C /* Fitness_TrackerTests.m */; };
 		3D75B0861FC302E6003D3A5C /* Fitness_TrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0851FC302E6003D3A5C /* Fitness_TrackerUITests.m */; };
+		3DAE42A71FC42B0F002EA8C1 /* ActivityDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */; };
+		3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42A91FC42CAE002EA8C1 /* ActivityInfo.m */; };
+		3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42B01FC43008002EA8C1 /* AddActivity.m */; };
+		3DAE42B41FC43870002EA8C1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42B31FC43870002EA8C1 /* UserInfo.m */; };
 		3DE3A1EA1FC32F90007FDBCA /* Heart_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3A1E91FC32F90007FDBCA /* Heart_Icon.png */; };
 		3DE3A1EC1FC3340C007FDBCA /* Location_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3A1EB1FC3340C007FDBCA /* Location_Icon.png */; };
 		3DE3A1EE1FC33415007FDBCA /* Adder_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3A1ED1FC33415007FDBCA /* Adder_Icon.png */; };
@@ -44,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityGraphViewController.h; sourceTree = "<group>"; };
+		3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityGraphViewController.m; sourceTree = "<group>"; };
 		3D75B05D1FC302E6003D3A5C /* Fitness Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75B0611FC302E6003D3A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D75B0631FC302E6003D3A5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +65,14 @@
 		3D75B0811FC302E6003D3A5C /* Fitness TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitness TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75B0851FC302E6003D3A5C /* Fitness_TrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fitness_TrackerUITests.m; sourceTree = "<group>"; };
 		3D75B0871FC302E7003D3A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DAE42A51FC42B0F002EA8C1 /* ActivityDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDataModel.h; sourceTree = "<group>"; };
+		3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDataModel.m; sourceTree = "<group>"; };
+		3DAE42A81FC42CAE002EA8C1 /* ActivityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityInfo.h; sourceTree = "<group>"; };
+		3DAE42A91FC42CAE002EA8C1 /* ActivityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityInfo.m; sourceTree = "<group>"; };
+		3DAE42AF1FC43008002EA8C1 /* AddActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddActivity.h; sourceTree = "<group>"; };
+		3DAE42B01FC43008002EA8C1 /* AddActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddActivity.m; sourceTree = "<group>"; };
+		3DAE42B21FC4386F002EA8C1 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = ../UserInfo.h; sourceTree = "<group>"; };
+		3DAE42B31FC43870002EA8C1 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = ../UserInfo.m; sourceTree = "<group>"; };
 		3DE3A1E91FC32F90007FDBCA /* Heart_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heart_Icon.png; sourceTree = "<group>"; };
 		3DE3A1EB1FC3340C007FDBCA /* Location_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location_Icon.png; sourceTree = "<group>"; };
 		3DE3A1ED1FC33415007FDBCA /* Adder_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adder_Icon.png; sourceTree = "<group>"; };
@@ -127,6 +142,13 @@
 				3D75B0931FC3058F003D3A5C /* Images */,
 				3D75B0631FC302E6003D3A5C /* AppDelegate.h */,
 				3D75B0641FC302E6003D3A5C /* AppDelegate.m */,
+				3DAE42B21FC4386F002EA8C1 /* UserInfo.h */,
+				3DAE42B31FC43870002EA8C1 /* UserInfo.m */,
+				3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */,
+				3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */,
+				3DAE42AF1FC43008002EA8C1 /* AddActivity.h */,
+				3DAE42B01FC43008002EA8C1 /* AddActivity.m */,
+				3DAE42AB1FC42CBE002EA8C1 /* ActivityInformation */,
 				3DF0C67E1FC319D40066D6C5 /* RepCounter.h */,
 				3DF0C67F1FC319D40066D6C5 /* RepCounter.m */,
 				3DE3A1F61FC33A98007FDBCA /* FacilityLocator.h */,
@@ -184,6 +206,17 @@
 				3DE3A1EF1FC3341E007FDBCA /* Swimming_Icon.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		3DAE42AB1FC42CBE002EA8C1 /* ActivityInformation */ = {
+			isa = PBXGroup;
+			children = (
+				3DAE42A81FC42CAE002EA8C1 /* ActivityInfo.h */,
+				3DAE42A91FC42CAE002EA8C1 /* ActivityInfo.m */,
+				3DAE42A51FC42B0F002EA8C1 /* ActivityDataModel.h */,
+				3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */,
+			);
+			name = ActivityInformation;
 			sourceTree = "<group>";
 		};
 		3DE3A1F11FC33824007FDBCA /* Frameworks */ = {
@@ -334,9 +367,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DAE42B41FC43870002EA8C1 /* UserInfo.m in Sources */,
+				3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */,
 				3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */,
 				3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */,
+				3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */,
+				3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */,
 				3DF0C6801FC319D40066D6C5 /* RepCounter.m in Sources */,
+				3DAE42A71FC42B0F002EA8C1 /* ActivityDataModel.m in Sources */,
 				3D75B0621FC302E6003D3A5C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

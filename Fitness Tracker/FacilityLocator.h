@@ -11,7 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-#define GOOGLE_MAPS_API_KEY @"AIzaSyBH6CpYrt1EiwK9nsBHBZAmjz9Ptunu9Xs"
+#define GOOGLE_MAPS_API_KEY @"AIzaSyCeno2h-heqVI6sm5xDXpZJpjnfgp2e65M"
+#define GoogleKeyQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 @interface FacilityLocator : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 {
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *Map;
 @property (strong, nonatomic) CLLocationManager *Location;
 @property (weak, nonatomic) IBOutlet UISlider *Slider;
+@property (weak, nonatomic) IBOutlet UIButton *SearchButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *RadiusLabel;
 
