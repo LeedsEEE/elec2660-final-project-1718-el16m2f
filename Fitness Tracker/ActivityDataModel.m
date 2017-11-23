@@ -58,8 +58,15 @@
         Squash.ActivityID = 7;
         Squash.Activity = @"Squash";
         Squash.CalorieRate = 748;
-    
-    
+        
+        [self.ActivityList addObject:Jogging];
+        [self.ActivityList addObject:Running];
+        [self.ActivityList addObject:SwimmingBreaststroke];
+        [self.ActivityList addObject:SwimmingButterfly];
+        [self.ActivityList addObject:Cycling];
+        [self.ActivityList addObject:Rowing];
+        [self.ActivityList addObject:Squash];
+        
     }
     
     return self;

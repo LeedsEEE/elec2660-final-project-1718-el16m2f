@@ -8,7 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "ActivityDataModel.h"
+//#import "ActivityInfo.h"
 
-@interface AddActivity : UIViewController
+@interface AddActivity : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *ActivityIconView;
+@property (weak, nonatomic) IBOutlet UIPickerView *ActivityPickerView;
+@property (strong, nonatomic) ActivityDataModel *Activity;
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *DatePickerView;
+
+@property (weak, nonatomic) IBOutlet UITextField *HourTextField;
+@property (weak, nonatomic) IBOutlet UITextField *MinuteTextField;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *SaveActivityButton;
+- (IBAction)SaveButtonPressed:(id)sender;
 
 @end

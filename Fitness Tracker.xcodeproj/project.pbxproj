@@ -15,6 +15,7 @@
 		3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */; };
 		3D75B07B1FC302E6003D3A5C /* Fitness_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B07A1FC302E6003D3A5C /* Fitness_TrackerTests.m */; };
 		3D75B0861FC302E6003D3A5C /* Fitness_TrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0851FC302E6003D3A5C /* Fitness_TrackerUITests.m */; };
+		3D92E2751FC6DDBE00E63775 /* AddWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D92E2741FC6DDBE00E63775 /* AddWeight.m */; };
 		3DAE42A71FC42B0F002EA8C1 /* ActivityDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */; };
 		3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42A91FC42CAE002EA8C1 /* ActivityInfo.m */; };
 		3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42B01FC43008002EA8C1 /* AddActivity.m */; };
@@ -65,6 +66,8 @@
 		3D75B0811FC302E6003D3A5C /* Fitness TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitness TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75B0851FC302E6003D3A5C /* Fitness_TrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fitness_TrackerUITests.m; sourceTree = "<group>"; };
 		3D75B0871FC302E7003D3A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D92E2731FC6DDBE00E63775 /* AddWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWeight.h; sourceTree = "<group>"; };
+		3D92E2741FC6DDBE00E63775 /* AddWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWeight.m; sourceTree = "<group>"; };
 		3DAE42A51FC42B0F002EA8C1 /* ActivityDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDataModel.h; sourceTree = "<group>"; };
 		3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDataModel.m; sourceTree = "<group>"; };
 		3DAE42A81FC42CAE002EA8C1 /* ActivityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityInfo.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				3DAE42AF1FC43008002EA8C1 /* AddActivity.h */,
 				3DAE42B01FC43008002EA8C1 /* AddActivity.m */,
 				3DAE42AB1FC42CBE002EA8C1 /* ActivityInformation */,
+				3D92E2731FC6DDBE00E63775 /* AddWeight.h */,
+				3D92E2741FC6DDBE00E63775 /* AddWeight.m */,
 				3DF0C67E1FC319D40066D6C5 /* RepCounter.h */,
 				3DF0C67F1FC319D40066D6C5 /* RepCounter.m */,
 				3DE3A1F61FC33A98007FDBCA /* FacilityLocator.h */,
@@ -372,6 +377,7 @@
 				3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */,
 				3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */,
 				3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */,
+				3D92E2751FC6DDBE00E63775 /* AddWeight.m in Sources */,
 				3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */,
 				3DF0C6801FC319D40066D6C5 /* RepCounter.m in Sources */,
 				3DAE42A71FC42B0F002EA8C1 /* ActivityDataModel.m in Sources */,

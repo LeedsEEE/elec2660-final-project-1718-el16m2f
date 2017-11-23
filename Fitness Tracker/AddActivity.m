@@ -17,21 +17,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _SaveActivityButton.layer.cornerRadius = 25;
+    
+    self.ActivityPickerView.delegate = self;
+    self.ActivityPickerView.dataSource = self;
+    
+    //self.Activity = [[ActivityDataModel alloc]init];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma Activity PickerView Delegate
+
+-(NSString *)pickerView:(UIPickerView *)pickerView
+            titleForRow:(NSInteger)row
+           forComponent:(NSInteger)component {
+    
+    NSString *ActivityTitle = [NSString stringWithFormat:@"%li",row];
+    
+    return ActivityTitle;
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)pickerView:(UIPickerView *)pickerView
+     didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component {
+    
+
 }
-*/
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;           // Set the number of columns to 1
+    
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    NSArray *list = [[NSArray alloc] init];
+    
+    list = self.Activity.ActivityList;
+    
+    NSInteger number = [list count];
+    
+    return number;
+    
+}
+
+
+
+
+
+- (IBAction)SaveButtonPressed:(id)sender {
+    
+}
 
 @end
