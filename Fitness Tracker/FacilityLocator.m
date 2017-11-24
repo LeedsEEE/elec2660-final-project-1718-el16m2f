@@ -9,6 +9,10 @@
 #import "FacilityLocator.h"
 
 @interface FacilityLocator ()
+{
+    
+    NSArray *Gyms;
+}
 
 @end
 
@@ -40,21 +44,41 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)SearchButtonPressed:(id)sender {
     
     self.Map.region = MKCoordinateRegionMake(CurrentLocationCoords, MKCoordinateSpanMake((Radius+0.5)/ConversionToLongAndLat, (Radius+0.5)/ConversionToLongAndLat)); //Zooming the map into current location spanning to delta longitude and delta latitude
     
     [self QueryGooglePlaces];
     
+    //MKMapPoint *annotation = [[MKmappoint alloc]init];
     
+    for (int a=0; a < [Gyms count]; a++) {                                          //Places a point for each type of building found in the search.
+        
+        CLLocationCoordinate2D Coordinates2D;
+        
+#pragma Using the data retreived from the query.
+        
+        NSDictionary *Loc = [Gyms objectAtIndex:a];
+        NSDictionary *geometry = [Loc objectForKey:@"geometry"];
+        NSDictionary *Place = [geometry objectForKey:@"location"];                  //This collection looks through the Gym array to find the values required for Longitude and Latitude
+        
+        Coordinates2D.latitude = [[Place objectForKey:@"lat"] floatValue];
+        Coordinates2D.longitude = [[Place objectForKey:@"lng"] floatValue];         //Sets the latitude and longitude of to an object called coordinates by looking at the JSON data.
+        
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+        
+        annotation.title = [NSString stringWithFormat:@"%@",[Loc objectForKey:@"name"]];
+        annotation.coordinate = Coordinates2D;
+        annotation.subtitle = [NSString stringWithFormat:@"%@",[Loc objectForKey:@"vicinity"]];     //Creates titles and subtitles for the annotated point.
+        
+        [self.Map addAnnotation:annotation];
+        
+    }
     
 }
 
+
+#pragma Slider moved action
 - (IBAction)RadiusSliderMoved:(UISlider *)sender {
     
     Radius = sender.value;                                                                  //Sets the variable 'Radius' to the value of the slider.
@@ -68,14 +92,12 @@
     
     NSInteger SearchRadius = (int)Radius*1000;
     
-    NSString *URL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%.6f,%.6f&radius=%li&type=cafe&key=%@",CurrentLocationCoords.latitude,CurrentLocationCoords.longitude,SearchRadius,GOOGLE_MAPS_API_KEY];
+    NSString *URL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%.6f,%.6f&radius=%li&type=gym&key=%@",CurrentLocationCoords.latitude,CurrentLocationCoords.longitude,SearchRadius,GOOGLE_MAPS_API_KEY];
     
     //Turn the string above into a URL format which is required to send the request
     NSURL *GoogleRequestURL = [NSURL URLWithString:URL];
     
     //Retreiving the results
-    
-    
     dispatch_async(GoogleKeyQueue, ^ {NSData *Data = [NSData dataWithContentsOfURL:GoogleRequestURL];
         [self performSelectorOnMainThread:@selector(FetchedData:)  withObject:Data waitUntilDone:YES];
                 });
@@ -91,11 +113,10 @@
                           options:kNilOptions
                           error:&error];
     
-    //Results retrieved from Google will be placed into an array.
-    NSArray* Gyms = [json objectForKey:@"Results"];
+    //Results retrieved from Google will be placed into an array
+    Gyms = [json objectForKey:@"results"];                     //When the JSON file comes back the data is stored in keys which they've labelled 'results', We convert this to an array to then use.
     
-    //Printing the data to the console
-    NSLog(@"Gym Data - %@", Gyms);
+    
 }
 
 @end
