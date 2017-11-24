@@ -28,6 +28,19 @@
     _ResetButton.layer.cornerRadius = 22;
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    Counts = 0;
+    Running = NO;
+    [Timer invalidate];
+    Timer = nil;
+    Time = 0;
+    
+    self.TimerLabel.text = [NSString stringWithFormat:@"00:00.00"];
+    self.CounterLabel.text = [NSString stringWithFormat:@"0"];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -38,24 +51,18 @@
     Counts = 0;
     self.CounterLabel.text = [NSString stringWithFormat:@"%li",(long)Counts];
     
-    Running = NO;
-    [Timer invalidate];
-    Timer = nil;
-    Time = 0;
-    self.TimerLabel.text = [NSString stringWithFormat:@"00:00.00"];
-    
     
 }
 
 - (IBAction)BackgroundPressed:(id)sender {
     
-    Counts++;
+    Counts++;                                       //Increases the count by 1 with each screen press
     self.CounterLabel.text = [NSString stringWithFormat:@"%li",(long)Counts];
     
-    if (Running == NO){
+    if (Running == NO){                             //If the timer isn't runningthis tells the timer to start running'
         Running = YES;
         
-        if(Timer == nil) {
+        if(Timer == nil) {                          //If the timer wasn't running the timer is now set to start runnning when the background is pressed.
             
             Timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(UpdateTimer) userInfo:nil repeats:YES];
             
@@ -79,6 +86,5 @@
     self.TimerLabel.text = [NSString stringWithFormat:@"%02d:%02d.%02d",Minutes,Seconds,MilliSeconds];
     
 }
-
 
 @end

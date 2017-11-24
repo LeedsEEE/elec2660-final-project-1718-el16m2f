@@ -156,6 +156,7 @@
 				3D92E2741FC6DDBE00E63775 /* AddWeight.m */,
 				3DF0C67E1FC319D40066D6C5 /* RepCounter.h */,
 				3DF0C67F1FC319D40066D6C5 /* RepCounter.m */,
+				3DAFE9841FC8579300CF27C3 /* Maps */,
 				3DE3A1F61FC33A98007FDBCA /* FacilityLocator.h */,
 				3DE3A1F71FC33A98007FDBCA /* FacilityLocator.m */,
 				3D75B0691FC302E6003D3A5C /* Main.storyboard */,
@@ -222,6 +223,13 @@
 				3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */,
 			);
 			name = ActivityInformation;
+			sourceTree = "<group>";
+		};
+		3DAFE9841FC8579300CF27C3 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		3DE3A1F11FC33824007FDBCA /* Frameworks */ = {

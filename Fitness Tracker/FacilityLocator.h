@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-#define GOOGLE_MAPS_API_KEY @"AIzaSyCeno2h-heqVI6sm5xDXpZJpjnfgp2e65M"
+#define GOOGLE_MAPS_API_KEY @"AIzaSyDQ6CsrOQXiKQUiqe5k77ap5n8J-D2aXkU"
 #define GoogleKeyQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 @interface FacilityLocator : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>

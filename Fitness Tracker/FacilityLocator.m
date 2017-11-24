@@ -51,6 +51,8 @@
     
     [self QueryGooglePlaces];
     
+    
+    
 }
 
 - (IBAction)RadiusSliderMoved:(UISlider *)sender {
@@ -64,7 +66,9 @@
 #pragma Creating a query for Google to find POIs
 - (void) QueryGooglePlaces {
     
-    NSString *URL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=gym&sensor=true&key=%@", CurrentLocationCoords.latitude, CurrentLocationCoords.longitude,[NSString stringWithFormat:@"%f", Radius/ConversionToLongAndLat], GOOGLE_MAPS_API_KEY];
+    NSInteger SearchRadius = (int)Radius*1000;
+    
+    NSString *URL = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%.6f,%.6f&radius=%li&type=cafe&key=%@",CurrentLocationCoords.latitude,CurrentLocationCoords.longitude,SearchRadius,GOOGLE_MAPS_API_KEY];
     
     //Turn the string above into a URL format which is required to send the request
     NSURL *GoogleRequestURL = [NSURL URLWithString:URL];
