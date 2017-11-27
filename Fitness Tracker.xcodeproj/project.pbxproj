@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2D3E9E1FCC797F003D0329 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2D3E9D1FCC797F003D0329 /* CoreData.framework */; };
+		3D2D3EA21FCC7A7C003D0329 /* FitnessTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D3EA01FCC7A79003D0329 /* FitnessTracker.xcdatamodeld */; };
 		3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */; };
 		3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */; };
 		3D6344D31FCC17CC000611D9 /* FitnessAppLogo(1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D21FCC17CC000611D9 /* FitnessAppLogo(1).jpg */; };
@@ -31,7 +33,6 @@
 		3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3A1F71FC33A98007FDBCA /* FacilityLocator.m */; };
 		3DE3A1FA1FC33C89007FDBCA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE3A1F91FC33C89007FDBCA /* MapKit.framework */; };
 		3DF0C6801FC319D40066D6C5 /* RepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0C67F1FC319D40066D6C5 /* RepCounter.m */; };
-		3DF0C6871FC31FFC0066D6C5 /* RunningWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DF0C6861FC31FFC0066D6C5 /* RunningWoman.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D2D3E9D1FCC797F003D0329 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3D2D3EA11FCC7A7C003D0329 /* FitnessTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessTracker.xcdatamodel; sourceTree = "<group>"; };
 		3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityGraphViewController.h; sourceTree = "<group>"; };
 		3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityGraphViewController.m; sourceTree = "<group>"; };
 		3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FitnessAppLogo(2).jpg"; sourceTree = "<group>"; };
@@ -91,7 +94,6 @@
 		3DE3A1F91FC33C89007FDBCA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3DF0C67E1FC319D40066D6C5 /* RepCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepCounter.h; path = ../RepCounter.h; sourceTree = "<group>"; };
 		3DF0C67F1FC319D40066D6C5 /* RepCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RepCounter.m; path = ../RepCounter.m; sourceTree = "<group>"; };
-		3DF0C6861FC31FFC0066D6C5 /* RunningWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RunningWoman.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2D3E9E1FCC797F003D0329 /* CoreData.framework in Frameworks */,
 				3DE3A1FA1FC33C89007FDBCA /* MapKit.framework in Frameworks */,
 				3DE3A1F51FC33830007FDBCA /* CoreLocation.framework in Frameworks */,
 				3DE3A1F31FC33824007FDBCA /* AddressBook.framework in Frameworks */,
@@ -122,10 +125,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D2D3E9F1FCC7A33003D0329 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D2D3EA01FCC7A79003D0329 /* FitnessTracker.xcdatamodeld */,
+			);
+			name = Resources;
+			path = "Fitness Tracker";
+			sourceTree = "<group>";
+		};
 		3D75B0541FC302E6003D3A5C = {
 			isa = PBXGroup;
 			children = (
 				3D75B05F1FC302E6003D3A5C /* Fitness Tracker */,
+				3D2D3E9F1FCC7A33003D0329 /* Resources */,
 				3D75B0791FC302E6003D3A5C /* Fitness TrackerTests */,
 				3D75B0841FC302E6003D3A5C /* Fitness TrackerUITests */,
 				3D75B05E1FC302E6003D3A5C /* Products */,
@@ -201,7 +214,6 @@
 		3D75B0931FC3058F003D3A5C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3DF0C6861FC31FFC0066D6C5 /* RunningWoman.jpg */,
 				3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */,
 				3D75B0941FC3059A003D3A5C /* Icons */,
 			);
@@ -241,6 +253,7 @@
 		3DE3A1F11FC33824007FDBCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D2D3E9D1FCC797F003D0329 /* CoreData.framework */,
 				3DE3A1F91FC33C89007FDBCA /* MapKit.framework */,
 				3DE3A1F41FC33830007FDBCA /* CoreLocation.framework */,
 				3DE3A1F21FC33824007FDBCA /* AddressBook.framework */,
@@ -355,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */,
-				3DF0C6871FC31FFC0066D6C5 /* RunningWoman.jpg in Resources */,
 				3D6344D31FCC17CC000611D9 /* FitnessAppLogo(1).jpg in Resources */,
 				3DE3A1EE1FC33415007FDBCA /* Adder_Icon.png in Resources */,
 				3D75B06D1FC302E6003D3A5C /* Assets.xcassets in Resources */,
@@ -397,6 +409,7 @@
 				3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */,
 				3DF0C6801FC319D40066D6C5 /* RepCounter.m in Sources */,
 				3DAE42A71FC42B0F002EA8C1 /* ActivityDataModel.m in Sources */,
+				3D2D3EA21FCC7A7C003D0329 /* FitnessTracker.xcdatamodeld in Sources */,
 				3D75B0621FC302E6003D3A5C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,6 +663,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3D2D3EA01FCC7A79003D0329 /* FitnessTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3D2D3EA11FCC7A7C003D0329 /* FitnessTracker.xcdatamodel */,
+			);
+			currentVersion = 3D2D3EA11FCC7A7C003D0329 /* FitnessTracker.xcdatamodel */;
+			path = FitnessTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3D75B0551FC302E6003D3A5C /* Project object */;
 }

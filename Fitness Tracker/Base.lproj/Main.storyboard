@@ -20,20 +20,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqM-oq-p5f">
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Add Data"/>
-                                <connections>
-                                    <segue destination="kkI-46-aRr" kind="popoverPresentation" popoverAnchorView="yqM-oq-p5f" id="BxA-hd-HHm">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z57-pi-gML">
+                                <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="  " id="8ex-tA-chu">
+                                        <barButtonItem key="rightBarButtonItem" title="Add Activity" id="7qN-uH-gTu">
+                                            <connections>
+                                                <segue destination="kkI-46-aRr" kind="popoverPresentation" popoverAnchorBarButtonItem="7qN-uH-gTu" id="tXN-mF-aRZ">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yqM-oq-p5f" firstAttribute="top" secondItem="mHa-Du-E4J" secondAttribute="bottom" constant="8" id="3pi-hB-Oqk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yqM-oq-p5f" secondAttribute="trailing" id="GA6-ni-IV2"/>
+                            <constraint firstItem="z57-pi-gML" firstAttribute="centerX" secondItem="GsO-sj-P3t" secondAttribute="centerX" id="6vo-Jm-hTG"/>
+                            <constraint firstItem="z57-pi-gML" firstAttribute="top" secondItem="GsO-sj-P3t" secondAttribute="top" id="Xsq-Jr-4RP"/>
+                            <constraint firstItem="z57-pi-gML" firstAttribute="width" secondItem="GsO-sj-P3t" secondAttribute="width" id="sTg-Bk-z9b"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Activity Tracker" image="Swimming_Icon.png" selectedImage="Swimming_Icon.png" id="oVr-yZ-X0A"/>
@@ -55,20 +61,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwo-oj-YBh">
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Record Weight"/>
-                                <connections>
-                                    <segue destination="bAl-ER-pYe" kind="popoverPresentation" popoverAnchorView="hwo-oj-YBh" id="YX0-o2-DhM">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rng-UB-g4h">
+                                <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="  " id="WdY-Rk-XPo">
+                                        <barButtonItem key="rightBarButtonItem" title="Record Weight" id="kqc-wr-izE">
+                                            <connections>
+                                                <segue destination="bAl-ER-pYe" kind="popoverPresentation" popoverAnchorBarButtonItem="kqc-wr-izE" id="eLh-y3-Bzb">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="hwo-oj-YBh" secondAttribute="trailing" id="L1U-DA-wPn"/>
-                            <constraint firstItem="hwo-oj-YBh" firstAttribute="top" secondItem="3T1-zB-Rb7" secondAttribute="bottom" constant="8" id="UiC-1f-Qzn"/>
+                            <constraint firstItem="rng-UB-g4h" firstAttribute="top" secondItem="a8u-ji-OHc" secondAttribute="top" id="6ES-CJ-fb6"/>
+                            <constraint firstItem="rng-UB-g4h" firstAttribute="width" secondItem="a8u-ji-OHc" secondAttribute="width" id="rFm-9a-lHI"/>
+                            <constraint firstItem="rng-UB-g4h" firstAttribute="centerX" secondItem="a8u-ji-OHc" secondAttribute="centerX" id="te3-Bw-wDM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Health Tracker" image="Heart_Icon.png" selectedImage="Heart_Icon.png" id="Bs2-EQ-E1K"/>
@@ -86,7 +98,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7pR-2J-clz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xfn-OZ-7xL">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEK-MD-fY3">
@@ -95,27 +107,30 @@
                                     <outlet property="delegate" destination="bAl-ER-pYe" id="sSR-tL-CNk"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="190" placeholderIntrinsicHeight="54" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLt-Kz-lnq">
-                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <state key="normal" title="Save Weight">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="SaveButtonPressed:" destination="bAl-ER-pYe" eventType="touchUpInside" id="M8m-vf-hvv"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGG-4U-iSI">
+                                <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="  " id="wls-kG-tHt">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="A7c-bW-pfA">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save Weight" id="3vQ-Kw-tXg">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="VLt-Kz-lnq" firstAttribute="centerX" secondItem="Xfn-OZ-7xL" secondAttribute="centerX" id="OP4-o1-LqO"/>
+                            <constraint firstItem="gGG-4U-iSI" firstAttribute="width" secondItem="Xfn-OZ-7xL" secondAttribute="width" id="3RK-LC-i7H"/>
+                            <constraint firstItem="gGG-4U-iSI" firstAttribute="top" secondItem="Xfn-OZ-7xL" secondAttribute="top" id="AbS-pb-c78"/>
+                            <constraint firstItem="gGG-4U-iSI" firstAttribute="centerX" secondItem="Xfn-OZ-7xL" secondAttribute="centerX" id="Piw-mP-qzj"/>
                             <constraint firstItem="hEK-MD-fY3" firstAttribute="top" secondItem="GeS-na-r5s" secondAttribute="bottom" constant="8" id="TLM-NG-690"/>
                             <constraint firstItem="hEK-MD-fY3" firstAttribute="centerX" secondItem="Xfn-OZ-7xL" secondAttribute="centerX" id="Zun-QZ-0Gl"/>
-                            <constraint firstItem="VLt-Kz-lnq" firstAttribute="top" secondItem="hEK-MD-fY3" secondAttribute="bottom" constant="8" id="sMF-aF-KK8"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SaveButton" destination="VLt-Kz-lnq" id="jNe-6I-JLp"/>
                         <outlet property="WeightPickerView" destination="hEK-MD-fY3" id="OgO-lZ-3Y1"/>
                     </connections>
                 </viewController>
@@ -206,7 +221,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6G-5i-eDV"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6G-5i-eDV">
+                                <frame key="frameInset" width="1000" height="1000"/>
+                            </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LKb-BD-1C4">
                                 <segments>
                                     <segment title="Map"/>
@@ -224,7 +241,8 @@
                                     <action selector="RefreshButtonPressed:" destination="1yG-CZ-eYH" eventType="touchUpInside" id="GMg-bc-zH6"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-OD-Lyp">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-OD-Lyp">
+                                <frame key="frameInset" width="1000" height="1000"/>
                                 <segments>
                                     <segment title="2 Km"/>
                                     <segment title="5 Km"/>
@@ -272,13 +290,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQh-6C-eIy">
-                                <frame key="frameInset" minX="169" minY="103" width="130" height="130"/>
-                            </imageView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eZw-qb-HcC">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eZw-qb-HcC">
                                 <date key="date" timeIntervalSinceReferenceDate="533035546.03465903">
                                     <!--2017-11-22 09:25:46 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="en_GB"/>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sg5-1k-JZb">
                                 <nil key="textColor"/>
@@ -301,35 +317,48 @@
                                     <action selector="SaveButtonPressed:" destination="kkI-46-aRr" eventType="touchUpInside" id="Odr-vp-k0b"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" placeholderIntrinsicWidth="281" placeholderIntrinsicHeight="216" translatesAutoresizingMaskIntoConstraints="NO" id="NrS-Py-akW">
+                            <pickerView contentMode="center" placeholderIntrinsicWidth="281" placeholderIntrinsicHeight="216" translatesAutoresizingMaskIntoConstraints="NO" id="NrS-Py-akW">
                                 <connections>
                                     <outlet property="dataSource" destination="kkI-46-aRr" id="LX0-RI-qCm"/>
                                     <outlet property="delegate" destination="kkI-46-aRr" id="TT4-mQ-c0I"/>
                                 </connections>
                             </pickerView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyg-S1-Du4">
+                                <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="  " id="M4F-q9-TxG">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="d8Z-oh-uBu">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Nc-hp-r3o">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="MQh-6C-eIy" firstAttribute="top" secondItem="HEe-uh-sCY" secondAttribute="bottom" constant="83" id="0RX-Xi-NoQ"/>
+                            <constraint firstItem="Eyg-S1-Du4" firstAttribute="centerX" secondItem="eZw-qb-HcC" secondAttribute="centerX" id="CT3-sW-Jbu"/>
                             <constraint firstItem="jZe-Qr-eaK" firstAttribute="top" secondItem="fYb-mm-yor" secondAttribute="bottom" constant="58" id="E9B-lf-z6g"/>
-                            <constraint firstItem="MQh-6C-eIy" firstAttribute="leading" secondItem="Baa-s7-6DV" secondAttribute="leadingMargin" constant="149" id="Gdw-F5-tE3"/>
-                            <constraint firstItem="NrS-Py-akW" firstAttribute="leading" secondItem="MQh-6C-eIy" secondAttribute="trailing" constant="17" id="Hdl-pH-rb9"/>
                             <constraint firstItem="jZe-Qr-eaK" firstAttribute="top" secondItem="sg5-1k-JZb" secondAttribute="bottom" constant="58" id="R8q-7v-ZsL"/>
+                            <constraint firstItem="NrS-Py-akW" firstAttribute="centerX" secondItem="Baa-s7-6DV" secondAttribute="centerX" id="REO-0u-KfY"/>
+                            <constraint firstItem="Eyg-S1-Du4" firstAttribute="width" secondItem="Baa-s7-6DV" secondAttribute="width" id="Rvq-cM-0m2"/>
                             <constraint firstItem="fYb-mm-yor" firstAttribute="top" secondItem="eZw-qb-HcC" secondAttribute="bottom" constant="31" id="SsP-3e-4MF"/>
                             <constraint firstItem="eZw-qb-HcC" firstAttribute="top" secondItem="NrS-Py-akW" secondAttribute="bottom" constant="21" id="UKF-R2-XJv"/>
-                            <constraint firstItem="eZw-qb-HcC" firstAttribute="top" secondItem="MQh-6C-eIy" secondAttribute="bottom" constant="64" id="eaL-V9-Zxu"/>
+                            <constraint firstItem="Eyg-S1-Du4" firstAttribute="top" secondItem="Baa-s7-6DV" secondAttribute="top" id="bV9-z8-tk4"/>
                             <constraint firstItem="jZe-Qr-eaK" firstAttribute="centerX" secondItem="Baa-s7-6DV" secondAttribute="centerX" id="gy7-h9-rYr"/>
                             <constraint firstItem="sg5-1k-JZb" firstAttribute="leading" secondItem="Baa-s7-6DV" secondAttribute="leadingMargin" constant="10" id="he6-Xt-4G9"/>
                             <constraint firstItem="NrS-Py-akW" firstAttribute="top" secondItem="HEe-uh-sCY" secondAttribute="bottom" constant="40" id="lWX-9a-2od"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fYb-mm-yor" secondAttribute="trailing" constant="10" id="pQN-cv-3TI"/>
                             <constraint firstItem="eZw-qb-HcC" firstAttribute="centerX" secondItem="Baa-s7-6DV" secondAttribute="centerX" id="rIU-Pf-fhd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NrS-Py-akW" secondAttribute="trailing" constant="153" id="uzE-ir-66i"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IkG-1c-mv1"/>
                     <connections>
-                        <outlet property="ActivityIconView" destination="MQh-6C-eIy" id="FTX-3K-1XS"/>
                         <outlet property="ActivityPickerView" destination="NrS-Py-akW" id="2R8-Do-OOX"/>
                         <outlet property="DatePickerView" destination="eZw-qb-HcC" id="mAn-Fp-HHX"/>
                         <outlet property="HourTextField" destination="sg5-1k-JZb" id="rME-CA-xQh"/>
@@ -345,12 +374,12 @@
         <scene sceneID="UlP-OB-V2e">
             <objects>
                 <tabBarController id="rwF-9L-56E" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" itemPositioning="fill" id="gPv-lU-Ine">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" white="0.68480603448275867" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.84956896551724137" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.23588362068965518" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>

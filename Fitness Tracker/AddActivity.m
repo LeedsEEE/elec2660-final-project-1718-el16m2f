@@ -8,7 +8,11 @@
 
 #import "AddActivity.h"
 
-@interface AddActivity ()
+@interface AddActivity () {
+    
+    NSArray *activities;
+    
+}
 
 @end
 
@@ -22,8 +26,10 @@
     
     self.ActivityPickerView.delegate = self;
     self.ActivityPickerView.dataSource = self;
+
+    self.DataModel = [[ActivityDataModel alloc] init];
     
-    //self.Activity = [[ActivityDataModel alloc]init];
+    activities = self.DataModel.ActivityList;
     
     
 }
@@ -34,7 +40,8 @@
             titleForRow:(NSInteger)row
            forComponent:(NSInteger)component {
     
-    NSString *ActivityTitle = [NSString stringWithFormat:@"%li",row];
+    ActivityInfo *Activity = [activities objectAtIndex:row];
+    NSString *ActivityTitle = [NSString stringWithFormat:@"%@", Activity.Activity];
     
     return ActivityTitle;
     
@@ -56,13 +63,7 @@
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    NSArray *list = [[NSArray alloc] init];
-    
-    list = self.Activity.ActivityList;
-    
-    NSInteger number = [list count];
-    
-    return number;
+    return activities.count;
     
 }
 

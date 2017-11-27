@@ -12,9 +12,10 @@
 
 @interface AddActivity : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate>
 
+@property (strong, nonatomic) ActivityDataModel *DataModel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *ActivityIconView;
 @property (weak, nonatomic) IBOutlet UIPickerView *ActivityPickerView;
-@property (strong, nonatomic) ActivityDataModel *Activity;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *DatePickerView;
 
