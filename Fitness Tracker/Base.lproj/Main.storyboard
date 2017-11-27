@@ -206,61 +206,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ji-3T-NDl">
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Search"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                </variation>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6G-5i-eDV"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LKb-BD-1C4">
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
                                 <connections>
-                                    <action selector="SearchButtonPressed:" destination="1yG-CZ-eYH" eventType="touchUpInside" id="KQB-ra-lYB"/>
+                                    <action selector="MapTypeSelected:" destination="1yG-CZ-eYH" eventType="valueChanged" id="NLG-U4-n87"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-dp-1fO">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="RefreshButtonPressed:" destination="1yG-CZ-eYH" eventType="touchUpInside" id="GMg-bc-zH6"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L6G-5i-eDV"/>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4.25" minValue="1" maxValue="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="gt2-z8-9Cd">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-OD-Lyp">
+                                <segments>
+                                    <segment title="2 Km"/>
+                                    <segment title="5 Km"/>
+                                    <segment title="10 Km"/>
+                                </segments>
                                 <connections>
-                                    <action selector="RadiusSliderMoved:" destination="1yG-CZ-eYH" eventType="valueChanged" id="AoG-lf-5GT"/>
+                                    <action selector="RadiusSelected:" destination="1yG-CZ-eYH" eventType="valueChanged" id="Bim-zt-21f"/>
                                 </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-Ss-vaH">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="rIm-0X-6gB"/>
-                                    <constraint firstAttribute="height" constant="27" id="sUn-6a-Hip"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                </variation>
-                            </label>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="L6G-5i-eDV" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="Bf9-vk-4Av"/>
-                            <constraint firstItem="L6G-5i-eDV" firstAttribute="width" secondItem="32Y-QV-0GU" secondAttribute="width" id="Ns4-SX-tNG"/>
-                            <constraint firstItem="gt2-z8-9Cd" firstAttribute="leading" secondItem="32Y-QV-0GU" secondAttribute="leadingMargin" constant="128" id="ON8-W6-s2y">
-                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="gt2-z8-9Cd" secondAttribute="trailing" constant="127" id="S1w-UI-FsP">
-                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
-                            </constraint>
-                            <constraint firstItem="gt2-z8-9Cd" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="SVM-mu-RZq"/>
-                            <constraint firstItem="BmP-DI-BPa" firstAttribute="top" secondItem="8Ji-3T-NDl" secondAttribute="bottom" constant="20" id="ZR6-aH-zoS"/>
-                            <constraint firstItem="8Ji-3T-NDl" firstAttribute="top" secondItem="gt2-z8-9Cd" secondAttribute="bottom" constant="8" id="gTO-j2-gpg"/>
-                            <constraint firstItem="1aJ-Ss-vaH" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="haU-Ym-amt"/>
-                            <constraint firstItem="L6G-5i-eDV" firstAttribute="top" secondItem="d49-wW-Pzc" secondAttribute="bottom" constant="-20" id="kdD-iB-BQy"/>
-                            <constraint firstItem="1aJ-Ss-vaH" firstAttribute="top" secondItem="L6G-5i-eDV" secondAttribute="bottom" constant="39" id="ozr-jM-SqD"/>
-                            <constraint firstItem="8Ji-3T-NDl" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="tlC-Qz-bbN"/>
-                            <constraint firstItem="gt2-z8-9Cd" firstAttribute="top" secondItem="1aJ-Ss-vaH" secondAttribute="bottom" constant="8" id="w4E-MF-j0Z"/>
+                            <constraint firstItem="L6G-5i-eDV" firstAttribute="width" secondItem="32Y-QV-0GU" secondAttribute="width" id="9Hn-h4-tu2"/>
+                            <constraint firstItem="L6G-5i-eDV" firstAttribute="centerY" secondItem="32Y-QV-0GU" secondAttribute="centerY" id="9Rc-fh-8ve"/>
+                            <constraint firstItem="3LO-OD-Lyp" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="MaB-wF-XzY"/>
+                            <constraint firstItem="3LO-OD-Lyp" firstAttribute="top" secondItem="L6G-5i-eDV" secondAttribute="bottom" constant="-60" id="OvE-g6-j1R"/>
+                            <constraint firstItem="L6G-5i-eDV" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="f8J-zz-vP3"/>
+                            <constraint firstItem="L6G-5i-eDV" firstAttribute="height" secondItem="32Y-QV-0GU" secondAttribute="height" id="gsw-Bh-VOe"/>
+                            <constraint firstItem="IGO-dp-1fO" firstAttribute="leading" secondItem="32Y-QV-0GU" secondAttribute="leading" constant="17" id="jz1-bP-v6W"/>
+                            <constraint firstItem="LKb-BD-1C4" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="mFl-TP-kfc"/>
+                            <constraint firstItem="LKb-BD-1C4" firstAttribute="top" secondItem="d49-wW-Pzc" secondAttribute="bottom" constant="8" id="yeS-AD-cBl"/>
+                            <constraint firstItem="IGO-dp-1fO" firstAttribute="top" secondItem="d49-wW-Pzc" secondAttribute="bottom" id="zeq-Pj-Mvy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Facility Locator" image="Location_Icon.png" selectedImage="Location_Icon.png" id="of7-eE-rGI"/>
                     <connections>
                         <outlet property="Map" destination="L6G-5i-eDV" id="WaZ-4Y-Wcz"/>
-                        <outlet property="RadiusLabel" destination="1aJ-Ss-vaH" id="l9u-kt-20o"/>
-                        <outlet property="SearchButton" destination="8Ji-3T-NDl" id="sNv-y1-1lr"/>
-                        <outlet property="Slider" destination="gt2-z8-9Cd" id="85x-QF-3ce"/>
+                        <outlet property="MapTypeController" destination="LKb-BD-1C4" id="t08-we-hUK"/>
+                        <outlet property="RadiusSegmentController" destination="3LO-OD-Lyp" id="aHo-vd-aBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xn-Uj-WTT" userLabel="First Responder" sceneMemberID="firstResponder"/>

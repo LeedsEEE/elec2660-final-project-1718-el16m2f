@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */; };
+		3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */; };
+		3D6344D31FCC17CC000611D9 /* FitnessAppLogo(1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D21FCC17CC000611D9 /* FitnessAppLogo(1).jpg */; };
 		3D75B0621FC302E6003D3A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0611FC302E6003D3A5C /* main.m */; };
 		3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0641FC302E6003D3A5C /* AppDelegate.m */; };
 		3D75B06B1FC302E6003D3A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B0691FC302E6003D3A5C /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityGraphViewController.h; sourceTree = "<group>"; };
 		3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityGraphViewController.m; sourceTree = "<group>"; };
+		3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FitnessAppLogo(2).jpg"; sourceTree = "<group>"; };
+		3D6344D21FCC17CC000611D9 /* FitnessAppLogo(1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FitnessAppLogo(1).jpg"; sourceTree = "<group>"; };
 		3D75B05D1FC302E6003D3A5C /* Fitness Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75B0611FC302E6003D3A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D75B0631FC302E6003D3A5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				3DF0C6861FC31FFC0066D6C5 /* RunningWoman.jpg */,
+				3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */,
 				3D75B0941FC3059A003D3A5C /* Icons */,
 			);
 			name = Images;
@@ -206,6 +211,7 @@
 		3D75B0941FC3059A003D3A5C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				3D6344D21FCC17CC000611D9 /* FitnessAppLogo(1).jpg */,
 				3DE3A1EB1FC3340C007FDBCA /* Location_Icon.png */,
 				3DE3A1E91FC32F90007FDBCA /* Heart_Icon.png */,
 				3DE3A1ED1FC33415007FDBCA /* Adder_Icon.png */,
@@ -350,9 +356,11 @@
 			files = (
 				3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */,
 				3DF0C6871FC31FFC0066D6C5 /* RunningWoman.jpg in Resources */,
+				3D6344D31FCC17CC000611D9 /* FitnessAppLogo(1).jpg in Resources */,
 				3DE3A1EE1FC33415007FDBCA /* Adder_Icon.png in Resources */,
 				3D75B06D1FC302E6003D3A5C /* Assets.xcassets in Resources */,
 				3DE3A1EA1FC32F90007FDBCA /* Heart_Icon.png in Resources */,
+				3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */,
 				3D75B06B1FC302E6003D3A5C /* Main.storyboard in Resources */,
 				3DE3A1EC1FC3340C007FDBCA /* Location_Icon.png in Resources */,
 				3DE3A1F01FC3341E007FDBCA /* Swimming_Icon.png in Resources */,

@@ -23,13 +23,13 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *Map;
 @property (strong, nonatomic) CLLocationManager *Location;
-@property (weak, nonatomic) IBOutlet UISlider *Slider;
-@property (weak, nonatomic) IBOutlet UIButton *SearchButton;
 
-@property (weak, nonatomic) IBOutlet UILabel *RadiusLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *MapTypeController;
+- (IBAction)MapTypeSelected:(id)sender;
 
-- (IBAction)SearchButtonPressed:(id)sender;
-- (IBAction)RadiusSliderMoved:(UISlider *)sender;
+- (IBAction)RadiusSelected:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *RadiusSegmentController;
 
+- (IBAction)RefreshButtonPressed:(id)sender;
 
 @end

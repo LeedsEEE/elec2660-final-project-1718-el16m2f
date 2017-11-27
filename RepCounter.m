@@ -51,6 +51,12 @@
     Counts = 0;
     self.CounterLabel.text = [NSString stringWithFormat:@"%li",(long)Counts];
     
+    Running = NO;
+    [Timer invalidate];
+    Timer = nil;
+    Time = 0;
+    self.TimerLabel.text = [NSString stringWithFormat:@"00:00.00"];
+    
     
 }
 
@@ -70,6 +76,7 @@
     }
 }
 
+#pragma Update timer function
 - (void)UpdateTimer {
     
     Time++;

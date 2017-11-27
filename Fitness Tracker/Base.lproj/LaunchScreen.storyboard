@@ -19,15 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RunningWoman.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-gF-OUp"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fitness Tracker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy1-4H-RlK">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="522" id="XhO-jE-JTe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="120"/>
-                                <color key="textColor" red="0.30196078431372547" green="0.086274509803921567" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitnessAppLogo(2).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-gF-OUp"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Matthew Fisher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5q-Qj-TLf">
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                 <nil key="highlightedColor"/>
@@ -35,13 +27,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wy1-4H-RlK" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="243" id="1HD-dG-dO9"/>
                             <constraint firstItem="oVz-gF-OUp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="2ff-lH-fDE"/>
                             <constraint firstItem="oVz-gF-OUp" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="7IE-y8-3Sn"/>
                             <constraint firstItem="oVz-gF-OUp" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="BwK-ed-WYi"/>
                             <constraint firstItem="R5q-Qj-TLf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="GBv-1S-U6n"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="R5q-Qj-TLf" secondAttribute="bottom" constant="20" id="a8U-UI-VOn"/>
-                            <constraint firstItem="wy1-4H-RlK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="bFp-51-4L1"/>
                             <constraint firstItem="oVz-gF-OUp" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="rUX-bd-ltL"/>
                         </constraints>
                     </view>
@@ -53,6 +43,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RunningWoman.jpg" width="1541" height="1388"/>
+        <image name="FitnessAppLogo(2).jpg" width="2048" height="2732"/>
     </resources>
 </document>
