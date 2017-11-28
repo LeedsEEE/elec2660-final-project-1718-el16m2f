@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JBChart/JBChart.h>
 
-@interface ActivityGraphViewController : UIViewController
+@interface ActivityGraphViewController : UIViewController <JBBarChartViewDelegate , JBBarChartViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIView *FirstTimeLoadView;
+@property (weak, nonatomic) IBOutlet JBBarChartView *ActivityBarChart;
+
 
 @end

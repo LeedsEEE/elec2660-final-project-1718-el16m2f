@@ -34,16 +34,26 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh6-pl-SPf" customClass="JBBarChartView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="z57-pi-gML" firstAttribute="centerX" secondItem="GsO-sj-P3t" secondAttribute="centerX" id="6vo-Jm-hTG"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="CeL-Om-5ms"/>
                             <constraint firstItem="z57-pi-gML" firstAttribute="top" secondItem="GsO-sj-P3t" secondAttribute="top" id="Xsq-Jr-4RP"/>
+                            <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" id="jdt-i8-xnc"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="psY-Ma-Ki7"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="top" secondItem="z57-pi-gML" secondAttribute="bottom" id="q9g-o9-eiS"/>
                             <constraint firstItem="z57-pi-gML" firstAttribute="width" secondItem="GsO-sj-P3t" secondAttribute="width" id="sTg-Bk-z9b"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Activity Tracker" image="Swimming_Icon.png" selectedImage="Swimming_Icon.png" id="oVr-yZ-X0A"/>
                     <navigationItem key="navigationItem" id="1py-v0-gTd"/>
+                    <connections>
+                        <outlet property="ActivityBarChart" destination="lh6-pl-SPf" id="vuX-zT-s3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbm-AF-lXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
