@@ -38,6 +38,7 @@
 		3D132B231FCDCA4100D89391 /* JBShapeLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D132B211FCDCA4100D89391 /* JBShapeLineLayer.m */; };
 		3D2D3E9E1FCC797F003D0329 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2D3E9D1FCC797F003D0329 /* CoreData.framework */; };
 		3D2D3EA21FCC7A7C003D0329 /* FitnessTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D3EA01FCC7A79003D0329 /* FitnessTracker.xcdatamodeld */; };
+		3D38FF451FCDF38F004BC8AA /* WeightGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D38FF441FCDF38F004BC8AA /* WeightGraphController.m */; };
 		3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */; };
 		3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */; };
 		3D6344D31FCC17CC000611D9 /* FitnessAppLogo(1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D21FCC17CC000611D9 /* FitnessAppLogo(1).jpg */; };
@@ -149,6 +150,8 @@
 		3D132B211FCDCA4100D89391 /* JBShapeLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBShapeLineLayer.m; sourceTree = "<group>"; };
 		3D2D3E9D1FCC797F003D0329 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3D2D3EA11FCC7A7C003D0329 /* FitnessTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessTracker.xcdatamodel; sourceTree = "<group>"; };
+		3D38FF431FCDF38F004BC8AA /* WeightGraphController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightGraphController.h; sourceTree = "<group>"; };
+		3D38FF441FCDF38F004BC8AA /* WeightGraphController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightGraphController.m; sourceTree = "<group>"; };
 		3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityGraphViewController.h; sourceTree = "<group>"; };
 		3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityGraphViewController.m; sourceTree = "<group>"; };
 		3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FitnessAppLogo(2).jpg"; sourceTree = "<group>"; };
@@ -333,6 +336,8 @@
 				3DAE42AF1FC43008002EA8C1 /* AddActivity.h */,
 				3DAE42B01FC43008002EA8C1 /* AddActivity.m */,
 				3DAE42AB1FC42CBE002EA8C1 /* ActivityInformation */,
+				3D38FF431FCDF38F004BC8AA /* WeightGraphController.h */,
+				3D38FF441FCDF38F004BC8AA /* WeightGraphController.m */,
 				3D92E2731FC6DDBE00E63775 /* AddWeight.h */,
 				3D92E2741FC6DDBE00E63775 /* AddWeight.m */,
 				3DF0C67E1FC319D40066D6C5 /* RepCounter.h */,
@@ -682,6 +687,7 @@
 				3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */,
 				3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */,
 				3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */,
+				3D38FF451FCDF38F004BC8AA /* WeightGraphController.m in Sources */,
 				3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */,
 				3D92E2751FC6DDBE00E63775 /* AddWeight.m in Sources */,
 				3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */,
@@ -988,6 +994,7 @@
 				3D132AED1FCDC96E00D89391 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D132AF21FCDC96E00D89391 /* Build configuration list for PBXNativeTarget "JBChartTests" */ = {
 			isa = XCConfigurationList;
@@ -996,6 +1003,7 @@
 				3D132AEF1FCDC96E00D89391 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D75B0581FC302E6003D3A5C /* Build configuration list for PBXProject "Fitness Tracker" */ = {
 			isa = XCConfigurationList;

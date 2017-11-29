@@ -10,6 +10,14 @@
 
 @interface ActivityGraphViewController ()
 
+@property (weak, nonatomic) NSArray *ChartData;
+@property (weak, nonatomic) NSArray *ChartLabels;
+
+@property (strong, nonatomic) NSArray *WeekData;
+@property (strong, nonatomic) NSArray *MonthData;
+@property (strong, nonatomic) NSArray *DaysInAWeek;
+@property (strong, nonatomic) NSArray *WeeksInAMonth;
+
 @end
 
 @implementation ActivityGraphViewController
@@ -17,13 +25,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.ActivityBarChart.delegate = self;
-    self.ActivityBarChart.dataSource = self;
+    self.WeekData = [NSArray arrayWithObjects:
+                            @20,@30,@40,@35,@25,@45,@30, nil];
+    self.MonthData = [NSArray arrayWithObjects:
+                            @500,@600,@550,@400,@475, nil];
     
-    self.ActivityBarChart.minimumValue = 0.0f;
-    self.ActivityBarChart.maximumValue = 60.0f;
-    self.ActivityBarChart.headerPadding = 20.0f;
-    self.ActivityBarChart.backgroundColor = [UIColor lightGrayColor];
+    self.DaysInAWeek = [NSArray arrayWithObjects:
+                        @"Monday",@"Sunday", nil];
+    
+    self.WeeksInAMonth = [NSArray arrayWithObjects:
+                        @"Week1",@"Week5", nil];
+
+    
+    [self UpdateData];
     
     [self.ActivityBarChart reloadData];
     
@@ -33,22 +47,20 @@
     
     [super viewWillAppear:animated];
     [self.ActivityBarChart setState:JBChartViewStateExpanded];
+    [self.ActivityBarChart reloadDataAnimated:animated];
     
 }
 
 
 -(NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView {
     
-    return 10;
+    return [self.ChartData count];
     
 }
 
 -(CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtIndex:(NSUInteger)index {
     
-    NSArray *TestData = [NSArray arrayWithObjects:
-                         @20,@30,@40,@35,@25,@45,@25,@10,@35,@30,nil];
-    
-    return [[TestData objectAtIndex:index]floatValue];
+    return [[self.ChartData objectAtIndex:index]floatValue];
     
 }
 
@@ -60,7 +72,60 @@
 
 -(UIColor *)barChartView:(JBBarChartView *)barChartView colorForBarViewAtIndex:(NSUInteger)index {
     
-    return [UIColor orangeColor];
+    if ((index%2) == 1){
+        return [UIColor orangeColor];
+    } else {
+        return [UIColor colorWithRed:1 green:0.6414 blue:0.28 alpha:1];
+    }
+    
+}
+
+-(void)barChartView:(JBBarChartView *)barChartView didSelectBarAtIndex:(NSUInteger)index {
+    
+    self.BarValueLabel.text = [NSString stringWithFormat:@"%.1f Calories",[[self.ChartData objectAtIndex:index]floatValue]];
+    
+}
+
+-(void)didDeselectBarChartView:(JBBarChartView *)barChartView {
+    
+    self.BarValueLabel.text = [NSString stringWithFormat:@" "];
+    
+}
+
+- (IBAction)SegmentedControlChanged:(id)sender {
+
+    if (self.BarChartType.selectedSegmentIndex == 0){
+        
+        self.ChartData = self.WeekData;
+        self.ChartLabels = self.DaysInAWeek;
+        
+    } else if (self.BarChartType.selectedSegmentIndex ==1){
+        
+        self.ChartData = self.MonthData;
+        self.ChartLabels = self.WeeksInAMonth;
+        
+    } else {
+        
+    }
+    
+    [self UpdateData];
+    [self.ActivityBarChart reloadData];
+    
+}
+
+-(void) UpdateData {
+    
+    self.ActivityBarChart.delegate = self;
+    self.ActivityBarChart.dataSource = self;
+    
+    self.ActivityBarChart.minimumValue = 0.0f;
+    self.ActivityBarChart.headerPadding = 40.0f;
+    self.ActivityBarChart.footerPadding = 0.0f;
+    self.ActivityBarChart.backgroundColor = [UIColor lightGrayColor];
+    self.ActivityBarChart.inverted = NO;
+    
+    self.LeftFooterLabel.text = [NSString stringWithFormat:@"%@",[self.ChartLabels objectAtIndex:0]];
+    self.RightFooterLabel.text = [NSString stringWithFormat:@"%@",[self.ChartLabels objectAtIndex:1]];
     
 }
 

@@ -12,6 +12,14 @@
 @interface ActivityGraphViewController : UIViewController <JBBarChartViewDelegate , JBBarChartViewDataSource>
 
 @property (weak, nonatomic) IBOutlet JBBarChartView *ActivityBarChart;
+@property (weak, nonatomic) IBOutlet UILabel *BarValueLabel;
+
+- (IBAction)SegmentedControlChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *BarChartType;
+
+@property (weak, nonatomic) IBOutlet UILabel *LeftFooterLabel;
+@property (weak, nonatomic) IBOutlet UILabel *RightFooterLabel;
+
 
 
 @end

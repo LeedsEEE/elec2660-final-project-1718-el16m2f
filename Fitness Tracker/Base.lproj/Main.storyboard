@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rwF-9L-56E">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rwF-9L-56E">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -20,10 +20,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z57-pi-gML">
+                            <navigationBar contentMode="scaleToFill" placeholderIntrinsicWidth="768" placeholderIntrinsicHeight="60" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z57-pi-gML">
                                 <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="  " id="8ex-tA-chu">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="E6S-TE-32O">
+                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="lRe-u1-8AF">
+                                                <rect key="frame" x="20" y="23" width="220" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segments>
+                                                    <segment title="Week"/>
+                                                    <segment title="Month"/>
+                                                    <segment title="Year"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="SegmentedControlChanged:" destination="pL7-Vn-rYN" eventType="valueChanged" id="YBv-ce-vB3"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Add Activity" id="7qN-uH-gTu">
                                             <connections>
                                                 <segue destination="kkI-46-aRr" kind="popoverPresentation" popoverAnchorBarButtonItem="7qN-uH-gTu" id="tXN-mF-aRZ">
@@ -35,17 +49,39 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh6-pl-SPf" customClass="JBBarChartView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value from chart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJP-rC-CT7">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRh-tB-tnf">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-ja-ugL">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="150" id="0HM-cN-iRb"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="17N-hv-NJl"/>
                             <constraint firstItem="z57-pi-gML" firstAttribute="centerX" secondItem="GsO-sj-P3t" secondAttribute="centerX" id="6vo-Jm-hTG"/>
-                            <constraint firstItem="lh6-pl-SPf" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="CeL-Om-5ms"/>
+                            <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="EJP-rC-CT7" secondAttribute="bottom" constant="20" id="AcE-95-QvF"/>
+                            <constraint firstItem="EJP-rC-CT7" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" constant="25" id="FEh-is-NRO"/>
+                            <constraint firstItem="zgd-ja-ugL" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="Fub-6H-HPT"/>
+                            <constraint firstItem="wRh-tB-tnf" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="8" id="Ojc-mt-0K3"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="top" secondItem="z57-pi-gML" secondAttribute="bottom" id="XNK-RC-qFI"/>
                             <constraint firstItem="z57-pi-gML" firstAttribute="top" secondItem="GsO-sj-P3t" secondAttribute="top" id="Xsq-Jr-4RP"/>
-                            <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" id="jdt-i8-xnc"/>
-                            <constraint firstItem="lh6-pl-SPf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="psY-Ma-Ki7"/>
-                            <constraint firstItem="lh6-pl-SPf" firstAttribute="top" secondItem="z57-pi-gML" secondAttribute="bottom" id="q9g-o9-eiS"/>
+                            <constraint firstItem="wRh-tB-tnf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="dl8-IU-dud"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EJP-rC-CT7" secondAttribute="trailing" constant="25" id="eJE-QQ-DHS"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="fxU-uH-lWN"/>
+                            <constraint firstItem="zgd-ja-ugL" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="8" id="jYP-dg-zP4"/>
                             <constraint firstItem="z57-pi-gML" firstAttribute="width" secondItem="GsO-sj-P3t" secondAttribute="width" id="sTg-Bk-z9b"/>
                         </constraints>
                     </view>
@@ -53,6 +89,10 @@
                     <navigationItem key="navigationItem" id="1py-v0-gTd"/>
                     <connections>
                         <outlet property="ActivityBarChart" destination="lh6-pl-SPf" id="vuX-zT-s3H"/>
+                        <outlet property="BarChartType" destination="lRe-u1-8AF" id="p8y-e7-26C"/>
+                        <outlet property="BarValueLabel" destination="EJP-rC-CT7" id="MkE-jq-5tz"/>
+                        <outlet property="LeftFooterLabel" destination="wRh-tB-tnf" id="WAV-qw-Gph"/>
+                        <outlet property="RightFooterLabel" destination="zgd-ja-ugL" id="z6s-4X-AeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbm-AF-lXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,7 +102,7 @@
         <!--Health Tracker-->
         <scene sceneID="9jc-2B-VJ2">
             <objects>
-                <viewController title="Health Tracker" modalTransitionStyle="flipHorizontal" id="SaT-c0-LLE" sceneMemberID="viewController">
+                <viewController title="Health Tracker" modalTransitionStyle="flipHorizontal" id="SaT-c0-LLE" customClass="WeightGraphController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3T1-zB-Rb7"/>
                         <viewControllerLayoutGuide type="bottom" id="NSA-NX-OjR"/>
