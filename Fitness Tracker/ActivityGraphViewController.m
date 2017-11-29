@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, self.view.frame.size.width,40)];
+    
     self.WeekData = [NSArray arrayWithObjects:
                             @20,@30,@40,@35,@25,@45,@30, nil];
     self.MonthData = [NSArray arrayWithObjects:

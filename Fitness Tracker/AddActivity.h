@@ -26,4 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *SaveActivityButton;
 - (IBAction)SaveButtonPressed:(id)sender;
 
+- (IBAction)CancelButtonPressed:(id)sender;
+
 @end

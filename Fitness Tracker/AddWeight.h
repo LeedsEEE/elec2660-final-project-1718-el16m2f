@@ -12,7 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *WeightPickerView;
 
-@property (weak, nonatomic) IBOutlet UIButton *SaveButton;
 - (IBAction)SaveButtonPressed:(id)sender;
+
+- (IBAction)CancelButtonPressed:(id)sender;
 
 @end

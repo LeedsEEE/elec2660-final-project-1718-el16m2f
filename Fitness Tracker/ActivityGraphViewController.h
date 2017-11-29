@@ -20,6 +20,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *LeftFooterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *RightFooterLabel;
 
-
-
 @end

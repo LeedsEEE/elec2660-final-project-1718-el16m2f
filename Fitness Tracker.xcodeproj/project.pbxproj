@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D08F9C71FCF3D2800FA28E2 /* FirstTimeLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D08F9C61FCF3D2800FA28E2 /* FirstTimeLoadViewController.m */; };
 		3D132ADE1FCDC96E00D89391 /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D132AD51FCDC96C00D89391 /* JBChart.framework */; };
 		3D132AE51FCDC96E00D89391 /* JBChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D132AE41FCDC96E00D89391 /* JBChartTests.m */; };
 		3D132AE71FCDC96E00D89391 /* JBChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D132AD71FCDC96E00D89391 /* JBChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -118,6 +119,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D08F9C51FCF3D2800FA28E2 /* FirstTimeLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTimeLoadViewController.h; sourceTree = "<group>"; };
+		3D08F9C61FCF3D2800FA28E2 /* FirstTimeLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTimeLoadViewController.m; sourceTree = "<group>"; };
 		3D132AD51FCDC96C00D89391 /* JBChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D132AD71FCDC96E00D89391 /* JBChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBChart.h; sourceTree = "<group>"; };
 		3D132AD81FCDC96E00D89391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -238,6 +241,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D08F9C21FCF3B7800FA28E2 /* Weight Monitoring Tab */ = {
+			isa = PBXGroup;
+			children = (
+				3D38FF431FCDF38F004BC8AA /* WeightGraphController.h */,
+				3D38FF441FCDF38F004BC8AA /* WeightGraphController.m */,
+				3D92E2731FC6DDBE00E63775 /* AddWeight.h */,
+				3D92E2741FC6DDBE00E63775 /* AddWeight.m */,
+			);
+			name = "Weight Monitoring Tab";
+			sourceTree = "<group>";
+		};
+		3D08F9C31FCF3BA200FA28E2 /* Rep Tab */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0C67E1FC319D40066D6C5 /* RepCounter.h */,
+				3DF0C67F1FC319D40066D6C5 /* RepCounter.m */,
+			);
+			name = "Rep Tab";
+			sourceTree = "<group>";
+		};
+		3D08F9C41FCF3BB100FA28E2 /* Activity Monitoring Tab */ = {
+			isa = PBXGroup;
+			children = (
+				3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */,
+				3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */,
+				3DAE42AF1FC43008002EA8C1 /* AddActivity.h */,
+				3DAE42B01FC43008002EA8C1 /* AddActivity.m */,
+				3DAE42AB1FC42CBE002EA8C1 /* ActivityInformation */,
+			);
+			name = "Activity Monitoring Tab";
+			sourceTree = "<group>";
+		};
 		3D132AD61FCDC96C00D89391 /* JBChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,20 +366,12 @@
 				3D75B0641FC302E6003D3A5C /* AppDelegate.m */,
 				3DAE42B21FC4386F002EA8C1 /* UserInfo.h */,
 				3DAE42B31FC43870002EA8C1 /* UserInfo.m */,
-				3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */,
-				3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */,
-				3DAE42AF1FC43008002EA8C1 /* AddActivity.h */,
-				3DAE42B01FC43008002EA8C1 /* AddActivity.m */,
-				3DAE42AB1FC42CBE002EA8C1 /* ActivityInformation */,
-				3D38FF431FCDF38F004BC8AA /* WeightGraphController.h */,
-				3D38FF441FCDF38F004BC8AA /* WeightGraphController.m */,
-				3D92E2731FC6DDBE00E63775 /* AddWeight.h */,
-				3D92E2741FC6DDBE00E63775 /* AddWeight.m */,
-				3DF0C67E1FC319D40066D6C5 /* RepCounter.h */,
-				3DF0C67F1FC319D40066D6C5 /* RepCounter.m */,
-				3DAFE9841FC8579300CF27C3 /* Maps */,
-				3DE3A1F61FC33A98007FDBCA /* FacilityLocator.h */,
-				3DE3A1F71FC33A98007FDBCA /* FacilityLocator.m */,
+				3D08F9C51FCF3D2800FA28E2 /* FirstTimeLoadViewController.h */,
+				3D08F9C61FCF3D2800FA28E2 /* FirstTimeLoadViewController.m */,
+				3D08F9C41FCF3BB100FA28E2 /* Activity Monitoring Tab */,
+				3D08F9C21FCF3B7800FA28E2 /* Weight Monitoring Tab */,
+				3D08F9C31FCF3BA200FA28E2 /* Rep Tab */,
+				3DAFE9841FC8579300CF27C3 /* Map Tab */,
 				3D75B0691FC302E6003D3A5C /* Main.storyboard */,
 				3D75B06C1FC302E6003D3A5C /* Assets.xcassets */,
 				3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */,
@@ -412,11 +439,13 @@
 			name = ActivityInformation;
 			sourceTree = "<group>";
 		};
-		3DAFE9841FC8579300CF27C3 /* Maps */ = {
+		3DAFE9841FC8579300CF27C3 /* Map Tab */ = {
 			isa = PBXGroup;
 			children = (
+				3DE3A1F61FC33A98007FDBCA /* FacilityLocator.h */,
+				3DE3A1F71FC33A98007FDBCA /* FacilityLocator.m */,
 			);
-			name = Maps;
+			name = "Map Tab";
 			sourceTree = "<group>";
 		};
 		3DE3A1F11FC33824007FDBCA /* Frameworks */ = {
@@ -687,6 +716,7 @@
 				3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */,
 				3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */,
 				3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */,
+				3D08F9C71FCF3D2800FA28E2 /* FirstTimeLoadViewController.m in Sources */,
 				3D38FF451FCDF38F004BC8AA /* WeightGraphController.m in Sources */,
 				3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */,
 				3D92E2751FC6DDBE00E63775 /* AddWeight.m in Sources */,
