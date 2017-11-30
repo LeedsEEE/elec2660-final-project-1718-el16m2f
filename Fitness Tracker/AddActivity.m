@@ -8,10 +8,11 @@
 
 #import "AddActivity.h"
 
-@interface AddActivity () {
-    
+@interface AddActivity ()
+{
     NSArray *activities;
-    
+    NSDate *CurrentDate;
+    NSInteger SelectedCalorieBurnRate;
 }
 
 @end
@@ -20,10 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    _SaveActivityButton.layer.cornerRadius = 25;
-    
+
     self.ActivityPickerView.delegate = self;
     self.ActivityPickerView.dataSource = self;
 
@@ -32,9 +30,25 @@
     activities = self.DataModel.ActivityList;
     
     
+    //A series of methods to create the Date format ad also set the Current Date into an NSDate variable
+    CurrentDate = [NSDate date];
+    NSLocale *Locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
+    NSDateFormatter *DateFormat = [[NSDateFormatter alloc] init];
+    [DateFormat setLocale:Locale];
+    [DateFormat setDateFormat:@"E,dd,MM,yyyy"];
+    
 }
 
+
 #pragma Activity PickerView Delegate
+-(void)pickerView:(UIPickerView *)pickerView
+     didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component {
+    
+    ActivityInfo *BurnRate = [activities objectAtIndex:row];
+    SelectedCalorieBurnRate = BurnRate.CalorieRate;
+    
+}
 
 -(NSString *)pickerView:(UIPickerView *)pickerView
             titleForRow:(NSInteger)row
@@ -45,14 +59,6 @@
     
     return ActivityTitle;
     
-}
-
-
--(void)pickerView:(UIPickerView *)pickerView
-     didSelectRow:(NSInteger)row
-      inComponent:(NSInteger)component {
-    
-
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -68,10 +74,32 @@
 }
 
 
+#pragma Removing the background when return is pressed
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+    
+}
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    if([string rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet].invertedSet].location != NSNotFound) {
+        
+        return NO;
+        
+    }
+    
+    return YES;
+    
+}
 
-
+#pragma Actions caused by buttons
 - (IBAction)SaveButtonPressed:(id)sender {
+    
+    [self SaveData];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -79,6 +107,43 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+- (IBAction)BackgroundPressed:(id)sender {
+    
+    if([self.HourTextField isFirstResponder]) {
+        [self.HourTextField resignFirstResponder];
+    }
+    
+    if ([self.MinuteTextField isFirstResponder]) {
+        [self.MinuteTextField resignFirstResponder];
+    }
+    
+}
+
+
+#pragma Save data function
+-(void)SaveData {
+    
+    
+    NSDate *ChosenDate = self.DatePickerView.date;
+    
+    NSInteger CaloriesBurnt = [self CalculateCaloriesBurnt];
+    
+    NSLog(@"Selected Date: %@", ChosenDate);
+    NSLog(@"Calories Burnt: %li", CaloriesBurnt);
+    
+}
+
+-(NSInteger)CalculateCaloriesBurnt {
+    
+    NSString *MinutesString = [NSString stringWithFormat:@"%@", self.MinuteTextField.text];
+    NSString *HourString = [NSString stringWithFormat:@"%@", self.HourTextField.text];
+    
+    int MinutesWorkedOut = [MinutesString intValue];
+    int HoursWorkedOut = [HourString intValue];
+    
+    return (SelectedCalorieBurnRate * ((HoursWorkedOut * 60) + MinutesWorkedOut));
 }
 
 @end

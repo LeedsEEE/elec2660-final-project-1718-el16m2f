@@ -30,6 +30,17 @@
     
 }
 
+
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+    
+}
+
 - (IBAction)SaveButtonPressed:(id)sender {
         [self performSegueWithIdentifier:@"DisplayTabs" sender:nil];
 }

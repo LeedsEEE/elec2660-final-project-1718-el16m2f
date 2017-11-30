@@ -9,14 +9,20 @@
 #import "ActivityGraphViewController.h"
 
 @interface ActivityGraphViewController ()
+{
+    NSArray *ChartData;
+    NSArray *ChartLabels;
 
-@property (weak, nonatomic) NSArray *ChartData;
-@property (weak, nonatomic) NSArray *ChartLabels;
-
-@property (strong, nonatomic) NSArray *WeekData;
-@property (strong, nonatomic) NSArray *MonthData;
-@property (strong, nonatomic) NSArray *DaysInAWeek;
-@property (strong, nonatomic) NSArray *WeeksInAMonth;
+    NSArray *WeekData;
+    NSArray *MonthData;
+    NSArray *DaysInAWeek;
+    NSArray *WeeksInAMonth;
+    
+    NSDate *CurrentDate;
+    
+    NSDateFormatter *WordedDayFormat;
+    NSDateFormatter *WordedMonthFormat;
+}
 
 @end
 
@@ -25,23 +31,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, self.view.frame.size.width,40)];
+    //Creating time objects and creating formats for the X-axis labels
+    CurrentDate = [NSDate date];
     
-    self.WeekData = [NSArray arrayWithObjects:
+    NSLocale *Locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
+    
+    WordedDayFormat = [[NSDateFormatter alloc]init];
+    [WordedDayFormat setLocale:Locale];
+    [WordedDayFormat setDateFormat:@"E"];
+    
+    WordedMonthFormat = [[NSDateFormatter alloc]init];
+    [WordedMonthFormat setLocale:Locale];
+    [WordedMonthFormat setDateFormat:@"MMMM-YY"];
+    
+    //Some test data
+    WeekData = [NSArray arrayWithObjects:
                             @20,@30,@40,@35,@25,@45,@30, nil];
-    self.MonthData = [NSArray arrayWithObjects:
+    MonthData = [NSArray arrayWithObjects:
                             @500,@600,@550,@400,@475, nil];
     
-    self.DaysInAWeek = [NSArray arrayWithObjects:
-                        @"Monday",@"Sunday", nil];
+    DaysInAWeek = [NSArray arrayWithObjects:
+                        @"Monday",@"Today", nil];
     
-    self.WeeksInAMonth = [NSArray arrayWithObjects:
+    WeeksInAMonth = [NSArray arrayWithObjects:
                         @"Week1",@"Week5", nil];
 
     
-    [self UpdateData];
-    
-    [self.ActivityBarChart reloadData];
+    [self InitialLoadUp];
     
 }
 
@@ -49,20 +65,20 @@
     
     [super viewWillAppear:animated];
     [self.ActivityBarChart setState:JBChartViewStateExpanded];
-    [self.ActivityBarChart reloadDataAnimated:animated];
     
 }
 
+#pragma Bar Graph delegate methods
 
 -(NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView {
     
-    return [self.ChartData count];
+    return [ChartData count];
     
 }
 
 -(CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtIndex:(NSUInteger)index {
     
-    return [[self.ChartData objectAtIndex:index]floatValue];
+    return [[ChartData objectAtIndex:index]floatValue];
     
 }
 
@@ -84,7 +100,7 @@
 
 -(void)barChartView:(JBBarChartView *)barChartView didSelectBarAtIndex:(NSUInteger)index {
     
-    self.BarValueLabel.text = [NSString stringWithFormat:@"%.1f Calories",[[self.ChartData objectAtIndex:index]floatValue]];
+    self.BarValueLabel.text = [NSString stringWithFormat:@"%.1f Calories",[[ChartData objectAtIndex:index]floatValue]];
     
 }
 
@@ -94,24 +110,64 @@
     
 }
 
-- (IBAction)SegmentedControlChanged:(id)sender {
+#pragma Segmented Control
 
+//This function alters the data that is going to be displayed based on the value of the Segmented Contorl
+-(void) SegmentedControlModifyData {
+    
     if (self.BarChartType.selectedSegmentIndex == 0){
         
-        self.ChartData = self.WeekData;
-        self.ChartLabels = self.DaysInAWeek;
+        ChartData = WeekData;
+        
+        NSDateComponents *singularday = [[NSDateComponents alloc] init];
+        singularday.day = -6;                                                    //These two lines create a component of -6 days so that the far left label shows the day from a week ago.
+        
+        NSCalendar *Calendar = [NSCalendar currentCalendar];
+        NSDate *TomorrowDay = [Calendar dateByAddingComponents:singularday toDate:CurrentDate options:0];
+        
+        ChartLabels = [NSArray arrayWithObjects:
+                       [WordedDayFormat stringFromDate:TomorrowDay],
+                       @"Today", nil];
         
     } else if (self.BarChartType.selectedSegmentIndex ==1){
         
-        self.ChartData = self.MonthData;
-        self.ChartLabels = self.WeeksInAMonth;
+        ChartData = MonthData;
+        ChartLabels = WeeksInAMonth;
         
     } else {
         
+        ChartData = MonthData;
+        
+        NSDateComponents *elevenmonths = [[NSDateComponents alloc] init];
+        elevenmonths.month = -11;                                                    //These two lines create a component of -11 months so that the graphs label displays the correct month with its year
+        
+        NSCalendar *Calendar = [NSCalendar currentCalendar];
+        NSDate *TomorrowDay = [Calendar dateByAddingComponents:elevenmonths toDate:CurrentDate options:0];
+        
+        ChartLabels = [NSArray arrayWithObjects:
+                       [WordedMonthFormat stringFromDate:TomorrowDay],
+                       [WordedMonthFormat stringFromDate:CurrentDate], nil];
+        
     }
     
+}
+
+- (IBAction)SegmentedControlChanged:(id)sender {
+
+    [self SegmentedControlModifyData];
     [self UpdateData];
-    [self.ActivityBarChart reloadData];
+    [self.ActivityBarChart reloadDataAnimated:YES];
+    
+}
+
+#pragma Additional functions
+
+//This is required to initialize the view
+-(void) InitialLoadUp {
+    
+    [self SegmentedControlModifyData];
+    [self UpdateData];
+    [self.ActivityBarChart reloadDataAnimated:YES];
     
 }
 
@@ -126,8 +182,8 @@
     self.ActivityBarChart.backgroundColor = [UIColor lightGrayColor];
     self.ActivityBarChart.inverted = NO;
     
-    self.LeftFooterLabel.text = [NSString stringWithFormat:@"%@",[self.ChartLabels objectAtIndex:0]];
-    self.RightFooterLabel.text = [NSString stringWithFormat:@"%@",[self.ChartLabels objectAtIndex:1]];
+    self.LeftFooterLabel.text = [NSString stringWithFormat:@"%@",[ChartLabels objectAtIndex:0]];
+    self.RightFooterLabel.text = [NSString stringWithFormat:@"%@",[ChartLabels objectAtIndex:1]];
     
 }
 

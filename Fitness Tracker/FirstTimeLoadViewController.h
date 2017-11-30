@@ -8,18 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstTimeLoadViewController : UIViewController
+@interface FirstTimeLoadViewController : UIViewController <UITextFieldDelegate>
 
+@property Boolean *WeightType;      //If NO measured in KG, if YES measured in lbs
+@property Boolean *HeightType;      //If No measured in cm, if YES measured in ft
 
 @property (weak, nonatomic) IBOutlet UITextField *NameTextField;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *DateOfBirthPicker;
 
 @property (weak, nonatomic) IBOutlet UITextField *HeightTextField;
-@property (weak, nonatomic) IBOutlet UIPickerView *HeightOptions;
 
 @property (weak, nonatomic) IBOutlet UITextField *WeightTextField;
-@property (weak, nonatomic) IBOutlet UIPickerView *WeightOptions;
+
 
 - (IBAction)SaveButtonPressed:(id)sender;
 

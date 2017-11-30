@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
 }
 
@@ -82,7 +81,17 @@ numberOfRowsInComponent:(NSInteger)component{
     
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+    
+}
+
 - (IBAction)SaveButtonPressed:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

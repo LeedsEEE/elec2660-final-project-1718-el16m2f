@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddWeight : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate>
+@interface AddWeight : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate , UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIPickerView *WeightPickerView;
 
