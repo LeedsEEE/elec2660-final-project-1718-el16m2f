@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D08F9C71FCF3D2800FA28E2 /* FirstTimeLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D08F9C61FCF3D2800FA28E2 /* FirstTimeLoadViewController.m */; };
+		3D0A93BB1FD17AB000274040 /* UserProfile+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A93B81FD17AB000274040 /* UserProfile+CoreDataClass.m */; };
+		3D0A93BC1FD17AB000274040 /* UserProfile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A93BA1FD17AB000274040 /* UserProfile+CoreDataProperties.m */; };
 		3D132ADE1FCDC96E00D89391 /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D132AD51FCDC96C00D89391 /* JBChart.framework */; };
 		3D132AE51FCDC96E00D89391 /* JBChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D132AE41FCDC96E00D89391 /* JBChartTests.m */; };
 		3D132AE71FCDC96E00D89391 /* JBChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D132AD71FCDC96E00D89391 /* JBChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -124,6 +126,10 @@
 /* Begin PBXFileReference section */
 		3D08F9C51FCF3D2800FA28E2 /* FirstTimeLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTimeLoadViewController.h; sourceTree = "<group>"; };
 		3D08F9C61FCF3D2800FA28E2 /* FirstTimeLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTimeLoadViewController.m; sourceTree = "<group>"; };
+		3D0A93B71FD17AB000274040 /* UserProfile+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserProfile+CoreDataClass.h"; path = "../UserProfile+CoreDataClass.h"; sourceTree = "<group>"; };
+		3D0A93B81FD17AB000274040 /* UserProfile+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserProfile+CoreDataClass.m"; path = "../UserProfile+CoreDataClass.m"; sourceTree = "<group>"; };
+		3D0A93B91FD17AB000274040 /* UserProfile+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserProfile+CoreDataProperties.h"; path = "../UserProfile+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D0A93BA1FD17AB000274040 /* UserProfile+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserProfile+CoreDataProperties.m"; path = "../UserProfile+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3D132AD51FCDC96C00D89391 /* JBChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D132AD71FCDC96E00D89391 /* JBChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBChart.h; sourceTree = "<group>"; };
 		3D132AD81FCDC96E00D89391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -279,6 +285,18 @@
 			name = "Activity Monitoring Tab";
 			sourceTree = "<group>";
 		};
+		3D0A93B61FD179E700274040 /* Core Date Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D0A93B71FD17AB000274040 /* UserProfile+CoreDataClass.h */,
+				3D0A93B81FD17AB000274040 /* UserProfile+CoreDataClass.m */,
+				3D0A93B91FD17AB000274040 /* UserProfile+CoreDataProperties.h */,
+				3D0A93BA1FD17AB000274040 /* UserProfile+CoreDataProperties.m */,
+				3D2D3EA01FCC7A79003D0329 /* Core_Data.xcdatamodeld */,
+			);
+			name = "Core Date Files";
+			sourceTree = "<group>";
+		};
 		3D132AD61FCDC96C00D89391 /* JBChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,7 +350,6 @@
 		3D2D3E9F1FCC7A33003D0329 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3D2D3EA01FCC7A79003D0329 /* Core_Data.xcdatamodeld */,
 			);
 			name = Resources;
 			path = "Fitness Tracker";
@@ -368,8 +385,9 @@
 			isa = PBXGroup;
 			children = (
 				3D75B0931FC3058F003D3A5C /* Images */,
-				3D75B0631FC302E6003D3A5C /* AppDelegate.h */,
+				3D0A93B61FD179E700274040 /* Core Date Files */,
 				3D75B0641FC302E6003D3A5C /* AppDelegate.m */,
+				3D75B0631FC302E6003D3A5C /* AppDelegate.h */,
 				3DAE42B21FC4386F002EA8C1 /* UserInfo.h */,
 				3DAE42B31FC43870002EA8C1 /* UserInfo.m */,
 				3D08F9C51FCF3D2800FA28E2 /* FirstTimeLoadViewController.h */,
@@ -614,6 +632,7 @@
 					};
 					3D75B05C1FC302E6003D3A5C = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					3D75B0751FC302E6003D3A5C = {
@@ -732,10 +751,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0A93BC1FD17AB000274040 /* UserProfile+CoreDataProperties.m in Sources */,
 				3DAE42B41FC43870002EA8C1 /* UserInfo.m in Sources */,
 				3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */,
 				3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */,
 				3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */,
+				3D0A93BB1FD17AB000274040 /* UserProfile+CoreDataClass.m in Sources */,
 				3D08F9C71FCF3D2800FA28E2 /* FirstTimeLoadViewController.m in Sources */,
 				3D38FF451FCDF38F004BC8AA /* WeightGraphController.m in Sources */,
 				3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */,
@@ -970,10 +991,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Fitness Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leeds.ac.uk.Fitness-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fitness Tracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -981,10 +1006,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Fitness Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leeds.ac.uk.Fitness-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fitness Tracker-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

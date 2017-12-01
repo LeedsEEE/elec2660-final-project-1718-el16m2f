@@ -15,6 +15,7 @@
 
     NSArray *WeekData;
     NSArray *MonthData;
+    NSArray *YearData;
     NSArray *DaysInAWeek;
     NSArray *WeeksInAMonth;
     
@@ -49,6 +50,8 @@
                             @20,@30,@40,@35,@25,@45,@30, nil];
     MonthData = [NSArray arrayWithObjects:
                             @500,@600,@550,@400,@475, nil];
+    YearData = [NSArray arrayWithObjects:
+                            @2000,@3000,@2500,@3250,@3112,@1750,@3980,@3210,@4100,@2680,@2980,@3650, nil];
     
     DaysInAWeek = [NSArray arrayWithObjects:
                         @"Monday",@"Today", nil];
@@ -56,6 +59,8 @@
     WeeksInAMonth = [NSArray arrayWithObjects:
                         @"Week1",@"Week5", nil];
 
+    
+    self.BarValueLabel.text = [NSString stringWithFormat:@"hold on the graph to see data"];
     
     [self InitialLoadUp];
     
@@ -136,7 +141,7 @@
         
     } else {
         
-        ChartData = MonthData;
+        ChartData = YearData;
         
         NSDateComponents *elevenmonths = [[NSDateComponents alloc] init];
         elevenmonths.month = -11;                                                    //These two lines create a component of -11 months so that the graphs label displays the correct month with its year

@@ -37,6 +37,8 @@
     [DateFormat setLocale:Locale];
     [DateFormat setDateFormat:@"E,dd,MM,yyyy"];
     
+    [self DatePickerViewInit];                  //Sets maximum and minimum values that the date picker view can operate within.
+    
 }
 
 
@@ -92,6 +94,20 @@
     }
     
     return YES;
+    
+}
+
+-(void)DatePickerViewInit {
+    
+    NSDateComponents *minusfivedays = [[NSDateComponents alloc] init];
+    minusfivedays.day = -5;
+    
+    NSCalendar *Calendar = [NSCalendar currentCalendar];
+    
+    NSDate *fivedaysago = [Calendar dateByAddingComponents: minusfivedays toDate:CurrentDate options:0];
+    
+    [self.DatePickerView setMaximumDate: CurrentDate];
+    [self.DatePickerView setMinimumDate: fivedaysago];
     
 }
 
