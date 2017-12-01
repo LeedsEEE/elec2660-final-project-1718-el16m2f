@@ -10,6 +10,7 @@
 		3D08F9C71FCF3D2800FA28E2 /* FirstTimeLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D08F9C61FCF3D2800FA28E2 /* FirstTimeLoadViewController.m */; };
 		3D0A93BB1FD17AB000274040 /* UserProfile+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A93B81FD17AB000274040 /* UserProfile+CoreDataClass.m */; };
 		3D0A93BC1FD17AB000274040 /* UserProfile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A93BA1FD17AB000274040 /* UserProfile+CoreDataProperties.m */; };
+		3D0A93C01FD1D04800274040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0A93BF1FD1D04800274040 /* Main.storyboard */; };
 		3D132ADE1FCDC96E00D89391 /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D132AD51FCDC96C00D89391 /* JBChart.framework */; };
 		3D132AE51FCDC96E00D89391 /* JBChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D132AE41FCDC96E00D89391 /* JBChartTests.m */; };
 		3D132AE71FCDC96E00D89391 /* JBChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D132AD71FCDC96E00D89391 /* JBChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,7 +47,6 @@
 		3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */; };
 		3D75B0621FC302E6003D3A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0611FC302E6003D3A5C /* main.m */; };
 		3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0641FC302E6003D3A5C /* AppDelegate.m */; };
-		3D75B06B1FC302E6003D3A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B0691FC302E6003D3A5C /* Main.storyboard */; };
 		3D75B06D1FC302E6003D3A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B06C1FC302E6003D3A5C /* Assets.xcassets */; };
 		3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */; };
 		3D75B07B1FC302E6003D3A5C /* Fitness_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B07A1FC302E6003D3A5C /* Fitness_TrackerTests.m */; };
@@ -130,6 +130,7 @@
 		3D0A93B81FD17AB000274040 /* UserProfile+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserProfile+CoreDataClass.m"; path = "../UserProfile+CoreDataClass.m"; sourceTree = "<group>"; };
 		3D0A93B91FD17AB000274040 /* UserProfile+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserProfile+CoreDataProperties.h"; path = "../UserProfile+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3D0A93BA1FD17AB000274040 /* UserProfile+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserProfile+CoreDataProperties.m"; path = "../UserProfile+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D0A93BF1FD1D04800274040 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3D132AD51FCDC96C00D89391 /* JBChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D132AD71FCDC96E00D89391 /* JBChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBChart.h; sourceTree = "<group>"; };
 		3D132AD81FCDC96E00D89391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,7 +172,6 @@
 		3D75B0611FC302E6003D3A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D75B0631FC302E6003D3A5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D75B0641FC302E6003D3A5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3D75B06A1FC302E6003D3A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D75B06C1FC302E6003D3A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D75B06F1FC302E6003D3A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D75B0711FC302E6003D3A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -396,8 +396,8 @@
 				3D08F9C21FCF3B7800FA28E2 /* Weight Monitoring Tab */,
 				3D08F9C31FCF3BA200FA28E2 /* Rep Tab */,
 				3DAFE9841FC8579300CF27C3 /* Map Tab */,
-				3D75B0691FC302E6003D3A5C /* Main.storyboard */,
 				3D75B06C1FC302E6003D3A5C /* Assets.xcassets */,
+				3D0A93BF1FD1D04800274040 /* Main.storyboard */,
 				3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */,
 				3D75B0601FC302E6003D3A5C /* Supporting Files */,
 			);
@@ -691,12 +691,12 @@
 				3D75B0701FC302E6003D3A5C /* LaunchScreen.storyboard in Resources */,
 				3DE35A911FD0757000F68566 /* 167px x 167px in Resources */,
 				3DE35A8F1FD0757000F68566 /* 76px x 76px in Resources */,
+				3D0A93C01FD1D04800274040 /* Main.storyboard in Resources */,
 				3DE3A1EE1FC33415007FDBCA /* Adder_Icon.png in Resources */,
 				3D75B06D1FC302E6003D3A5C /* Assets.xcassets in Resources */,
 				3DE3A1EA1FC32F90007FDBCA /* Heart_Icon.png in Resources */,
 				3DE35A8E1FD0757000F68566 /* 40px x 40px in Resources */,
 				3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */,
-				3D75B06B1FC302E6003D3A5C /* Main.storyboard in Resources */,
 				3DE3A1EC1FC3340C007FDBCA /* Location_Icon.png in Resources */,
 				3DE35A901FD0757000F68566 /* 156px x 156px in Resources */,
 				3DE3A1F01FC3341E007FDBCA /* Swimming_Icon.png in Resources */,
@@ -816,14 +816,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3D75B0691FC302E6003D3A5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D75B06A1FC302E6003D3A5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3D75B06E1FC302E6003D3A5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

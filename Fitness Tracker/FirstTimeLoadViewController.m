@@ -17,6 +17,8 @@
     NSDate *CurrentDate;
     NSString *Name;
     NSDate *DoB;
+    
+    BOOL PerformProfileScreen;
 }
 
 @property (nonatomic, weak) NSNumber *Height;
@@ -28,31 +30,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    CurrentDate = [NSDate date];
     
-//#define KgsToLbs 2.20462
-//#define MtoFt 3.28084
+    [self DateOfBirthPickerViewInit];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated {
     
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"HasViewedAppBefore"]) {
+    NSNumber *ShowProfileScreen = [[NSUserDefaults standardUserDefaults] objectForKey:@"ShowSetup"];
+    
+    if(ShowProfileScreen == nil) {
         
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasviewedappbefore"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowSetup"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NSLog(@"Set bool to yes!!!");
+        
+        PerformProfileScreen = TRUE;
         
     }else {
         
         [self performSegueWithIdentifier:@"DisplayTabs" sender:nil];
         
+        NSLog(@"WTF is happening???");
+        
+        [self LeaveView];
+        
     }
     
-    CurrentDate = [NSDate date];
-    
-    [self DateOfBirthPickerViewInit];
-    
-    
-    
-    
 }
-
 
 
 -(void)DateOfBirthPickerViewInit {
@@ -79,6 +87,12 @@
     
     return YES;
     
+}
+
+- (IBAction)HeightToggleSwitch:(id)sender {
+}
+
+- (IBAction)WeightToggleSwitch:(id)sender {
 }
 
 - (IBAction)SaveButtonPressed:(id)sender {
@@ -110,9 +124,8 @@
     }
     
     
-    
     [self AddToDatabase];
-    [self performSegueWithIdentifier:@"DisplayTabs" sender:nil];
+    [self LeaveView];
 }
 
 - (void)AddToDatabase {
@@ -123,6 +136,14 @@
                                @"Weight": self.Weight};
     
     [UserProfile UpdateUserProfile:UserInfo];
+    
+    NSLog(@"%@",[UserProfile UpdateUserProfile:UserInfo].description);
+    
+}
+
+-(void) LeaveView {
+    
+    [self performSegueWithIdentifier:@"DisplayTabs" sender:nil];
     
 }
 

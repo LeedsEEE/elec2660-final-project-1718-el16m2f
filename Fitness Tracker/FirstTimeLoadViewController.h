@@ -21,6 +21,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *WeightTextField;
 
+- (IBAction)HeightToggleSwitch:(id)sender;
+- (IBAction)WeightToggleSwitch:(id)sender;
+
 
 - (IBAction)SaveButtonPressed:(id)sender;
 

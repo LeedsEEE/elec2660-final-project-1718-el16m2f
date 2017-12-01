@@ -100,8 +100,6 @@
     
     [self.Map removeAnnotations:self.Map.annotations];                              //Removes all the previously loaded annotations.
     
-    //self.Map.showsUserLocation = YES;                                               //This is kept here to make sure
-    
     CLLocation *CurrentLocation = self.Location.location;
     CurrentLocationCoords = CurrentLocation.coordinate;                             //Re-calculating the users position.
     
