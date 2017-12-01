@@ -37,31 +37,6 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    
-    NSNumber *ShowProfileScreen = [[NSUserDefaults standardUserDefaults] objectForKey:@"ShowSetup"];
-    
-    if(ShowProfileScreen == nil) {
-        
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowSetup"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        NSLog(@"Set bool to yes!!!");
-        
-        PerformProfileScreen = TRUE;
-        
-    }else {
-        
-        [self performSegueWithIdentifier:@"DisplayTabs" sender:nil];
-        
-        NSLog(@"WTF is happening???");
-        
-        [self LeaveView];
-        
-    }
-    
-}
-
 
 -(void)DateOfBirthPickerViewInit {
     
@@ -143,7 +118,7 @@
 
 -(void) LeaveView {
     
-    [self performSegueWithIdentifier:@"DisplayTabs" sender:nil];
+    [self performSegueWithIdentifier:@"ContinueApp" sender:nil];
     
 }
 

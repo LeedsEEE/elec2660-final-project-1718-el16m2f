@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y72-7N-DBY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rwF-9L-56E">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NSn-Xc-CLX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GsO-sj-P3t">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1317"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z57-pi-gML">
@@ -93,6 +93,7 @@
                         <outlet property="BarValueLabel" destination="EJP-rC-CT7" id="MkE-jq-5tz"/>
                         <outlet property="LeftFooterLabel" destination="wRh-tB-tnf" id="WAV-qw-Gph"/>
                         <outlet property="RightFooterLabel" destination="zgd-ja-ugL" id="z6s-4X-AeY"/>
+                        <segue destination="Y72-7N-DBY" kind="showDetail" identifier="ShowProfileSetup" action="showViewController:sender:" id="vME-re-Iax"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbm-AF-lXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,7 +109,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NSA-NX-OjR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a8u-ji-OHc">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1317"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rng-UB-g4h">
@@ -204,7 +205,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WwS-s3-jm8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G4F-JK-3a7" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1317"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Tzc-nT-pLa">
@@ -275,7 +276,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BmP-DI-BPa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="32Y-QV-0GU">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1317"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6G-5i-eDV">
@@ -458,7 +459,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ndz-wx-cIf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Pp-vv-hvc">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi there, so this must be your first time using Fitness Tracker. Let's get you started up!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06b-Na-Ie5">
@@ -481,8 +482,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Cd-9G-xiC">
-                                <frame key="frameInset" width="1000" height="1000"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Cd-9G-xiC">
                                 <date key="date" timeIntervalSinceReferenceDate="533673808.07375902">
                                     <!--2017-11-29 18:43:28 +0000-->
                                 </date>
@@ -492,8 +492,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date of Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvU-Zc-loR">
-                                <frame key="frameInset" width="1000" height="1000"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvU-Zc-loR">
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -569,12 +568,12 @@
                         <outlet property="HeightTextField" destination="mzE-Hn-SjE" id="aTb-rI-NoF"/>
                         <outlet property="NameTextField" destination="Qt3-hg-nWc" id="rRL-bW-qzY"/>
                         <outlet property="WeightTextField" destination="YLZ-RX-ykE" id="xyE-7L-1KW"/>
-                        <segue destination="rwF-9L-56E" kind="show" identifier="DisplayTabs" animates="NO" id="pCD-2k-8DE"/>
+                        <segue destination="rwF-9L-56E" kind="show" identifier="ContinueApp" id="N7o-eV-Pkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8K-fe-m8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-680.46875" y="-18.1640625"/>
+            <point key="canvasLocation" x="1226" y="-1859"/>
         </scene>
     </scenes>
     <resources>

@@ -73,6 +73,23 @@
     
 }
 
+#pragma Function to move to the profile screen if this is the users first time!
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    NSNumber *ShowProfileScreen = [[NSUserDefaults standardUserDefaults] objectForKey:@"ShowProfileSetup"];
+    
+    if(ShowProfileScreen == nil) {
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowProfileSetup"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self performSegueWithIdentifier:@"ShowProfileSetup" sender:nil];
+        
+    }
+    
+}
+
 #pragma Bar Graph delegate methods
 
 -(NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView {

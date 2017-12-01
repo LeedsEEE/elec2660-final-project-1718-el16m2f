@@ -16,16 +16,13 @@
     AppDelegate *applicationdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = applicationdelegate.persistentContainer.viewContext;
     
-    UserProfile *UserEntity = (UserProfile *[NSEntityDescription insertNewObjectForEntityForName:@"UserProfile" inManagedObjectContext:context];
-    //Creating a new object
+    UserProfile *UserEntity = (UserProfile *)[NSEntityDescription insertNewObjectForEntityForName:@"UserProfile" inManagedObjectContext:context];
     
+    //Creating a new object
     UserEntity.firstName = [UserInformation valueForKey:@"Name"];
     UserEntity.dob = [UserInformation valueForKey:@"DoB"];
     UserEntity.height = [UserInformation valueForKey:@"Height"];
     UserEntity.weight = [UserInformation valueForKey:@"Weight"];
-    
-    
-   
     
     return UserEntity;
     
