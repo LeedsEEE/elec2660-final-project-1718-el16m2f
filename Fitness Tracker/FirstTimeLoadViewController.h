@@ -10,8 +10,11 @@
 
 @interface FirstTimeLoadViewController : UIViewController <UITextFieldDelegate>
 
-@property Boolean *WeightType;      //If NO measured in KG, if YES measured in lbs
-@property Boolean *HeightType;      //If No measured in cm, if YES measured in ft
+@property NSInteger WeightType;      //If NO measured in KG, if YES measured in lbs
+@property NSInteger HeightType;      //If No measured in cm, if YES measured in ft
+
+#define KilogramToPounds 2.20462
+#define CentimetresToFeet 0.0328084
 
 @property (weak, nonatomic) IBOutlet UITextField *NameTextField;
 
@@ -24,7 +27,10 @@
 - (IBAction)HeightToggleSwitch:(id)sender;
 - (IBAction)WeightToggleSwitch:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *HeightToggleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *WeightToggleLabel;
 
 - (IBAction)SaveButtonPressed:(id)sender;
+- (IBAction)BackgroundPressed:(id)sender;
 
 @end

@@ -77,12 +77,9 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     
-    NSNumber *ShowProfileScreen = [[NSUserDefaults standardUserDefaults] objectForKey:@"ShowProfileSetup"];
+    NSNumber *ShowProfileScreen = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserFirstTime"];
     
     if(ShowProfileScreen == nil) {
-        
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowProfileSetup"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
         
         [self performSegueWithIdentifier:@"ShowProfileSetup" sender:nil];
         

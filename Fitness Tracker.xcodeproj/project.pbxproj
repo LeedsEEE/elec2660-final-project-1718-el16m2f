@@ -56,6 +56,7 @@
 		3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42A91FC42CAE002EA8C1 /* ActivityInfo.m */; };
 		3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42B01FC43008002EA8C1 /* AddActivity.m */; };
 		3DAE42B41FC43870002EA8C1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42B31FC43870002EA8C1 /* UserInfo.m */; };
+		3DB5D7281FD5AE6900D09DBB /* 8ccb55af.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB5D7271FD5AE6900D09DBB /* 8ccb55af.png */; };
 		3DE35A8E1FD0757000F68566 /* 40px x 40px in Resources */ = {isa = PBXBuildFile; fileRef = 3DE35A8A1FD0757000F68566 /* 40px x 40px */; };
 		3DE35A8F1FD0757000F68566 /* 76px x 76px in Resources */ = {isa = PBXBuildFile; fileRef = 3DE35A8B1FD0757000F68566 /* 76px x 76px */; };
 		3DE35A901FD0757000F68566 /* 156px x 156px in Resources */ = {isa = PBXBuildFile; fileRef = 3DE35A8C1FD0757000F68566 /* 156px x 156px */; };
@@ -191,6 +192,7 @@
 		3DAE42B01FC43008002EA8C1 /* AddActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddActivity.m; sourceTree = "<group>"; };
 		3DAE42B21FC4386F002EA8C1 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = ../UserInfo.h; sourceTree = "<group>"; };
 		3DAE42B31FC43870002EA8C1 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = ../UserInfo.m; sourceTree = "<group>"; };
+		3DB5D7271FD5AE6900D09DBB /* 8ccb55af.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8ccb55af.png; sourceTree = "<group>"; };
 		3DE35A8A1FD0757000F68566 /* 40px x 40px */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "40px x 40px"; sourceTree = "<group>"; };
 		3DE35A8B1FD0757000F68566 /* 76px x 76px */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "76px x 76px"; sourceTree = "<group>"; };
 		3DE35A8C1FD0757000F68566 /* 156px x 156px */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "156px x 156px"; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				3DE3A1E91FC32F90007FDBCA /* Heart_Icon.png */,
 				3DE3A1ED1FC33415007FDBCA /* Adder_Icon.png */,
 				3DE3A1EF1FC3341E007FDBCA /* Swimming_Icon.png */,
+				3DB5D7271FD5AE6900D09DBB /* 8ccb55af.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				3DE3A1EE1FC33415007FDBCA /* Adder_Icon.png in Resources */,
 				3D75B06D1FC302E6003D3A5C /* Assets.xcassets in Resources */,
 				3DE3A1EA1FC32F90007FDBCA /* Heart_Icon.png in Resources */,
+				3DB5D7281FD5AE6900D09DBB /* 8ccb55af.png in Resources */,
 				3DE35A8E1FD0757000F68566 /* 40px x 40px in Resources */,
 				3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */,
 				3DE3A1EC1FC3340C007FDBCA /* Location_Icon.png in Resources */,

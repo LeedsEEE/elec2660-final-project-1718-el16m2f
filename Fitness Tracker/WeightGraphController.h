@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JBChart/JBChart.h>
 
-@interface WeightGraphController : UIViewController
+@interface WeightGraphController : UIViewController <JBLineChartViewDelegate , JBLineChartViewDataSource>
+
+@property (weak, nonatomic) IBOutlet JBLineChartView *LineChart;
 
 @end
