@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet JBLineChartView *LineChart;
 
+- (IBAction)RefreshButtonPressed:(id)sender;
+
 @end

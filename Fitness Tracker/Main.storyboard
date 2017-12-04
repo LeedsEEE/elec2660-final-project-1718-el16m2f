@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rwF-9L-56E">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rwF-9L-56E">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -20,32 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z57-pi-gML">
-                                <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="  " id="8ex-tA-chu">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="E6S-TE-32O">
-                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="lRe-u1-8AF">
-                                                <rect key="frame" x="16" y="7" width="220" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <segments>
-                                                    <segment title="Week"/>
-                                                    <segment title="Month"/>
-                                                    <segment title="Year"/>
-                                                </segments>
-                                                <connections>
-                                                    <action selector="SegmentedControlChanged:" destination="pL7-Vn-rYN" eventType="valueChanged" id="YBv-ce-vB3"/>
-                                                </connections>
-                                            </segmentedControl>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Add Activity" id="7qN-uH-gTu">
-                                            <connections>
-                                                <segue destination="kkI-46-aRr" kind="showDetail" id="tXN-mF-aRZ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh6-pl-SPf" customClass="JBBarChartView">
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -64,23 +38,50 @@
                                 <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cul-6Y-I1A">
+                                <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="  " id="qvp-t3-ZTM">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="E6S-TE-32O">
+                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="lRe-u1-8AF">
+                                                <rect key="frame" x="16" y="7" width="220" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segments>
+                                                    <segment title="Week"/>
+                                                    <segment title="Month"/>
+                                                    <segment title="Year"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="SegmentedControlChanged:" destination="pL7-Vn-rYN" eventType="valueChanged" id="YBv-ce-vB3"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Add Activity" id="7qN-uH-gTu">
+                                            <color key="tintColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="kkI-46-aRr" kind="showDetail" id="tXN-mF-aRZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="95" id="0HM-cN-iRb"/>
                             <constraint firstItem="lh6-pl-SPf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="17N-hv-NJl"/>
-                            <constraint firstItem="z57-pi-gML" firstAttribute="centerX" secondItem="GsO-sj-P3t" secondAttribute="centerX" id="6vo-Jm-hTG"/>
+                            <constraint firstItem="cul-6Y-I1A" firstAttribute="centerX" secondItem="GsO-sj-P3t" secondAttribute="centerX" id="3VS-VZ-1oh"/>
                             <constraint firstItem="EJP-rC-CT7" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" constant="25" id="FEh-is-NRO"/>
                             <constraint firstItem="zgd-ja-ugL" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="Fub-6H-HPT"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="top" secondItem="cul-6Y-I1A" secondAttribute="bottom" id="OfT-Jl-WEr"/>
                             <constraint firstItem="wRh-tB-tnf" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="8" id="Ojc-mt-0K3"/>
-                            <constraint firstItem="lh6-pl-SPf" firstAttribute="top" secondItem="z57-pi-gML" secondAttribute="bottom" id="XNK-RC-qFI"/>
-                            <constraint firstItem="z57-pi-gML" firstAttribute="top" secondItem="GsO-sj-P3t" secondAttribute="top" id="Xsq-Jr-4RP"/>
                             <constraint firstItem="wRh-tB-tnf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="dl8-IU-dud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EJP-rC-CT7" secondAttribute="trailing" constant="25" id="eJE-QQ-DHS"/>
+                            <constraint firstItem="cul-6Y-I1A" firstAttribute="top" secondItem="mHa-Du-E4J" secondAttribute="bottom" id="fQe-C1-ott"/>
                             <constraint firstItem="lh6-pl-SPf" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="fxU-uH-lWN"/>
+                            <constraint firstItem="cul-6Y-I1A" firstAttribute="width" secondItem="GsO-sj-P3t" secondAttribute="width" id="hZb-GE-v34"/>
                             <constraint firstItem="zgd-ja-ugL" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="8" id="jYP-dg-zP4"/>
                             <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="EJP-rC-CT7" secondAttribute="bottom" constant="20" id="kcF-H2-Q4u"/>
-                            <constraint firstItem="z57-pi-gML" firstAttribute="width" secondItem="GsO-sj-P3t" secondAttribute="width" id="sTg-Bk-z9b"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Activity Tracker" image="Swimming_Icon.png" selectedImage="Swimming_Icon.png" id="oVr-yZ-X0A"/>
@@ -97,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbm-AF-lXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226.5625" y="-1041.2109375"/>
+            <point key="canvasLocation" x="1226.4000000000001" y="-1041.2293853073463"/>
         </scene>
         <!--Health Tracker-->
         <scene sceneID="9jc-2B-VJ2">
@@ -115,6 +116,11 @@
                                 <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="  " id="WdY-Rk-XPo">
+                                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="Bu4-L6-egQ">
+                                            <connections>
+                                                <action selector="RefreshButtonPressed:" destination="SaT-c0-LLE" id="8Sj-v5-9z4"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Record Weight" id="kqc-wr-izE">
                                             <connections>
                                                 <segue destination="bAl-ER-pYe" kind="showDetail" id="eLh-y3-Bzb"/>
@@ -124,16 +130,16 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6S-5k-oKR" customClass="JBLineChartView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rng-UB-g4h" firstAttribute="top" secondItem="a8u-ji-OHc" secondAttribute="top" id="6ES-CJ-fb6"/>
                             <constraint firstItem="Q6S-5k-oKR" firstAttribute="top" secondItem="rng-UB-g4h" secondAttribute="bottom" id="AwK-jo-gFr"/>
-                            <constraint firstItem="Q6S-5k-oKR" firstAttribute="width" secondItem="a8u-ji-OHc" secondAttribute="width" id="CXV-Xe-Bqn"/>
-                            <constraint firstItem="Q6S-5k-oKR" firstAttribute="leading" secondItem="rng-UB-g4h" secondAttribute="leading" id="H0E-41-Ulb"/>
                             <constraint firstItem="NSA-NX-OjR" firstAttribute="top" secondItem="Q6S-5k-oKR" secondAttribute="bottom" constant="79" id="OHo-Un-9Jy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q6S-5k-oKR" secondAttribute="trailing" id="dE8-NH-Sg6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Q6S-5k-oKR" secondAttribute="leading" id="jkt-w7-7PB"/>
                             <constraint firstItem="rng-UB-g4h" firstAttribute="width" secondItem="a8u-ji-OHc" secondAttribute="width" id="rFm-9a-lHI"/>
                             <constraint firstItem="rng-UB-g4h" firstAttribute="centerX" secondItem="a8u-ji-OHc" secondAttribute="centerX" id="te3-Bw-wDM"/>
                         </constraints>
@@ -188,7 +194,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hEK-MD-fY3" firstAttribute="height" secondItem="Xfn-OZ-7xL" secondAttribute="height" id="23z-Xl-OyM"/>
                             <constraint firstItem="gGG-4U-iSI" firstAttribute="width" secondItem="Xfn-OZ-7xL" secondAttribute="width" id="3RK-LC-i7H"/>
                             <constraint firstItem="hEK-MD-fY3" firstAttribute="centerX" secondItem="Xfn-OZ-7xL" secondAttribute="centerX" id="3ds-rZ-MnA"/>
                             <constraint firstItem="gGG-4U-iSI" firstAttribute="top" secondItem="Xfn-OZ-7xL" secondAttribute="top" id="AbS-pb-c78"/>
@@ -288,7 +293,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6G-5i-eDV"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6G-5i-eDV"/>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="35" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LKb-BD-1C4">
                                 <segments>
                                     <segment title="Map"/>

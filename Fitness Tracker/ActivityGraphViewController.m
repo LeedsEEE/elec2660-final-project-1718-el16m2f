@@ -63,7 +63,6 @@
     self.BarValueLabel.text = [NSString stringWithFormat:@"hold on the graph to see data"];
     
     [self InitialLoadUp];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
