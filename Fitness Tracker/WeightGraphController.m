@@ -60,8 +60,14 @@
 
 -(CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
     
-    return [[WeekData objectAtIndex:horizontalIndex] floatValue];
+    if (lineIndex == 0){
+        
+        return [[WeekData objectAtIndex:horizontalIndex] floatValue];
     
+    }
+    
+    
+    return 0;
 }
 
 #pragma Line Chart Delegate
