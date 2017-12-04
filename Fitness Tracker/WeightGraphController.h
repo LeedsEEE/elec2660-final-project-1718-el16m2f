@@ -15,4 +15,11 @@
 
 - (IBAction)RefreshButtonPressed:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *TypeOfWeek;
+
+@property (weak, nonatomic) IBOutlet UILabel *LeftChartFooter;
+@property (weak, nonatomic) IBOutlet UILabel *RightChartFooter;
+
+@property (weak, nonatomic) IBOutlet UILabel *ChartValue;
+
 @end

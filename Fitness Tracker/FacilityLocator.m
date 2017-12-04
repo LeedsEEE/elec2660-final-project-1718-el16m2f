@@ -48,6 +48,10 @@
     
 }
 
+-(BOOL)prefersStatusBarHidden {
+    return YES;                                                 //This function removes the status bar, as it was getting in the way.
+}
+
 
 #pragma Changing the map type with a segment controller
 

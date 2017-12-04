@@ -60,7 +60,7 @@
                         @"Week1",@"Week5", nil];
 
     
-    self.BarValueLabel.text = [NSString stringWithFormat:@"hold on the graph to see data"];
+    self.BarValueLabel.text = [NSString stringWithFormat:@"Touch on the bars"];
     
     [self InitialLoadUp];
 }
@@ -70,6 +70,11 @@
     [super viewWillAppear:animated];
     [self.ActivityBarChart setState:JBChartViewStateExpanded];
     
+}
+
+-(BOOL)prefersStatusBarHidden {
+    return YES;                                                 //This function removes the status bar, as it was getting in the way.
+    //https://stackoverflow.com/questions/32965610/hide-the-status-bar-in-ios-9
 }
 
 #pragma Function to move to the profile screen if this is the users first time!

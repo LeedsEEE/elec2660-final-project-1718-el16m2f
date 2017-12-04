@@ -20,9 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh6-pl-SPf" customClass="JBBarChartView">
-                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRh-tB-tnf">
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -38,10 +35,10 @@
                                 <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cul-6Y-I1A">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZY-fT-NBM">
                                 <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="  " id="qvp-t3-ZTM">
+                                    <navigationItem title="  " id="yev-69-iiq">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="E6S-TE-32O">
                                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="lRe-u1-8AF">
                                                 <rect key="frame" x="16" y="7" width="220" height="30"/>
@@ -65,28 +62,31 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh6-pl-SPf" customClass="JBBarChartView">
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="95" id="0HM-cN-iRb"/>
+                            <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="107" id="0HM-cN-iRb"/>
                             <constraint firstItem="lh6-pl-SPf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="17N-hv-NJl"/>
-                            <constraint firstItem="cul-6Y-I1A" firstAttribute="centerX" secondItem="GsO-sj-P3t" secondAttribute="centerX" id="3VS-VZ-1oh"/>
+                            <constraint firstItem="EZY-fT-NBM" firstAttribute="centerX" secondItem="GsO-sj-P3t" secondAttribute="centerX" id="Ahw-VF-cKY"/>
                             <constraint firstItem="EJP-rC-CT7" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" constant="25" id="FEh-is-NRO"/>
                             <constraint firstItem="zgd-ja-ugL" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="Fub-6H-HPT"/>
-                            <constraint firstItem="lh6-pl-SPf" firstAttribute="top" secondItem="cul-6Y-I1A" secondAttribute="bottom" id="OfT-Jl-WEr"/>
-                            <constraint firstItem="wRh-tB-tnf" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="8" id="Ojc-mt-0K3"/>
+                            <constraint firstItem="wRh-tB-tnf" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="20" id="Ojc-mt-0K3"/>
+                            <constraint firstItem="EZY-fT-NBM" firstAttribute="width" secondItem="GsO-sj-P3t" secondAttribute="width" id="TME-dN-9RA"/>
                             <constraint firstItem="wRh-tB-tnf" firstAttribute="leading" secondItem="GsO-sj-P3t" secondAttribute="leadingMargin" id="dl8-IU-dud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EJP-rC-CT7" secondAttribute="trailing" constant="25" id="eJE-QQ-DHS"/>
-                            <constraint firstItem="cul-6Y-I1A" firstAttribute="top" secondItem="mHa-Du-E4J" secondAttribute="bottom" id="fQe-C1-ott"/>
                             <constraint firstItem="lh6-pl-SPf" firstAttribute="trailing" secondItem="GsO-sj-P3t" secondAttribute="trailingMargin" id="fxU-uH-lWN"/>
-                            <constraint firstItem="cul-6Y-I1A" firstAttribute="width" secondItem="GsO-sj-P3t" secondAttribute="width" id="hZb-GE-v34"/>
-                            <constraint firstItem="zgd-ja-ugL" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="8" id="jYP-dg-zP4"/>
+                            <constraint firstItem="zgd-ja-ugL" firstAttribute="top" secondItem="lh6-pl-SPf" secondAttribute="bottom" constant="20" id="jYP-dg-zP4"/>
                             <constraint firstItem="NSn-Xc-CLX" firstAttribute="top" secondItem="EJP-rC-CT7" secondAttribute="bottom" constant="20" id="kcF-H2-Q4u"/>
+                            <constraint firstItem="EZY-fT-NBM" firstAttribute="top" secondItem="mHa-Du-E4J" secondAttribute="bottom" id="oaP-J3-Cbz"/>
+                            <constraint firstItem="lh6-pl-SPf" firstAttribute="top" secondItem="EZY-fT-NBM" secondAttribute="bottom" id="tvI-cn-ZUv"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Activity Tracker" image="Swimming_Icon.png" selectedImage="Swimming_Icon.png" id="oVr-yZ-X0A"/>
                     <navigationItem key="navigationItem" id="1py-v0-gTd"/>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="ActivityBarChart" destination="lh6-pl-SPf" id="vuX-zT-s3H"/>
                         <outlet property="BarChartType" destination="lRe-u1-8AF" id="p8y-e7-26C"/>
@@ -130,16 +130,48 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6S-5k-oKR" customClass="JBLineChartView">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUk-Zv-dlW">
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4U-xZ-pST">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value from graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rb-r0-SyO">
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTE-Ri-9HM">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4rb-r0-SyO" secondAttribute="bottom" constant="8" id="1rv-Uq-A5U"/>
+                                    <constraint firstAttribute="bottom" secondItem="k4U-xZ-pST" secondAttribute="bottom" constant="20" id="4a4-iK-4DM"/>
+                                    <constraint firstItem="k4U-xZ-pST" firstAttribute="leading" secondItem="Q6S-5k-oKR" secondAttribute="leading" constant="8" id="J3C-Ps-gtT"/>
+                                    <constraint firstItem="HUk-Zv-dlW" firstAttribute="top" secondItem="Q6S-5k-oKR" secondAttribute="top" constant="8" id="NEw-aX-eOI"/>
+                                    <constraint firstItem="HUk-Zv-dlW" firstAttribute="centerX" secondItem="Q6S-5k-oKR" secondAttribute="centerX" id="XXt-IA-Nec"/>
+                                    <constraint firstAttribute="trailing" secondItem="MTE-Ri-9HM" secondAttribute="trailing" constant="8" id="YVc-pD-xNP"/>
+                                    <constraint firstItem="4rb-r0-SyO" firstAttribute="centerX" secondItem="Q6S-5k-oKR" secondAttribute="centerX" id="cum-tY-yKy"/>
+                                    <constraint firstItem="MTE-Ri-9HM" firstAttribute="centerY" secondItem="k4U-xZ-pST" secondAttribute="centerY" id="ifr-yU-lh2"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rng-UB-g4h" firstAttribute="top" secondItem="a8u-ji-OHc" secondAttribute="top" id="6ES-CJ-fb6"/>
+                            <constraint firstItem="NSA-NX-OjR" firstAttribute="top" secondItem="Q6S-5k-oKR" secondAttribute="bottom" id="7S2-01-IjA"/>
                             <constraint firstItem="Q6S-5k-oKR" firstAttribute="top" secondItem="rng-UB-g4h" secondAttribute="bottom" id="AwK-jo-gFr"/>
-                            <constraint firstItem="NSA-NX-OjR" firstAttribute="top" secondItem="Q6S-5k-oKR" secondAttribute="bottom" constant="79" id="OHo-Un-9Jy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q6S-5k-oKR" secondAttribute="trailing" id="dE8-NH-Sg6"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Q6S-5k-oKR" secondAttribute="leading" id="jkt-w7-7PB"/>
+                            <constraint firstAttribute="trailing" secondItem="Q6S-5k-oKR" secondAttribute="trailing" id="Drh-mm-ZK9"/>
+                            <constraint firstItem="Q6S-5k-oKR" firstAttribute="leading" secondItem="a8u-ji-OHc" secondAttribute="leading" id="mwk-tp-qau"/>
                             <constraint firstItem="rng-UB-g4h" firstAttribute="width" secondItem="a8u-ji-OHc" secondAttribute="width" id="rFm-9a-lHI"/>
                             <constraint firstItem="rng-UB-g4h" firstAttribute="centerX" secondItem="a8u-ji-OHc" secondAttribute="centerX" id="te3-Bw-wDM"/>
                         </constraints>
@@ -147,7 +179,11 @@
                     <tabBarItem key="tabBarItem" title="Health Tracker" image="Heart_Icon.png" selectedImage="Heart_Icon.png" id="Bs2-EQ-E1K"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="ChartValue" destination="4rb-r0-SyO" id="RPi-5H-cbG"/>
+                        <outlet property="LeftChartFooter" destination="k4U-xZ-pST" id="M5x-YX-cYq"/>
                         <outlet property="LineChart" destination="Q6S-5k-oKR" id="jS9-bl-Pp4"/>
+                        <outlet property="RightChartFooter" destination="MTE-Ri-9HM" id="0I0-GJ-fJP"/>
+                        <outlet property="TypeOfWeek" destination="HUk-Zv-dlW" id="Gfd-Hp-BYd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rky-Ke-tBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUG-tH-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="-348.57571214392806"/>
+            <point key="canvasLocation" x="2209" y="-348"/>
         </scene>
         <!--Rep Counter-->
         <scene sceneID="dtY-L9-4XD">
@@ -304,6 +340,12 @@
                                     <action selector="MapTypeSelected:" destination="1yG-CZ-eYH" eventType="valueChanged" id="NLG-U4-n87"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="45" placeholderIntrinsicHeight="45" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-dp-1fO">
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="RefreshButtonPressed:" destination="1yG-CZ-eYH" eventType="touchUpInside" id="GMg-bc-zH6"/>
+                                </connections>
+                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-OD-Lyp">
                                 <segments>
                                     <segment title="2 Km"/>
@@ -314,12 +356,6 @@
                                     <action selector="RadiusSelected:" destination="1yG-CZ-eYH" eventType="valueChanged" id="Bim-zt-21f"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="45" placeholderIntrinsicHeight="45" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-dp-1fO">
-                                <state key="normal" title="Refresh"/>
-                                <connections>
-                                    <action selector="RefreshButtonPressed:" destination="1yG-CZ-eYH" eventType="touchUpInside" id="GMg-bc-zH6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -441,14 +477,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIt-Ms-Kx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2589.5999999999999" y="-1313.793103448276"/>
+            <point key="canvasLocation" x="2209" y="-1041"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="UlP-OB-V2e">
             <objects>
                 <tabBarController id="rwF-9L-56E" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" itemPositioning="fill" id="gPv-lU-Ine">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -617,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8K-fe-m8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-600.79999999999995" y="-1431.6341829085459"/>
+            <point key="canvasLocation" x="177" y="-1041"/>
         </scene>
     </scenes>
     <resources>
