@@ -115,6 +115,22 @@
     
 }
 
+
+#pragma mark Method for calculating how many calories were burnt
+-(NSInteger)CalculateCaloriesBurnt {
+    
+    NSString *MinutesString = [NSString stringWithFormat:@"%@", self.MinuteTextField.text];
+    NSString *HourString = [NSString stringWithFormat:@"%@", self.HourTextField.text];
+    
+    int MinutesWorkedOut = [MinutesString intValue];
+    int HoursWorkedOut = [HourString intValue];
+    
+    self.TimeWorkedOut = ((HoursWorkedOut*60)+MinutesWorkedOut);
+    
+    return (SelectedCalorieBurnRate * self.TimeWorkedOut);
+}
+
+
 #pragma Actions caused by buttons
 - (IBAction)SaveButtonPressed:(id)sender {
     [self SaveData];
@@ -172,17 +188,11 @@
     
 }
 
--(NSInteger)CalculateCaloriesBurnt {
+
+-(void)AddToDatabase {
     
-    NSString *MinutesString = [NSString stringWithFormat:@"%@", self.MinuteTextField.text];
-    NSString *HourString = [NSString stringWithFormat:@"%@", self.HourTextField.text];
     
-    int MinutesWorkedOut = [MinutesString intValue];
-    int HoursWorkedOut = [HourString intValue];
     
-    self.TimeWorkedOut = ((HoursWorkedOut*60)+MinutesWorkedOut);
-    
-    return (SelectedCalorieBurnRate * self.TimeWorkedOut);
 }
 
 @end

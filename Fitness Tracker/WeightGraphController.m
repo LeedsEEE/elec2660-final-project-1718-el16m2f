@@ -34,6 +34,15 @@
     [WordedDayFormat setLocale:Locale];
     [WordedDayFormat setDateFormat:@"E"];
     
+    //Initialising the graphs size. If this is not done the graph loads with an incorrect size. If this isn't implemented simply refreshing the graph will bring it to a correct size
+    CGRect frame = self.LineChart.frame;
+    UIViewController *WeightGraphViewController = [[UIViewController alloc]init];
+    CGSize PhoneScreenSize = WeightGraphViewController.view.frame.size;
+    frame.size.width = (PhoneScreenSize.width-0);             //Width subtracting the constraint size
+    float z = 93;
+    frame.size.height = (PhoneScreenSize.height-z);           //The value of z determines the height of the graph. 
+    _LineChart.frame = frame;
+    
     [self initwithfakedata];
     ChartData = WeekData;
     [self UpdateData];
@@ -51,7 +60,7 @@
     return YES;
 }
 
-#pragma Line Chart Data source
+#pragma mark Line Chart Data source
 -(NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView {                                                                                //Sets the number of lines within the chart
     
     return 2;
@@ -78,10 +87,10 @@
     }
 }
 
-#pragma Line Chart Delegate
+#pragma mark Line Chart Delegate
 
 
-#pragma Setting the color of the lines within the chart
+#pragma mark Setting the color of the lines within the chart
 -(UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex {
     if (lineIndex == 0){
         return [UIColor colorWithRed:1 green:0.294 blue:0.294 alpha:0.9];           //Red color
@@ -109,7 +118,7 @@
 }
 
 
-#pragma Changing the looks of the data dots
+#pragma mark Changing the looks of the data dots
 -(BOOL)lineChartView:(JBLineChartView *)lineChartView showsDotsForLineAtLineIndex:(NSUInteger)lineIndex {
     return true;
 }
@@ -122,7 +131,7 @@
 }
 
 
-#pragma Actions for when a data set is clicked on
+#pragma mark Actions for when a data set is clicked on
 -(void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex {
     
     CurrentDate = [NSDate date];
@@ -139,7 +148,7 @@
     if(lineIndex == 0){
         
         self.TypeOfWeek.text = [NSString stringWithFormat:@"Current week"];
-        self.ChartValue.text = [NSString stringWithFormat:@"%@ Kgs", [WeekData objectAtIndex:horizontalIndex]];
+        self.ChartValue.text = [NSString stringWithFormat:@"%.1f Kgs", [[WeekData objectAtIndex:horizontalIndex]floatValue]];
         
         self.RightChartFooter.text = [NSString stringWithFormat:@"Today"];
         self.LeftChartFooter.text = [WordedDayFormat stringFromDate:[Calendar dateByAddingComponents:MinusSixDays toDate:CurrentDate options:0]];
@@ -148,7 +157,7 @@
     } else if(lineIndex == 1){
         
         self.TypeOfWeek.text = [NSString stringWithFormat:@"Last week"];
-        self.ChartValue.text = [NSString stringWithFormat:@"%@ Kgs", [PreviousWeekData objectAtIndex:horizontalIndex]];
+        self.ChartValue.text = [NSString stringWithFormat:@"%.1f Kgs", [[PreviousWeekData objectAtIndex:horizontalIndex]floatValue]];
         
         self.RightChartFooter.text = [WordedDayFormat stringFromDate:[Calendar dateByAddingComponents:MinusSevenDays toDate:CurrentDate options:0]];
         self.LeftChartFooter.text = [WordedDayFormat stringFromDate:[Calendar dateByAddingComponents:MinusThirteenDays toDate:CurrentDate options:0]];
@@ -163,19 +172,23 @@
 }
 
 
+#pragma mark FakeData
+-(void) initwithfakedata {
+    
+    WeekData = [NSArray arrayWithObjects:
+                @80,@82,@82.5,@80.3,@79.2,@78.9,@82,@83.5, nil];
+    
+    PreviousWeekData = [NSArray arrayWithObjects:
+                        @86.5,@84.2,@85,@82.4,@83.9,@82.8,@82.1,@82, nil];
+    
+}
+
+
+#pragma mark Methods to execute when a button is pressed
 - (IBAction)RefreshButtonPressed:(id)sender {
     
     [self UpdateData];
     [self.LineChart reloadDataAnimated:YES];
-    
-}
--(void) initwithfakedata {
-    
-    WeekData = [NSArray arrayWithObjects:
-                @80,@82,@85,@80,@81,@79,@78,@82, nil];
-    
-    PreviousWeekData = [NSArray arrayWithObjects:
-                        @90,@87,@85,@82,@83,@79,@81,@82, nil];
     
 }
 

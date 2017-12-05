@@ -28,6 +28,7 @@
     
 }
 
-
+//Core Data YouTube tutorials by HuxTex
+//https://youtube.com/watch?v=p_INW9noMDI&t=732s
 
 @end

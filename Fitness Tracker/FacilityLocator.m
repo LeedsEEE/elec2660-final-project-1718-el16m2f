@@ -53,7 +53,7 @@
 }
 
 
-#pragma Changing the map type with a segment controller
+#pragma mark Changing the map type with a segment controller
 
 - (IBAction)MapTypeSelected:(id)sender {
     
@@ -76,7 +76,7 @@
 }
 
 
-#pragma Changing the searching radius
+#pragma mark Changing the searching radius
 
 - (IBAction)RadiusSelected:(id)sender {
     
@@ -99,7 +99,7 @@
 }
 
 
-#pragma Function for doing searches
+#pragma mark Function for doing searches
 
 - (void) UpdateSearches {
     
@@ -141,7 +141,7 @@
 }
 
 
-#pragma Creating a query for Google to find POIs using HTTPS
+#pragma mark Creating a query for Google to find POIs using HTTPS
 
 - (void) QueryGooglePlaces {
     

@@ -45,6 +45,15 @@
     [WordedMonthFormat setLocale:Locale];
     [WordedMonthFormat setDateFormat:@"MMMM-YY"];
     
+    //Initialising the graphs size. If this is not done the graph loads with an incorrect size. If this isn't implemented simply refreshing the graph will bring it to a correct size
+    CGRect frame = self.ActivityBarChart.frame;
+    UIViewController *WeightGraphViewController = [[UIViewController alloc]init];
+    CGSize PhoneScreenSize = WeightGraphViewController.view.frame.size;
+    frame.size.width = (PhoneScreenSize.width-10);             //Width subtracting the constraint size
+    float z = 190;
+    frame.size.height = (PhoneScreenSize.height-z);           //The value of z determines the height of the graph.
+    self.ActivityBarChart.frame = frame;
+    
     //Some test data
     [self initfakedata];
     
@@ -65,7 +74,7 @@
     //https://stackoverflow.com/questions/32965610/hide-the-status-bar-in-ios-9
 }
 
-#pragma Function to move to the profile screen if this is the users first time!
+#pragma mark Function to move to the profile screen if this is the users first time!
 
 -(void)viewDidAppear:(BOOL)animated {
     
@@ -79,7 +88,7 @@
     
 }
 
-#pragma Bar Graph delegate methods
+#pragma mark Bar Graph delegate methods
 
 -(NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView {
     
@@ -104,7 +113,7 @@
     if ((index%2) == 1){
         return [UIColor orangeColor];
     } else {
-        return [UIColor colorWithRed:1 green:0.6414 blue:0.28 alpha:1];
+        return [UIColor colorWithRed:1 green:0.294 blue:0.294 alpha:0.6];
     }
     
 }
@@ -121,7 +130,7 @@
     
 }
 
-#pragma Segmented Control
+#pragma mark Segmented Control
 
 //This function alters the data that is going to be displayed based on the value of the Segmented Contorl
 -(void) SegmentedControlModifyData {
@@ -171,7 +180,7 @@
     
 }
 
-#pragma Additional functions
+#pragma mark Additional functions
 
 //This is required to initialize the view
 -(void) InitialLoadUp {
@@ -185,9 +194,9 @@
 -(void) initfakedata {
     
     WeekData = [NSArray arrayWithObjects:
-                @20,@30,@40,@35,@25,@45,@30, nil];
+                @20.5,@30.2,@40.1,@35.4,@25.9,@45.6,@30.8, nil];
     MonthData = [NSArray arrayWithObjects:
-                 @500,@600,@550,@400,@475, nil];
+                 @500.5,@600.4,@550.1,@400.0,@475.8, nil];
     YearData = [NSArray arrayWithObjects:
                 @2000,@3000,@2500,@3250,@3112,@1750,@3980,@3210,@4100,@2680,@2980,@3650, nil];
     

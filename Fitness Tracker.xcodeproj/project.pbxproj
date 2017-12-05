@@ -52,10 +52,13 @@
 		3D75B07B1FC302E6003D3A5C /* Fitness_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B07A1FC302E6003D3A5C /* Fitness_TrackerTests.m */; };
 		3D75B0861FC302E6003D3A5C /* Fitness_TrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0851FC302E6003D3A5C /* Fitness_TrackerUITests.m */; };
 		3D92E2751FC6DDBE00E63775 /* AddWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D92E2741FC6DDBE00E63775 /* AddWeight.m */; };
+		3DAD831D1FD706A900F1D672 /* UserWeightData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD83161FD706A900F1D672 /* UserWeightData+CoreDataClass.m */; };
+		3DAD831E1FD706A900F1D672 /* UserWeightData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD83181FD706A900F1D672 /* UserWeightData+CoreDataProperties.m */; };
+		3DAD831F1FD706A900F1D672 /* UserActivityData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD831A1FD706A900F1D672 /* UserActivityData+CoreDataClass.m */; };
+		3DAD83201FD706A900F1D672 /* UserActivityData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD831C1FD706A900F1D672 /* UserActivityData+CoreDataProperties.m */; };
 		3DAE42A71FC42B0F002EA8C1 /* ActivityDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */; };
 		3DAE42AA1FC42CAE002EA8C1 /* ActivityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42A91FC42CAE002EA8C1 /* ActivityInfo.m */; };
 		3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42B01FC43008002EA8C1 /* AddActivity.m */; };
-		3DAE42B41FC43870002EA8C1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE42B31FC43870002EA8C1 /* UserInfo.m */; };
 		3DB5D7281FD5AE6900D09DBB /* 8ccb55af.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB5D7271FD5AE6900D09DBB /* 8ccb55af.png */; };
 		3DE35A8E1FD0757000F68566 /* 40px x 40px in Resources */ = {isa = PBXBuildFile; fileRef = 3DE35A8A1FD0757000F68566 /* 40px x 40px */; };
 		3DE35A8F1FD0757000F68566 /* 76px x 76px in Resources */ = {isa = PBXBuildFile; fileRef = 3DE35A8B1FD0757000F68566 /* 76px x 76px */; };
@@ -184,14 +187,20 @@
 		3D75B0871FC302E7003D3A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D92E2731FC6DDBE00E63775 /* AddWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWeight.h; sourceTree = "<group>"; };
 		3D92E2741FC6DDBE00E63775 /* AddWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWeight.m; sourceTree = "<group>"; };
+		3DAD83151FD706A900F1D672 /* UserWeightData+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserWeightData+CoreDataClass.h"; path = "../UserWeightData+CoreDataClass.h"; sourceTree = "<group>"; };
+		3DAD83161FD706A900F1D672 /* UserWeightData+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserWeightData+CoreDataClass.m"; path = "../UserWeightData+CoreDataClass.m"; sourceTree = "<group>"; };
+		3DAD83171FD706A900F1D672 /* UserWeightData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserWeightData+CoreDataProperties.h"; path = "../UserWeightData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3DAD83181FD706A900F1D672 /* UserWeightData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserWeightData+CoreDataProperties.m"; path = "../UserWeightData+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3DAD83191FD706A900F1D672 /* UserActivityData+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserActivityData+CoreDataClass.h"; path = "../UserActivityData+CoreDataClass.h"; sourceTree = "<group>"; };
+		3DAD831A1FD706A900F1D672 /* UserActivityData+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserActivityData+CoreDataClass.m"; path = "../UserActivityData+CoreDataClass.m"; sourceTree = "<group>"; };
+		3DAD831B1FD706A900F1D672 /* UserActivityData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserActivityData+CoreDataProperties.h"; path = "../UserActivityData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3DAD831C1FD706A900F1D672 /* UserActivityData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserActivityData+CoreDataProperties.m"; path = "../UserActivityData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3DAE42A51FC42B0F002EA8C1 /* ActivityDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDataModel.h; sourceTree = "<group>"; };
 		3DAE42A61FC42B0F002EA8C1 /* ActivityDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDataModel.m; sourceTree = "<group>"; };
 		3DAE42A81FC42CAE002EA8C1 /* ActivityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityInfo.h; sourceTree = "<group>"; };
 		3DAE42A91FC42CAE002EA8C1 /* ActivityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityInfo.m; sourceTree = "<group>"; };
 		3DAE42AF1FC43008002EA8C1 /* AddActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddActivity.h; sourceTree = "<group>"; };
 		3DAE42B01FC43008002EA8C1 /* AddActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddActivity.m; sourceTree = "<group>"; };
-		3DAE42B21FC4386F002EA8C1 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = ../UserInfo.h; sourceTree = "<group>"; };
-		3DAE42B31FC43870002EA8C1 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = ../UserInfo.m; sourceTree = "<group>"; };
 		3DB5D7271FD5AE6900D09DBB /* 8ccb55af.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8ccb55af.png; sourceTree = "<group>"; };
 		3DE35A8A1FD0757000F68566 /* 40px x 40px */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "40px x 40px"; sourceTree = "<group>"; };
 		3DE35A8B1FD0757000F68566 /* 76px x 76px */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "76px x 76px"; sourceTree = "<group>"; };
@@ -290,10 +299,9 @@
 		3D0A93B61FD179E700274040 /* Core Date Files */ = {
 			isa = PBXGroup;
 			children = (
-				3D0A93B71FD17AB000274040 /* UserProfile+CoreDataClass.h */,
-				3D0A93B81FD17AB000274040 /* UserProfile+CoreDataClass.m */,
-				3D0A93B91FD17AB000274040 /* UserProfile+CoreDataProperties.h */,
-				3D0A93BA1FD17AB000274040 /* UserProfile+CoreDataProperties.m */,
+				3DAD83211FD706BC00F1D672 /* User Profile */,
+				3DAD83221FD706D300F1D672 /* Weight Data */,
+				3DAD83231FD706ED00F1D672 /* Activity Data */,
 				3D2D3EA01FCC7A79003D0329 /* Core_Data.xcdatamodeld */,
 			);
 			name = "Core Date Files";
@@ -390,10 +398,8 @@
 				3D0A93B61FD179E700274040 /* Core Date Files */,
 				3D75B0641FC302E6003D3A5C /* AppDelegate.m */,
 				3D75B0631FC302E6003D3A5C /* AppDelegate.h */,
-				3DAE42B21FC4386F002EA8C1 /* UserInfo.h */,
-				3DAE42B31FC43870002EA8C1 /* UserInfo.m */,
-				3D08F9C51FCF3D2800FA28E2 /* FirstTimeLoadViewController.h */,
 				3D08F9C61FCF3D2800FA28E2 /* FirstTimeLoadViewController.m */,
+				3D08F9C51FCF3D2800FA28E2 /* FirstTimeLoadViewController.h */,
 				3D08F9C41FCF3BB100FA28E2 /* Activity Monitoring Tab */,
 				3D08F9C21FCF3B7800FA28E2 /* Weight Monitoring Tab */,
 				3D08F9C31FCF3BA200FA28E2 /* Rep Tab */,
@@ -453,6 +459,39 @@
 				3DB5D7271FD5AE6900D09DBB /* 8ccb55af.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		3DAD83211FD706BC00F1D672 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3D0A93B71FD17AB000274040 /* UserProfile+CoreDataClass.h */,
+				3D0A93B81FD17AB000274040 /* UserProfile+CoreDataClass.m */,
+				3D0A93B91FD17AB000274040 /* UserProfile+CoreDataProperties.h */,
+				3D0A93BA1FD17AB000274040 /* UserProfile+CoreDataProperties.m */,
+			);
+			name = "User Profile";
+			sourceTree = "<group>";
+		};
+		3DAD83221FD706D300F1D672 /* Weight Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD83151FD706A900F1D672 /* UserWeightData+CoreDataClass.h */,
+				3DAD83161FD706A900F1D672 /* UserWeightData+CoreDataClass.m */,
+				3DAD83171FD706A900F1D672 /* UserWeightData+CoreDataProperties.h */,
+				3DAD83181FD706A900F1D672 /* UserWeightData+CoreDataProperties.m */,
+			);
+			name = "Weight Data";
+			sourceTree = "<group>";
+		};
+		3DAD83231FD706ED00F1D672 /* Activity Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD83191FD706A900F1D672 /* UserActivityData+CoreDataClass.h */,
+				3DAD831A1FD706A900F1D672 /* UserActivityData+CoreDataClass.m */,
+				3DAD831B1FD706A900F1D672 /* UserActivityData+CoreDataProperties.h */,
+				3DAD831C1FD706A900F1D672 /* UserActivityData+CoreDataProperties.m */,
+			);
+			name = "Activity Data";
 			sourceTree = "<group>";
 		};
 		3DAE42AB1FC42CBE002EA8C1 /* ActivityInformation */ = {
@@ -756,12 +795,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0A93BC1FD17AB000274040 /* UserProfile+CoreDataProperties.m in Sources */,
-				3DAE42B41FC43870002EA8C1 /* UserInfo.m in Sources */,
 				3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */,
 				3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */,
 				3DE3A1F81FC33A98007FDBCA /* FacilityLocator.m in Sources */,
 				3D0A93BB1FD17AB000274040 /* UserProfile+CoreDataClass.m in Sources */,
 				3D08F9C71FCF3D2800FA28E2 /* FirstTimeLoadViewController.m in Sources */,
+				3DAD83201FD706A900F1D672 /* UserActivityData+CoreDataProperties.m in Sources */,
 				3D38FF451FCDF38F004BC8AA /* WeightGraphController.m in Sources */,
 				3DAE42B11FC43008002EA8C1 /* AddActivity.m in Sources */,
 				3D92E2751FC6DDBE00E63775 /* AddWeight.m in Sources */,
@@ -769,7 +808,10 @@
 				3DF0C6801FC319D40066D6C5 /* RepCounter.m in Sources */,
 				3DAE42A71FC42B0F002EA8C1 /* ActivityDataModel.m in Sources */,
 				3D2D3EA21FCC7A7C003D0329 /* Core_Data.xcdatamodeld in Sources */,
+				3DAD831F1FD706A900F1D672 /* UserActivityData+CoreDataClass.m in Sources */,
+				3DAD831D1FD706A900F1D672 /* UserWeightData+CoreDataClass.m in Sources */,
 				3D75B0621FC302E6003D3A5C /* main.m in Sources */,
+				3DAD831E1FD706A900F1D672 /* UserWeightData+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

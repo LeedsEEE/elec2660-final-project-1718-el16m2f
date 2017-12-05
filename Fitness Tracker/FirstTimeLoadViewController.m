@@ -56,7 +56,7 @@
     
 }
 
-#pragma Measurement type toggling
+#pragma mark Measurement type toggling
 - (IBAction)HeightToggleSwitch:(id)sender {
     
     if([sender isOn]){
@@ -147,7 +147,7 @@
     
 }
 
-#pragma Removing the keyboard via the return key and a background press
+#pragma mark Removing the keyboard via the return key and a background press
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];

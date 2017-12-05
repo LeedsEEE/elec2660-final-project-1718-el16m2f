@@ -76,7 +76,7 @@
     }
 }
 
-#pragma Update timer function
+#pragma mark Update timer function
 - (void)UpdateTimer {
     
     Time++;
