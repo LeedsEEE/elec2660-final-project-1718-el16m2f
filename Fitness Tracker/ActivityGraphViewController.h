@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <JBChart/JBChart.h>
+#import "DataMethods.h"
 
 @interface ActivityGraphViewController : UIViewController <JBBarChartViewDelegate , JBBarChartViewDataSource>
 

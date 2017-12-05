@@ -7,6 +7,7 @@
 //
 
 #import "ActivityGraphViewController.h"
+#import "UserActivityData+CoreDataClass.h"
 
 @interface ActivityGraphViewController ()
 {
@@ -56,6 +57,7 @@
     
     //Some test data
     [self initfakedata];
+    [self initdata];
     
     self.BarValueLabel.text = [NSString stringWithFormat:@"Touch on the bars"];
     
@@ -175,6 +177,7 @@
 - (IBAction)SegmentedControlChanged:(id)sender {
 
     [self SegmentedControlModifyData];
+    [self initdata];
     [self UpdateData];
     [self.ActivityBarChart reloadDataAnimated:YES];
     
@@ -205,6 +208,14 @@
     
     WeeksInAMonth = [NSArray arrayWithObjects:
                      @"Week1",@"Week5", nil];
+    
+}
+
+-(void) initdata {
+    ////DO SOME DATA GRABBING HERE
+    
+    NSArray *TestArray = [DataMethods GetActivityDataFromCoreData];
+    int testing = [TestArray objectAtIndex:0];
     
 }
 

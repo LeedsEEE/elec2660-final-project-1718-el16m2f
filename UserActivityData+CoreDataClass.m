@@ -7,7 +7,6 @@
 //
 
 #import "UserActivityData+CoreDataClass.h"
-#import "AppDelegate.h"
 
 @implementation UserActivityData
 
@@ -16,32 +15,24 @@
     AppDelegate *applicationdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = applicationdelegate.persistentContainer.viewContext;
     
-    //UserActivityData *ActivityEntity = (UserActivityData *)[NSEntityDescription insertNewObjectForEntityForName:@"UserActivity" inManagedObjectContext:context];
+    UserActivityData *ActivityEntity = (UserActivityData *)[NSEntityDescription insertNewObjectForEntityForName:@"UserActivityData" inManagedObjectContext:context];
     
-    UserActivityData *ActivityEntity = nil;
+    //UserActivityData *ActivityEntity = nil;
     
-    NSString *activityID = UserActivityInfo[@"ActivityID"];
+    //NSString *activityID = UserActivityInfo[@"activityID"];
     NSFetchRequest *fetchrequest = [NSFetchRequest fetchRequestWithEntityName:@"UserActivityData"];
-    fetchrequest.predicate = [NSPredicate predicateWithFormat:@"ActivityID = %@",activityID];
+    //fetchrequest.predicate = [NSPredicate predicateWithFormat:@"activityID = %@",activityID];
     
     NSError *error;
     NSArray *matchingdata = [context executeFetchRequest:fetchrequest error:&error];
     
-    if (!matchingdata || error || ([matchingdata count] > 1)) {
-        //Error handeling
-        
-    } else if ([matchingdata count]) {
-        //Returns the existing entry
-        ActivityEntity = [matchingdata firstObject];
-        
-    } else {
-        //Creating a new object
-        ActivityEntity.activityID = [UserActivityData valueForKey:@"ActivityID"];
-        ActivityEntity.calories = [UserActivityData valueForKey:@"Calories"];
-        ActivityEntity.date = [UserActivityData valueForKey:@"Date"];
-        
-    }
+    NSInteger NewActivityID = [matchingdata count];
     
+    ActivityEntity.activityID = [NSNumber numberWithInteger:NewActivityID];
+    ActivityEntity.calories = [UserActivityInfo valueForKey:@"calories"];
+    ActivityEntity.date = [UserActivityInfo valueForKey:@"date"];
+    
+    [context save:nil];
     return ActivityEntity;
     
 }

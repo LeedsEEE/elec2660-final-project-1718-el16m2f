@@ -7,12 +7,15 @@
 //
 
 #import "AddActivity.h"
+#import "UserActivityData+CoreDataClass.h"
 
 @interface AddActivity ()
 {
     NSArray *activities;
     NSDate *CurrentDate;
+    NSDate *ChosenDate;
     NSInteger SelectedCalorieBurnRate;
+    CGFloat CaloriesBurnt;
 }
 
 @end
@@ -117,15 +120,15 @@
 
 
 #pragma mark Method for calculating how many calories were burnt
--(NSInteger)CalculateCaloriesBurnt {
+-(CGFloat)CalculateCaloriesBurnt {
     
     NSString *MinutesString = [NSString stringWithFormat:@"%@", self.MinuteTextField.text];
     NSString *HourString = [NSString stringWithFormat:@"%@", self.HourTextField.text];
     
-    int MinutesWorkedOut = [MinutesString intValue];
-    int HoursWorkedOut = [HourString intValue];
-    
-    self.TimeWorkedOut = ((HoursWorkedOut*60)+MinutesWorkedOut);
+    float MinutesWorkedOut = [MinutesString intValue];
+    float HoursWorkedOut = [HourString intValue];
+    float z = 60;
+    self.TimeWorkedOut = (HoursWorkedOut+(MinutesWorkedOut/z));
     
     return (SelectedCalorieBurnRate * self.TimeWorkedOut);
 }
@@ -160,9 +163,9 @@
 -(void)SaveData {
     
     
-    NSDate *ChosenDate = self.DatePickerView.date;
+    ChosenDate = self.DatePickerView.date;
     
-    NSInteger CaloriesBurnt = [self CalculateCaloriesBurnt];
+    CaloriesBurnt = [self CalculateCaloriesBurnt];
     
     if (self.TimeWorkedOut > 150) {
         //INVALID CODE
@@ -180,7 +183,9 @@
         
         //Sucessful save
         NSLog(@"Selected Date: %@", ChosenDate);
-        NSLog(@"Calories Burnt: %li", CaloriesBurnt);
+        NSLog(@"Calories Burnt: %f", CaloriesBurnt);
+        
+        [self AddToDatabase];
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -190,8 +195,12 @@
 
 
 -(void)AddToDatabase {
+
+    NSDictionary *UserActivityInfo = @{@"calories":[NSNumber numberWithFloat:CaloriesBurnt],
+                                           @"date":ChosenDate};
     
-    
+    [UserActivityData UpdateUserActivity:UserActivityInfo];
+    //NSLog(@"Core Data updated with %@",[UserActivityData UpdateUserActivity:UserActivityInfo].description);
     
 }
 

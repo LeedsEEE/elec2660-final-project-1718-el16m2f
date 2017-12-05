@@ -123,13 +123,25 @@
         
     }
     
+    if (self.Weight == 0 || self.Height == 0 || [Name length] == 0){
+        
+        UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry missing"
+                                                                                 message:@"A data entry is missing."
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *OkButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+        [AlertController addAction:OkButton];
+        [self presentViewController:AlertController animated:YES completion:nil];
+        
+    } else {
+        
+        [self AddToDatabase];
     
-    [self AddToDatabase];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserFirstTime"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserFirstTime"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self LeaveView];
+        [self LeaveView];
+        
+    }
 }
 
 

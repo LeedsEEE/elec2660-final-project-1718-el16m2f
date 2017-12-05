@@ -24,6 +24,7 @@
     UserEntity.height = [UserInformation valueForKey:@"Height"];
     UserEntity.weight = [UserInformation valueForKey:@"Weight"];
     
+    [context save:nil];
     return UserEntity;
     
 }
