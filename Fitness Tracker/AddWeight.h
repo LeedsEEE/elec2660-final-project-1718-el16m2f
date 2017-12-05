@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface AddWeight : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate , UITextFieldDelegate>
+{
+    BOOL MeasurementType;           //True in Kg, False in Lbs
+    float Weight;
+}
+
+#define KilogramsToPounds 2.20462
 
 @property (weak, nonatomic) IBOutlet UIPickerView *WeightPickerView;
 

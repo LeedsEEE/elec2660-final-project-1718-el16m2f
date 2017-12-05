@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *HourTextField;
 @property (weak, nonatomic) IBOutlet UITextField *MinuteTextField;
 
+@property NSInteger TimeWorkedOut;
+
 - (IBAction)SaveButtonPressed:(id)sender;
 - (IBAction)CancelButtonPressed:(id)sender;
 

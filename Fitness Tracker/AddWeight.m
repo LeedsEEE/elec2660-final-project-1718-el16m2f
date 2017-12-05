@@ -10,27 +10,28 @@
 
 @interface AddWeight ()
 
+{
+    float hundreds;
+    float tens;
+    float singular;
+    float decimal;
+}
+
 @end
 
 @implementation AddWeight
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+}
+
+-(BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 #pragma WeightPickerView setip
-
--(void)pickerView:(UIPickerView *)pickerView
-     didSelectRow:(NSInteger)row
-      inComponent:(NSInteger)component {
-    
-}
-
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    
     return 6;                                                                               //Setting the number of columns in the picker view to 5. 2 numbers, a decimal place, a number and a measurement choice.
-    
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView
@@ -81,16 +82,37 @@ numberOfRowsInComponent:(NSInteger)component{
     
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+-(void)pickerView:(UIPickerView *)pickerView
+        didSelectRow:(NSInteger)row
+        inComponent:(NSInteger)component {
+
+    if (component == 0){
+        hundreds = (row*100);
+    } else if(component == 1){
+        tens = (row*10);
+    } else if(component == 2){
+        singular = row;
+    } else if(component == 4){
+        float rowvalue = row;
+        decimal = (rowvalue/10);
+    } else if(component == 5){
+        if (row == 0){
+            MeasurementType = FALSE;
+        }else{
+            MeasurementType = TRUE;
+        }
+    }
     
-    [textField resignFirstResponder];
-    
-    return YES;
-    
+    if(MeasurementType == FALSE){
+        Weight = (hundreds+tens+singular+decimal);
+    } else {
+        Weight = ((hundreds+tens+singular+(decimal/10))/KilogramsToPounds);
+    }
 }
 
 - (IBAction)SaveButtonPressed:(id)sender {
     
+    NSLog(@"Recorded weight = %.1f",Weight);
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

@@ -46,19 +46,7 @@
     [WordedMonthFormat setDateFormat:@"MMMM-YY"];
     
     //Some test data
-    WeekData = [NSArray arrayWithObjects:
-                            @20,@30,@40,@35,@25,@45,@30, nil];
-    MonthData = [NSArray arrayWithObjects:
-                            @500,@600,@550,@400,@475, nil];
-    YearData = [NSArray arrayWithObjects:
-                            @2000,@3000,@2500,@3250,@3112,@1750,@3980,@3210,@4100,@2680,@2980,@3650, nil];
-    
-    DaysInAWeek = [NSArray arrayWithObjects:
-                        @"Monday",@"Today", nil];
-    
-    WeeksInAMonth = [NSArray arrayWithObjects:
-                        @"Week1",@"Week5", nil];
-
+    [self initfakedata];
     
     self.BarValueLabel.text = [NSString stringWithFormat:@"Touch on the bars"];
     
@@ -191,6 +179,23 @@
     [self SegmentedControlModifyData];
     [self UpdateData];
     [self.ActivityBarChart reloadDataAnimated:YES];
+    
+}
+
+-(void) initfakedata {
+    
+    WeekData = [NSArray arrayWithObjects:
+                @20,@30,@40,@35,@25,@45,@30, nil];
+    MonthData = [NSArray arrayWithObjects:
+                 @500,@600,@550,@400,@475, nil];
+    YearData = [NSArray arrayWithObjects:
+                @2000,@3000,@2500,@3250,@3112,@1750,@3980,@3210,@4100,@2680,@2980,@3650, nil];
+    
+    DaysInAWeek = [NSArray arrayWithObjects:
+                   @"Monday",@"Today", nil];
+    
+    WeeksInAMonth = [NSArray arrayWithObjects:
+                     @"Week1",@"Week5", nil];
     
 }
 

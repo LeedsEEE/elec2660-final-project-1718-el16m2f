@@ -41,6 +41,10 @@
     
 }
 
+-(BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 
 #pragma Activity PickerView Delegate
 -(void)pickerView:(UIPickerView *)pickerView
@@ -113,9 +117,7 @@
 
 #pragma Actions caused by buttons
 - (IBAction)SaveButtonPressed:(id)sender {
-    
     [self SaveData];
-    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -146,8 +148,27 @@
     
     NSInteger CaloriesBurnt = [self CalculateCaloriesBurnt];
     
-    NSLog(@"Selected Date: %@", ChosenDate);
-    NSLog(@"Calories Burnt: %li", CaloriesBurnt);
+    if (self.TimeWorkedOut > 150) {
+        //INVALID CODE
+        
+        UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry too large"
+                                                                message:@"The data that has been entered is considered too large."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *OkButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+        
+        [AlertController addAction:OkButton];
+        [self presentViewController:AlertController animated:YES completion:nil];
+        
+    } else {
+        
+        //Sucessful save
+        NSLog(@"Selected Date: %@", ChosenDate);
+        NSLog(@"Calories Burnt: %li", CaloriesBurnt);
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
     
 }
 
@@ -159,7 +180,9 @@
     int MinutesWorkedOut = [MinutesString intValue];
     int HoursWorkedOut = [HourString intValue];
     
-    return (SelectedCalorieBurnRate * ((HoursWorkedOut * 60) + MinutesWorkedOut));
+    self.TimeWorkedOut = ((HoursWorkedOut*60)+MinutesWorkedOut);
+    
+    return (SelectedCalorieBurnRate * self.TimeWorkedOut);
 }
 
 @end

@@ -294,7 +294,7 @@
                             <constraint firstItem="oet-tP-Kie" firstAttribute="width" secondItem="G4F-JK-3a7" secondAttribute="height" multiplier="157:618" id="NtW-b8-VWz"/>
                             <constraint firstItem="yeb-dS-gze" firstAttribute="centerX" secondItem="G4F-JK-3a7" secondAttribute="centerX" id="RRN-oH-NKt"/>
                             <constraint firstItem="yeb-dS-gze" firstAttribute="top" secondItem="zBb-vN-lb6" secondAttribute="bottom" constant="107" id="eOO-hA-NdG">
-                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
                             </constraint>
                             <constraint firstItem="Tzc-nT-pLa" firstAttribute="centerX" secondItem="G4F-JK-3a7" secondAttribute="centerX" id="wJO-VB-bzz"/>
                             <constraint firstItem="WwS-s3-jm8" firstAttribute="top" secondItem="oet-tP-Kie" secondAttribute="bottom" constant="64" id="yMj-6V-DW7">

@@ -79,12 +79,12 @@
     if([sender isOn]){
         
         self.WeightType = 1;
-        self.WeightToggleLabel.text = [NSString stringWithFormat:@"Kg"];
+        self.WeightToggleLabel.text = [NSString stringWithFormat:@"Lbs"];
         
     }else{
         
         self.WeightType = 0;
-        self.WeightToggleLabel.text = [NSString stringWithFormat:@"Lbs"];
+        self.WeightToggleLabel.text = [NSString stringWithFormat:@"Kgs"];
         
     }
     

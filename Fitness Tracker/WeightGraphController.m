@@ -26,8 +26,7 @@
 
 - (void)viewDidLoad {
     
-    self.TypeOfWeek.text = [NSString stringWithFormat:@""];
-    self.ChartValue.text = [NSString stringWithFormat:@""];
+    [self ResetLabels];
     
     NSLocale *Locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
     
@@ -38,6 +37,7 @@
     [self initwithfakedata];
     ChartData = WeekData;
     [self UpdateData];
+    [self.LineChart reloadData];
     
 }
 
@@ -158,10 +158,7 @@
 
 -(void)didDeselectLineInLineChartView:(JBLineChartView *)lineChartView {
     
-    self.TypeOfWeek.text = [NSString stringWithFormat:@""];
-    self.ChartValue.text = [NSString stringWithFormat:@""];
-    self.RightChartFooter.text = [NSString stringWithFormat:@""];
-    self.LeftChartFooter.text = [NSString stringWithFormat:@""];
+    [self ResetLabels];
     
 }
 
@@ -179,6 +176,15 @@
     
     PreviousWeekData = [NSArray arrayWithObjects:
                         @90,@87,@85,@82,@83,@79,@81,@82, nil];
+    
+}
+
+-(void) ResetLabels {
+    
+    self.TypeOfWeek.text = [NSString stringWithFormat:@"Weight Tracker"];
+    self.ChartValue.text = [NSString stringWithFormat:@"Click on the graph"];
+    self.RightChartFooter.text = [NSString stringWithFormat:@""];
+    self.LeftChartFooter.text = [NSString stringWithFormat:@""];
     
 }
 
