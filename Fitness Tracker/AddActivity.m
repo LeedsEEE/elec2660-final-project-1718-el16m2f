@@ -165,6 +165,12 @@
     
     ChosenDate = self.DatePickerView.date;
     
+    //A function to make sure that the date it saves only saves the date and not the time
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:ChosenDate];
+    components.hour = 00;
+    ChosenDate = [cal dateFromComponents:components];
+    
     CaloriesBurnt = [self CalculateCaloriesBurnt];
     
     if (self.TimeWorkedOut > 150) {

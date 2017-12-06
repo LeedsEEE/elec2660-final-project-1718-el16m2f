@@ -57,7 +57,7 @@
     
     //Some test data
     [self initfakedata];
-    [self initdata];
+    WeekData = [self initdata];
     
     self.BarValueLabel.text = [NSString stringWithFormat:@"Touch on the bars"];
     
@@ -177,7 +177,7 @@
 - (IBAction)SegmentedControlChanged:(id)sender {
 
     [self SegmentedControlModifyData];
-    [self initdata];
+    WeekData = [self initdata];
     [self UpdateData];
     [self.ActivityBarChart reloadDataAnimated:YES];
     
@@ -211,11 +211,44 @@
     
 }
 
--(void) initdata {
+-(NSArray *) initdata {
     ////DO SOME DATA GRABBING HERE
     
-    NSArray *TestArray = [DataMethods GetActivityDataFromCoreData];
-    int testing = [TestArray objectAtIndex:0];
+    NSArray *EntityData = [DataMethods GetActivityDataFromCoreData];
+    //UserActivityData *EntityData;
+    NSMutableArray *CalorieData = [[NSMutableArray alloc]init];
+    
+    //Creating a calendar
+    NSCalendar *Calendar = [NSCalendar currentCalendar];
+    NSDateComponents *PastWeek = [[NSDateComponents alloc]init];
+   
+    NSDateComponents *components = [Calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
+    components.hour = 00;
+    NSDate *TodayAtMidnight = [Calendar dateFromComponents:components];
+    
+    for (int i=0 ;i<7; i++){
+        
+        PastWeek.day = (-6+i);
+        NSDate *DateToScan = [Calendar dateByAddingComponents:PastWeek toDate:TodayAtMidnight options:0];
+        CGFloat DayCalories = 0.0;
+        
+        for(int a=0 ; a < [EntityData count] ; a++){
+            
+            NSArray *IndividulEntryData = [EntityData objectAtIndex:a];
+            
+            if (DateToScan == [IndividulEntryData valueForKey:@"date"]) {
+                DayCalories = (DayCalories + [[IndividulEntryData valueForKey:@"calories"]floatValue]);
+            }
+            
+        }
+        
+        [CalorieData addObject:[NSNumber numberWithFloat:DayCalories]];
+    
+    }
+    
+    NSLog(@"%@",CalorieData);
+    
+    return CalorieData;
     
 }
 

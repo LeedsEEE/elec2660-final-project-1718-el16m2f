@@ -18,6 +18,7 @@
     //UserActivityData *ActivityEntity = (UserActivityData *)[NSEntityDescription insertNewObjectForEntityForName:@"UserActivityData" inManagedObjectContext:context];
     
     NSFetchRequest *FetchData = [NSFetchRequest fetchRequestWithEntityName:@"UserActivityData"];
+    //FetchData.fetchLimit = 14;
     
     [FetchData setReturnsObjectsAsFaults:NO];
     
