@@ -115,6 +115,8 @@ numberOfRowsInComponent:(NSInteger)component{
     NSLog(@"Recorded weight = %.1f",Weight);
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    
+    
 }
 
 - (IBAction)CancelButtonPressed:(id)sender {

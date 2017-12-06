@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "UserActivityData+CoreDataClass.h"
+#import "UserWeightData+CoreDataClass.h"
 
 @interface DataMethods : NSObject
 
-+(NSArray *) GetActivityDataFromCoreData;
++(NSArray *)GetActivityDataFromCoreData:(int)DateSorting;
 
 +(NSArray *) GetWeightDataFromCoreData;
 

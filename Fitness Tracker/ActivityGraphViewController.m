@@ -213,7 +213,7 @@
 
 -(NSArray *) initdata {
     ////DO SOME DATA GRABBING HERE
-    
+    /*
     NSArray *EntityData = [DataMethods GetActivityDataFromCoreData];
     //UserActivityData *EntityData;
     NSMutableArray *CalorieData = [[NSMutableArray alloc]init];
@@ -247,8 +247,9 @@
     }
     
     NSLog(@"%@",CalorieData);
+    */
     
-    return CalorieData;
+    return nil;
     
 }
 
