@@ -48,6 +48,12 @@
     
 }
 
+-(void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered {
+    
+    [self UpdateSearches];
+    
+}
+
 -(BOOL)prefersStatusBarHidden {
     return YES;                                                 //This function removes the status bar, as it was getting in the way.
 }
@@ -58,20 +64,12 @@
 - (IBAction)MapTypeSelected:(id)sender {
     
     if(self.MapTypeController.selectedSegmentIndex == 0){
-        
         self.Map.mapType = MKMapTypeStandard;
-        
     } else if (self.MapTypeController.selectedSegmentIndex == 1){
-        
         self.Map.mapType = MKMapTypeSatellite;
-        
     } else if (self.MapTypeController.selectedSegmentIndex == 2){
-        
         self.Map.mapType = MKMapTypeHybrid;
-        
     }
-    
-    
     
 }
 
@@ -92,13 +90,6 @@
     
 }
 
-- (IBAction)RefreshButtonPressed:(id)sender {
-    
-    [self UpdateSearches];
-    
-}
-
-
 #pragma mark Function for doing searches
 
 - (void) UpdateSearches {
@@ -113,15 +104,19 @@
     
     [self QueryGooglePlaces];
     
-    //MKMapPoint *annotation = [[MKmappoint alloc]init];
+    [self AddArrayOfCoordinates:Gyms];
     
-    for (int a=0; a < [Gyms count]; a++) {                                          //Places a point for each type of building found in the search.
+}
+
+-(void)AddArrayOfCoordinates:(NSArray *)JSONArray{
+ 
+    for (int a=0; a < [JSONArray count]; a++) {                                          //Places a point for each type of building found in the search.
         
         CLLocationCoordinate2D Coordinates2D;
         
-#pragma Using the data retreived from the query.
+        //Below Here the app sorts through the recieved array and plots annotations
         
-        NSDictionary *Loc = [Gyms objectAtIndex:a];
+        NSDictionary *Loc = [JSONArray objectAtIndex:a];
         NSDictionary *geometry = [Loc objectForKey:@"geometry"];
         NSDictionary *Place = [geometry objectForKey:@"location"];                  //This collection looks through the Gym array to find the values required for Longitude and Latitude
         
@@ -135,9 +130,7 @@
         annotation.subtitle = [NSString stringWithFormat:@"%@",[Loc objectForKey:@"vicinity"]];//Creates titles and subtitles for the annotated point.
         
         [self.Map addAnnotation:annotation];
-        
     }
-    
 }
 
 
@@ -158,7 +151,6 @@
     
 }
 
-
 -(void)FetchedData: (NSData *)responseData {
     
     NSError* error;
@@ -166,10 +158,7 @@
                           JSONObjectWithData:responseData
                           options:kNilOptions
                           error:&error];
-    
     Gyms = [json objectForKey:@"results"];                     //When the JSON file comes back the data is stored in keys which they've labelled 'results', We convert this to an array to then use.
-    
-    
 }
 
 @end

@@ -30,6 +30,4 @@
 - (IBAction)RadiusSelected:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *RadiusSegmentController;
 
-- (IBAction)RefreshButtonPressed:(id)sender;
-
 @end

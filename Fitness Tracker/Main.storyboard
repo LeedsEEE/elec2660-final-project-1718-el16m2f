@@ -344,12 +344,6 @@
                                     <action selector="MapTypeSelected:" destination="1yG-CZ-eYH" eventType="valueChanged" id="NLG-U4-n87"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="45" placeholderIntrinsicHeight="45" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-dp-1fO">
-                                <state key="normal" title="Refresh"/>
-                                <connections>
-                                    <action selector="RefreshButtonPressed:" destination="1yG-CZ-eYH" eventType="touchUpInside" id="GMg-bc-zH6"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-OD-Lyp">
                                 <segments>
                                     <segment title="2 Km"/>
@@ -365,11 +359,9 @@
                         <constraints>
                             <constraint firstItem="L6G-5i-eDV" firstAttribute="width" secondItem="32Y-QV-0GU" secondAttribute="width" id="9Hn-h4-tu2"/>
                             <constraint firstItem="L6G-5i-eDV" firstAttribute="centerY" secondItem="32Y-QV-0GU" secondAttribute="centerY" id="9Rc-fh-8ve"/>
-                            <constraint firstItem="IGO-dp-1fO" firstAttribute="leading" secondItem="32Y-QV-0GU" secondAttribute="leadingMargin" id="MVP-Rt-oCi"/>
                             <constraint firstItem="3LO-OD-Lyp" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="MaB-wF-XzY"/>
                             <constraint firstItem="3LO-OD-Lyp" firstAttribute="top" secondItem="L6G-5i-eDV" secondAttribute="bottom" constant="-60" id="OvE-g6-j1R"/>
                             <constraint firstItem="LKb-BD-1C4" firstAttribute="centerX" secondItem="L6G-5i-eDV" secondAttribute="centerX" id="SFI-R0-5Dq"/>
-                            <constraint firstItem="IGO-dp-1fO" firstAttribute="top" secondItem="d49-wW-Pzc" secondAttribute="bottom" constant="8" id="Shu-VY-Mf5"/>
                             <constraint firstItem="L6G-5i-eDV" firstAttribute="centerX" secondItem="32Y-QV-0GU" secondAttribute="centerX" id="f8J-zz-vP3"/>
                             <constraint firstItem="L6G-5i-eDV" firstAttribute="height" secondItem="32Y-QV-0GU" secondAttribute="height" id="gsw-Bh-VOe"/>
                             <constraint firstItem="LKb-BD-1C4" firstAttribute="top" secondItem="d49-wW-Pzc" secondAttribute="bottom" constant="8" id="yeS-AD-cBl"/>
