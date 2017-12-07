@@ -13,8 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet JBLineChartView *LineChart;
 
-- (IBAction)RefreshButtonPressed:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UILabel *TypeOfWeek;
 
 @property (weak, nonatomic) IBOutlet UILabel *LeftChartFooter;

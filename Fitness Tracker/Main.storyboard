@@ -116,11 +116,6 @@
                                 <color key="barTintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="  " id="WdY-Rk-XPo">
-                                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="Bu4-L6-egQ">
-                                            <connections>
-                                                <action selector="RefreshButtonPressed:" destination="SaT-c0-LLE" id="8Sj-v5-9z4"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Record Weight" id="kqc-wr-izE">
                                             <connections>
                                                 <segue destination="bAl-ER-pYe" kind="showDetail" id="eLh-y3-Bzb"/>
@@ -227,14 +222,23 @@
                                     <outlet property="delegate" destination="bAl-ER-pYe" id="sSR-tL-CNk"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="When inputting your weight remember you will not be able to undo or re-write this." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDd-FM-WA7">
+                                <frame key="frameInset" minX="16" minY="548" width="343" height="99"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gGG-4U-iSI" firstAttribute="width" secondItem="Xfn-OZ-7xL" secondAttribute="width" id="3RK-LC-i7H"/>
                             <constraint firstItem="hEK-MD-fY3" firstAttribute="centerX" secondItem="Xfn-OZ-7xL" secondAttribute="centerX" id="3ds-rZ-MnA"/>
                             <constraint firstItem="gGG-4U-iSI" firstAttribute="top" secondItem="Xfn-OZ-7xL" secondAttribute="top" id="AbS-pb-c78"/>
+                            <constraint firstItem="UDd-FM-WA7" firstAttribute="leading" secondItem="Xfn-OZ-7xL" secondAttribute="leadingMargin" id="Lo4-bl-AJA"/>
                             <constraint firstItem="hEK-MD-fY3" firstAttribute="width" secondItem="Xfn-OZ-7xL" secondAttribute="width" id="Ohs-R7-0Qv"/>
                             <constraint firstItem="gGG-4U-iSI" firstAttribute="centerX" secondItem="Xfn-OZ-7xL" secondAttribute="centerX" id="Piw-mP-qzj"/>
+                            <constraint firstItem="UDd-FM-WA7" firstAttribute="trailing" secondItem="Xfn-OZ-7xL" secondAttribute="trailingMargin" id="VRj-03-yua"/>
+                            <constraint firstItem="7pR-2J-clz" firstAttribute="top" secondItem="UDd-FM-WA7" secondAttribute="bottom" constant="20" id="hol-gv-OVZ"/>
                             <constraint firstItem="hEK-MD-fY3" firstAttribute="top" secondItem="gGG-4U-iSI" secondAttribute="bottom" id="nWE-cg-kIu"/>
                         </constraints>
                     </view>
@@ -244,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUG-tH-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="-348"/>
+            <point key="canvasLocation" x="2208.8000000000002" y="-348.57571214392806"/>
         </scene>
         <!--Rep Counter-->
         <scene sceneID="dtY-L9-4XD">
@@ -395,15 +399,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eZw-qb-HcC">
-                                <date key="date" timeIntervalSinceReferenceDate="533035546.03465903">
-                                    <!--2017-11-22 09:25:46 +0000-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="531230400">
-                                    <!--2017-11-01 12:00:00 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="en_GB"/>
-                            </datePicker>
                             <pickerView contentMode="center" placeholderIntrinsicWidth="281" placeholderIntrinsicHeight="216" translatesAutoresizingMaskIntoConstraints="NO" id="NrS-Py-akW">
                                 <connections>
                                     <outlet property="dataSource" destination="kkI-46-aRr" id="LX0-RI-qCm"/>
@@ -442,6 +437,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                             </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eZw-qb-HcC">
+                                <date key="date" timeIntervalSinceReferenceDate="533035546.03465903">
+                                    <!--2017-11-22 09:25:46 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="531230400">
+                                    <!--2017-11-01 12:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_GB"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -451,16 +455,16 @@
                             <constraint firstItem="Eyg-S1-Du4" firstAttribute="centerX" secondItem="eZw-qb-HcC" secondAttribute="centerX" id="CT3-sW-Jbu"/>
                             <constraint firstItem="NrS-Py-akW" firstAttribute="width" secondItem="Baa-s7-6DV" secondAttribute="width" id="CWq-C0-mjA"/>
                             <constraint firstItem="eZw-qb-HcC" firstAttribute="width" secondItem="Baa-s7-6DV" secondAttribute="width" id="DIw-Sr-L0c"/>
+                            <constraint firstItem="NrS-Py-akW" firstAttribute="top" secondItem="HEe-uh-sCY" secondAttribute="bottom" constant="40" id="Iqg-Mb-QFG"/>
                             <constraint firstItem="NrS-Py-akW" firstAttribute="centerX" secondItem="Baa-s7-6DV" secondAttribute="centerX" id="REO-0u-KfY"/>
                             <constraint firstItem="Eyg-S1-Du4" firstAttribute="width" secondItem="Baa-s7-6DV" secondAttribute="width" id="Rvq-cM-0m2"/>
-                            <constraint firstItem="eZw-qb-HcC" firstAttribute="top" secondItem="NrS-Py-akW" secondAttribute="bottom" constant="21" id="UKF-R2-XJv"/>
                             <constraint firstItem="sg5-1k-JZb" firstAttribute="centerY" secondItem="fYb-mm-yor" secondAttribute="centerY" id="VwD-M5-sBS"/>
                             <constraint firstItem="Eyg-S1-Du4" firstAttribute="top" secondItem="Baa-s7-6DV" secondAttribute="top" id="bV9-z8-tk4"/>
                             <constraint firstItem="fYb-mm-yor" firstAttribute="top" secondItem="eZw-qb-HcC" secondAttribute="bottom" constant="31" id="gLa-pO-OS2"/>
                             <constraint firstItem="sg5-1k-JZb" firstAttribute="width" secondItem="fYb-mm-yor" secondAttribute="width" id="hXZ-Au-Gca"/>
-                            <constraint firstItem="NrS-Py-akW" firstAttribute="top" secondItem="HEe-uh-sCY" secondAttribute="bottom" constant="40" id="lWX-9a-2od"/>
                             <constraint firstItem="eZw-qb-HcC" firstAttribute="centerX" secondItem="Baa-s7-6DV" secondAttribute="centerX" id="rIU-Pf-fhd"/>
                             <constraint firstAttribute="leadingMargin" secondItem="sg5-1k-JZb" secondAttribute="leading" id="rPh-oU-o4e"/>
+                            <constraint firstItem="eZw-qb-HcC" firstAttribute="top" secondItem="NrS-Py-akW" secondAttribute="bottom" constant="35" id="vqR-yc-lbW"/>
                         </constraints>
                         <connections>
                             <action selector="BackgroundPressed:" destination="kkI-46-aRr" eventType="valueChanged" id="aFU-zq-0F3"/>
@@ -477,7 +481,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIt-Ms-Kx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="-1041"/>
+            <point key="canvasLocation" x="2208.8000000000002" y="-1041.2293853073463"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="UlP-OB-V2e">

@@ -17,8 +17,6 @@
     NSArray *WeekData;
     NSArray *MonthData;
     NSArray *YearData;
-    NSArray *DaysInAWeek;
-    NSArray *WeeksInAMonth;
     
     NSDate *CurrentDate;
     
@@ -149,7 +147,9 @@
     } else if (self.BarChartType.selectedSegmentIndex ==1){
         
         ChartData = [DataMethods GetActivityDataFromCoreData:2];                    //-----FETCHES MONTH DATA-----//
-        ChartLabels = WeeksInAMonth;
+        ChartLabels = [NSArray arrayWithObjects:
+                       @"Week 1",
+                       @"Week 5", nil];
         
     } else {
         

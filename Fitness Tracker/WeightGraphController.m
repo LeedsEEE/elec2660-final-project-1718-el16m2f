@@ -174,14 +174,6 @@
     
 }
 
-
-#pragma mark Methods to execute when a button is pressed
-- (IBAction)RefreshButtonPressed:(id)sender {
-    
-    [self GraphRefresh];
-    
-}
-
 -(void) ResetLabels {
     
     self.TypeOfWeek.text = [NSString stringWithFormat:@"Weight Tracker"];

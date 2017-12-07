@@ -14,15 +14,11 @@
 
 @implementation AddWeight
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 -(BOOL)prefersStatusBarHidden {
     return YES;
 }
 
-#pragma WeightPickerView setip
+#pragma mark WeightPickerView delegate
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 6;                                                                               //Setting the number of columns in the picker view to 5. 2 numbers, a decimal place, a number and a measurement choice.
 }
@@ -47,6 +43,7 @@ numberOfRowsInComponent:(NSInteger)component{
     
 }
 
+#pragma mark WeightPickerView datasource
 -(NSString *)pickerView:(UIPickerView *)pickerView
             titleForRow:(NSInteger)row
            forComponent:(NSInteger)component {
@@ -103,33 +100,28 @@ numberOfRowsInComponent:(NSInteger)component{
     }
 }
 
+
+#pragma mark Navigation button methods
 - (IBAction)SaveButtonPressed:(id)sender {
     
     CurrentDate = [NSDate date];
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
     components.hour = 00;
-    components.day = 17;         ///----REMOVE THIS, its messing up the date saved
-    components.month = 11;
     
     CurrentDate = [cal dateFromComponents:components];
     
-    if(Weight<40 || Weight>170){
+    if(Weight<40 || Weight>170){                        //If the weight is out of certain boundaries an error shows
         
         [self ExceededLimitsAlert];
         
-    //} else if (Date saving to is allready in the database) {
+    } else if (CurrentDate == [DataMethods DateOfMostRecentWeightSave]){
+        
+        [self SavingOnTheSameDayAlert];                 //If the user is saving onto an allready saved date it shows an error
         
     } else {
-    
-        NSLog(@"Recorded weight = %.1f",Weight);
-    
-        //NSDate *TESTDATE = [NSDate dateWithTimeIntervalSinceNow:864000];
         
         [DataMethods WEIGHTAddToDatabase:&(Weight) :CurrentDate];
-        
-        //NSLog(@"%@",[DataMethods WEIGHTAddToDatabase:&(Weight) :TESTDATE])
-        
         [self dismissViewControllerAnimated:YES completion:nil];
         
     }

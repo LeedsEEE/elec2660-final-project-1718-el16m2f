@@ -25,6 +25,6 @@
 
 +(NSArray *)GetWeightDataFromCoreData:(BOOL)PreviousWeek;
 
-
++(NSDate *)DateOfMostRecentWeightSave;
 
 @end

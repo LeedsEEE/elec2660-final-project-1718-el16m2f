@@ -241,5 +241,19 @@
     
 }
 
++(NSDate *)DateOfMostRecentWeightSave {
+    
+    AppDelegate *applicationdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = applicationdelegate.persistentContainer.viewContext;
+    
+    NSFetchRequest *FetchData = [NSFetchRequest fetchRequestWithEntityName:@"UserWeightData"];
+    [FetchData setReturnsObjectsAsFaults:NO];                                   //When debugging this allows you to hover over the array that the fetch goes to and then see the data inside without displaying 'fault'
+    
+    NSError *error;
+    NSArray *FetchedWeightData = [context executeFetchRequest:FetchData error:&error];
+    
+    return [[FetchedWeightData objectAtIndex:([FetchedWeightData count]-1)]valueForKey:@"data"];
+}
+
 
 @end
