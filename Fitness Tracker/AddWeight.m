@@ -109,6 +109,9 @@ numberOfRowsInComponent:(NSInteger)component{
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
     components.hour = 00;
+    components.day = 17;         ///----REMOVE THIS, its messing up the date saved
+    components.month = 11;
+    
     CurrentDate = [cal dateFromComponents:components];
     
     if(Weight<40 || Weight>170){
@@ -121,7 +124,12 @@ numberOfRowsInComponent:(NSInteger)component{
     
         NSLog(@"Recorded weight = %.1f",Weight);
     
+        //NSDate *TESTDATE = [NSDate dateWithTimeIntervalSinceNow:864000];
+        
         [DataMethods WEIGHTAddToDatabase:&(Weight) :CurrentDate];
+        
+        //NSLog(@"%@",[DataMethods WEIGHTAddToDatabase:&(Weight) :TESTDATE])
+        
         [self dismissViewControllerAnimated:YES completion:nil];
         
     }

@@ -156,9 +156,89 @@
     
 }
 
-+(NSArray *) GetWeightDataFromCoreData {
+
++(NSArray *)GetWeightDataFromCoreData:(BOOL)PreviousWeek {
     
-    return nil;
+    /*
+    //If the bool is:
+    // TRUE = Show previous week recordings
+    // FALSE = Show current week recordings
+    */
+    
+    AppDelegate *applicationdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = applicationdelegate.persistentContainer.viewContext;
+    
+    NSFetchRequest *FetchData = [NSFetchRequest fetchRequestWithEntityName:@"UserWeightData"];
+    [FetchData setReturnsObjectsAsFaults:NO];                                   //When debugging this allows you to hover over the array that the fetch goes to and then see the data inside without displaying 'fault'
+    
+    NSError *error;
+    NSArray *FetchedWeightData = [context executeFetchRequest:FetchData error:&error];
+    
+    //-----Everything under here is to sort the fetched array-----
+    
+    
+    //UserActivityData *EntityData;
+    NSMutableArray *WeightData = [[NSMutableArray alloc]init];
+    
+    //Creating a calendar
+    NSCalendar *Calendar = [NSCalendar currentCalendar];
+    NSDateComponents *CalculationDate = [[NSDateComponents alloc]init];
+    NSDate *CurrentDate = [NSDate date];
+    NSInteger CountFrom;
+    
+    NSDateComponents *components = [Calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
+    components.hour = 00;
+    NSDate *FirstDayOfWeek = [Calendar dateFromComponents:components];
+    
+    CGFloat WeightForDay = 0.0;
+    BOOL DataFound = NO;
+    
+    if(!PreviousWeek){
+        CountFrom = -6;
+    }else{
+        CountFrom = -13;
+    }
+    
+    
+    //A for loop running 7 times for 7 days to rearrange data into date order.
+    for(int i=0;i<7;i++){
+        
+        CalculationDate.day = (CountFrom+i);
+        NSDate *SearchDate = [Calendar dateByAddingComponents:CalculationDate toDate:FirstDayOfWeek options:0];
+        
+        //Finds the most recent piece of data outside of the
+        for( NSUInteger a=([FetchedWeightData count]-1) ; a > 0 && !DataFound ; a-- ){
+            
+            NSArray *IndividualWeightEntry = [FetchedWeightData objectAtIndex:a];
+            
+            if([[IndividualWeightEntry valueForKey:@"weight"]floatValue] != 0 && SearchDate > [IndividualWeightEntry valueForKey:@"data"]){
+                
+                WeightForDay = [[[FetchedWeightData objectAtIndex:(a)]valueForKey:@"weight"]floatValue];
+                DataFound = YES;
+            }
+        }
+        
+        
+        //Sorts the data into an array
+        for(int a=0;a<[FetchedWeightData count];a++){
+                
+            NSArray *IndividualWeightEntry = [FetchedWeightData objectAtIndex:a];
+                
+            if(SearchDate == [IndividualWeightEntry valueForKey:@"data"]){
+                
+                
+                
+                if([[IndividualWeightEntry valueForKey:@"weight"]floatValue] != 0){
+                    WeightForDay = [[IndividualWeightEntry valueForKey:@"weight"]floatValue];
+                    
+                }
+            }
+        }
+        [WeightData addObject:[NSNumber numberWithFloat:WeightForDay]];
+    }
+        
+    return WeightData;
+    
 }
 
 

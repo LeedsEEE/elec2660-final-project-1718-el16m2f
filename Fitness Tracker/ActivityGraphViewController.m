@@ -55,11 +55,6 @@
     frame.size.height = (PhoneScreenSize.height-z);           //The value of z determines the height of the graph.
     self.ActivityBarChart.frame = frame;
     
-    
-    [self initfakedata];        //GET RID OF THIS ASAP
-    
-    WeekData = [self initdata];
-    
     self.BarValueLabel.text = [NSString stringWithFormat:@"Touch on the bars"];
     
     [self GraphRefresh];
@@ -122,7 +117,7 @@
 
 -(void)barChartView:(JBBarChartView *)barChartView didSelectBarAtIndex:(NSUInteger)index {
     
-    self.BarValueLabel.text = [NSString stringWithFormat:@"%.1f Calories",[[ChartData objectAtIndex:index]floatValue]];
+    self.BarValueLabel.text = [NSString stringWithFormat:@"%.0f Calories",[[ChartData objectAtIndex:index]floatValue]];
     
 }
 
@@ -192,65 +187,6 @@
     [self SegmentedControlModifyData];
     [self UpdateData];
     [self.ActivityBarChart reloadDataAnimated:YES];
-    
-}
-
--(void) initfakedata {
-    
-    WeekData = [NSArray arrayWithObjects:
-                @20.5,@30.2,@40.1,@35.4,@25.9,@45.6,@30.8, nil];
-    MonthData = [NSArray arrayWithObjects:
-                 @500.5,@600.4,@550.1,@400.0,@475.8, nil];
-    YearData = [NSArray arrayWithObjects:
-                @2000,@3000,@2500,@3250,@3112,@1750,@3980,@3210,@4100,@2680,@2980,@3650, nil];
-/*
-    DaysInAWeek = [NSArray arrayWithObjects:
-                   @"Monday",@"Today", nil];*/
-    
-    WeeksInAMonth = [NSArray arrayWithObjects:
-                     @"Week1",@"Week5", nil];
-    
-}
-
--(NSArray *) initdata {
-    ////DO SOME DATA GRABBING HERE
-    /*
-    NSArray *EntityData = [DataMethods GetActivityDataFromCoreData];
-    //UserActivityData *EntityData;
-    NSMutableArray *CalorieData = [[NSMutableArray alloc]init];
-    
-    //Creating a calendar
-    NSCalendar *Calendar = [NSCalendar currentCalendar];
-    NSDateComponents *PastWeek = [[NSDateComponents alloc]init];
-   
-    NSDateComponents *components = [Calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
-    components.hour = 00;
-    NSDate *TodayAtMidnight = [Calendar dateFromComponents:components];
-    
-    for (int i=0 ;i<7; i++){
-        
-        PastWeek.day = (-6+i);
-        NSDate *DateToScan = [Calendar dateByAddingComponents:PastWeek toDate:TodayAtMidnight options:0];
-        CGFloat DayCalories = 0.0;
-        
-        for(int a=0 ; a < [EntityData count] ; a++){
-            
-            NSArray *IndividulEntryData = [EntityData objectAtIndex:a];
-            
-            if (DateToScan == [IndividulEntryData valueForKey:@"date"]) {
-                DayCalories = (DayCalories + [[IndividulEntryData valueForKey:@"calories"]floatValue]);
-            }
-            
-        }
-        
-        [CalorieData addObject:[NSNumber numberWithFloat:DayCalories]];
-    
-    }
-    
-    NSLog(@"%@",CalorieData);
-    */
-    
-    return nil;
     
 }
 

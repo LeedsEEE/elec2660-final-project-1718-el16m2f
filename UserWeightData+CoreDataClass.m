@@ -16,13 +16,21 @@
     AppDelegate *applicationdelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = applicationdelegate.persistentContainer.viewContext;
     
-    UserWeightData *WeightEntity = (UserWeightData *)[NSEntityDescription insertNewObjectForEntityForName:@"UserWeightActivity" inManagedObjectContext:context];
+    UserWeightData *WeightEntity = (UserWeightData *)[NSEntityDescription insertNewObjectForEntityForName:@"UserWeightData" inManagedObjectContext:context];
+    
+    NSFetchRequest *fetchrequest = [NSFetchRequest fetchRequestWithEntityName:@"UserWeightData"];
+    
+    NSError *error;
+    NSArray *matchingdata = [context executeFetchRequest:fetchrequest error:&error];
+    
+    NSInteger NewWeightID = [matchingdata count];
     
     //Creating a new object
-    WeightEntity.weightID = [UserWeightInfo valueForKey:@"WeightID"];
-    WeightEntity.weight = [UserWeightInfo valueForKey:@"Weight"];
-    WeightEntity.data = [UserWeightInfo valueForKey:@"Date"];
+    WeightEntity.weightID = [NSNumber numberWithInteger:NewWeightID];
+    WeightEntity.weight = [UserWeightInfo valueForKey:@"weight"];
+    WeightEntity.data = [UserWeightInfo valueForKey:@"data"];
     
+    [context save:nil];
     return WeightEntity;
     
 }

@@ -23,7 +23,7 @@
 
 +(void)WEIGHTAddToDatabase:(CGFloat *)WeightToSave :(NSDate *)DateOfRecording;
 
-+(NSArray *)GetWeightDataFromCoreData;
++(NSArray *)GetWeightDataFromCoreData:(BOOL)PreviousWeek;
 
 
 

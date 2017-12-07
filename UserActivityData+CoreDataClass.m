@@ -17,11 +17,7 @@
     
     UserActivityData *ActivityEntity = (UserActivityData *)[NSEntityDescription insertNewObjectForEntityForName:@"UserActivityData" inManagedObjectContext:context];
     
-    //UserActivityData *ActivityEntity = nil;
-    
-    //NSString *activityID = UserActivityInfo[@"activityID"];
     NSFetchRequest *fetchrequest = [NSFetchRequest fetchRequestWithEntityName:@"UserActivityData"];
-    //fetchrequest.predicate = [NSPredicate predicateWithFormat:@"activityID = %@",activityID];
     
     NSError *error;
     NSArray *matchingdata = [context executeFetchRequest:fetchrequest error:&error];

@@ -8,6 +8,7 @@
 
 #import "FirstTimeLoadViewController.h"
 #import "UserProfile+CoreDataClass.h"
+#import "DataMethods.h"
 
 @interface FirstTimeLoadViewController ()
 {
@@ -155,9 +156,18 @@
     
     [UserProfile UpdateUserProfile:UserInfo];
     
-    NSLog(@"%@",[UserProfile UpdateUserProfile:UserInfo].description);
+    NSCalendar *Calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc]init];
+    components.hour = 00;                                               //Setting the time of the current day to midnight
+    CurrentDate = [Calendar dateFromComponents:components];
+    components.day = -20;
+    NSDate *DateToSave = [Calendar dateByAddingComponents:components toDate:CurrentDate options:0];
+                                                                        //Creating a date 20 days prior to making the account
+    CGFloat WeightToCoreData = [self.Weight floatValue];
+    [DataMethods WEIGHTAddToDatabase:&WeightToCoreData :DateToSave];    //Saving the weight inputted into the weight core data
     
 }
+
 
 #pragma mark Removing the keyboard via the return key and a background press
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {

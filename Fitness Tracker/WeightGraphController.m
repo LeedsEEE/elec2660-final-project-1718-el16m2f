@@ -7,10 +7,10 @@
 //
 
 #import "WeightGraphController.h"
+#import "DataMethods.h"
 
 @interface WeightGraphController ()
 {
-    NSArray *ChartData;
     NSArray *ChartLabels;
     
     NSArray *WeekData;
@@ -41,12 +41,9 @@
     frame.size.width = (PhoneScreenSize.width-0);             //Width subtracting the constraint size
     float z = 93;
     frame.size.height = (PhoneScreenSize.height-z);           //The value of z determines the height of the graph. 
-    _LineChart.frame = frame;
+    self.LineChart.frame = frame;
     
-    [self initwithfakedata];
-    ChartData = WeekData;
-    [self UpdateData];
-    [self.LineChart reloadData];
+    [self GraphRefresh];
     
 }
 
@@ -54,6 +51,12 @@
 {
     [super viewWillAppear:animated];
     [self.LineChart setState:JBChartViewStateExpanded];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [self GraphRefresh];
+    
 }
 
 -(BOOL)prefersStatusBarHidden {
@@ -148,7 +151,7 @@
     if(lineIndex == 0){
         
         self.TypeOfWeek.text = [NSString stringWithFormat:@"Current week"];
-        self.ChartValue.text = [NSString stringWithFormat:@"%.1f Kgs", [[WeekData objectAtIndex:horizontalIndex]floatValue]];
+        self.ChartValue.text = [NSString stringWithFormat:@"%.0f Kgs", [[WeekData objectAtIndex:horizontalIndex]floatValue]];
         
         self.RightChartFooter.text = [NSString stringWithFormat:@"Today"];
         self.LeftChartFooter.text = [WordedDayFormat stringFromDate:[Calendar dateByAddingComponents:MinusSixDays toDate:CurrentDate options:0]];
@@ -157,7 +160,7 @@
     } else if(lineIndex == 1){
         
         self.TypeOfWeek.text = [NSString stringWithFormat:@"Last week"];
-        self.ChartValue.text = [NSString stringWithFormat:@"%.1f Kgs", [[PreviousWeekData objectAtIndex:horizontalIndex]floatValue]];
+        self.ChartValue.text = [NSString stringWithFormat:@"%.0f Kgs", [[PreviousWeekData objectAtIndex:horizontalIndex]floatValue]];
         
         self.RightChartFooter.text = [WordedDayFormat stringFromDate:[Calendar dateByAddingComponents:MinusSevenDays toDate:CurrentDate options:0]];
         self.LeftChartFooter.text = [WordedDayFormat stringFromDate:[Calendar dateByAddingComponents:MinusThirteenDays toDate:CurrentDate options:0]];
@@ -172,23 +175,10 @@
 }
 
 
-#pragma mark FakeData
--(void) initwithfakedata {
-    
-    WeekData = [NSArray arrayWithObjects:
-                @80,@82,@82.5,@80.3,@79.2,@78.9,@82,@83.5, nil];
-    
-    PreviousWeekData = [NSArray arrayWithObjects:
-                        @86.5,@84.2,@85,@82.4,@83.9,@82.8,@82.1,@82, nil];
-    
-}
-
-
 #pragma mark Methods to execute when a button is pressed
 - (IBAction)RefreshButtonPressed:(id)sender {
     
-    [self UpdateData];
-    [self.LineChart reloadDataAnimated:YES];
+    [self GraphRefresh];
     
 }
 
@@ -201,12 +191,21 @@
     
 }
 
+-(void)GraphRefresh {
+    
+    WeekData = [DataMethods GetWeightDataFromCoreData:false];           //By entering false it returns the current week
+    PreviousWeekData = [DataMethods GetWeightDataFromCoreData:true];    //By entering true it returns the previous week
+    [self UpdateData];
+    [self.LineChart reloadDataAnimated:YES];
+    
+}
+
 -(void) UpdateData {
     
     self.LineChart.delegate = self;
     self.LineChart.dataSource = self;
     
-    //Setting the min and max values of the graph by using the min and max from the data
+    //These values need initialising before going through the for loop
     float MaxValue = 0.0;
     float MinValue = 10000.0;
     
