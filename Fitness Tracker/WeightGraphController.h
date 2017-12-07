@@ -10,6 +10,16 @@
 #import <JBChart/JBChart.h>
 
 @interface WeightGraphController : UIViewController <JBLineChartViewDelegate , JBLineChartViewDataSource>
+{
+    NSArray *ChartLabels;
+    
+    NSArray *WeekData;
+    NSArray *PreviousWeekData;
+    
+    NSDate *CurrentDate;
+    NSDateFormatter *WordedDayFormat;
+    
+}
 
 @property (weak, nonatomic) IBOutlet JBLineChartView *LineChart;
 

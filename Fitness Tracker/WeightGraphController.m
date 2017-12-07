@@ -10,16 +10,7 @@
 #import "DataMethods.h"
 
 @interface WeightGraphController ()
-{
-    NSArray *ChartLabels;
-    
-    NSArray *WeekData;
-    NSArray *PreviousWeekData;
-    
-    NSDate *CurrentDate;
-    NSDateFormatter *WordedDayFormat;
-    
-}
+
 @end
 
 @implementation WeightGraphController
@@ -28,6 +19,9 @@
     
     [self ResetLabels];
     
+    //Creating locales to format the date into a GB format
+    //Reference
+    //https://www.cocoawithlove.com/2009/05/simple-methods-for-date-formatting-and.html
     NSLocale *Locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
     
     WordedDayFormat = [[NSDateFormatter alloc]init];
@@ -53,15 +47,19 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self GraphRefresh];
+    [self GraphRefresh];                                      //The graph is refreshed here so everytime the viewed is presented the data is automatically updated
 }
 
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {         //Same as the method adopted in the activity graph to make sure the graph resizes upon load
+    
+    //Method found at: http://pinkstone.co.uk/how-to-handle-device-rotation-since-ios-8/
     [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(GraphRefresh) userInfo:nil repeats:NO];
 }
 
 -(BOOL)prefersStatusBarHidden {
     return YES;
+    //Method used to hide the status bar
+    //https://stackoverflow.com/questions/32965610/hide-the-status-bar-in-ios-9
 }
 
 #pragma mark Line Chart Data source
@@ -69,7 +67,7 @@
     return 2;
 }
 
--(NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex {                                       //Sets the number of dots on the line.
+-(NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex {                                       //Sets the number of dots on the line to the count of the array.
     if (lineIndex == 0){
         return [WeekData count];
     } else if (lineIndex == 1){
@@ -123,14 +121,14 @@
 
 #pragma mark Changing the looks of the data dots
 -(BOOL)lineChartView:(JBLineChartView *)lineChartView showsDotsForLineAtLineIndex:(NSUInteger)lineIndex {
-    return true;
+    return true;                                                                    //If true the line will be presented with data points
 }
 
 -(UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
-    return [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];       //Set the color of the dots
+    return [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];                   //Set the color of the data points
 }
 -(CGFloat)lineChartView:(JBLineChartView *)lineChartView dotRadiusForDotAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
-    return 4.5;                                                                     //Set the radius of the dots
+    return 4.5;                                                                     //Set the radius of the points
 }
 
 
@@ -148,7 +146,7 @@
     
     NSCalendar *Calendar = [NSCalendar currentCalendar];
     
-    if(lineIndex == 0){
+    if(lineIndex == 0){                     //If the data selected is current week it will show current week labels but if its the previous week the label will change to match this
         
         self.TypeOfWeek.text = [NSString stringWithFormat:@"Current week"];
         self.ChartValue.text = [NSString stringWithFormat:@"%.0f Kgs", [[WeekData objectAtIndex:horizontalIndex]floatValue]];
@@ -203,7 +201,7 @@
     
     NSArray *Allthedata = [WeekData arrayByAddingObjectsFromArray:PreviousWeekData];
     
-    for(int i = 0 ; i < ([Allthedata count]) ; i++){
+    for(int i = 0 ; i < ([Allthedata count]) ; i++){                    //Finds the Min and Max values so that graph will display data between the min and max rather than 0 and max
         if([[Allthedata objectAtIndex:i] floatValue] > MaxValue){
             MaxValue = [[Allthedata objectAtIndex:i]floatValue];
         }else if([[Allthedata objectAtIndex:i]floatValue] < MinValue){
@@ -211,6 +209,7 @@
         }
     }
 
+    //Sets boundary values of the chart
     self.LineChart.minimumValue = (MinValue*0.975);
     self.LineChart.maximumValue = (MaxValue);
     
@@ -218,7 +217,6 @@
     self.LineChart.footerPadding = 50;
     
     [self.LineChart reloadDataAnimated:YES];
-    
 }
 
 @end

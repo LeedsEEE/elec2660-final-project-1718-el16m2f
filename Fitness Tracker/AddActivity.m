@@ -10,13 +10,6 @@
 #import "DataMethods.h"
 
 @interface AddActivity ()
-{
-    NSArray *activities;
-    NSDate *CurrentDate;
-    NSDate *ChosenDate;
-    NSInteger SelectedCalorieBurnRate;
-    CGFloat CaloriesBurnt;
-}
 
 @end
 
@@ -44,7 +37,7 @@
     
 }
 
--(BOOL)prefersStatusBarHidden {
+-(BOOL)prefersStatusBarHidden {                 //A method used to hide the status bar
     return YES;
 }
 
@@ -55,7 +48,7 @@
       inComponent:(NSInteger)component {
     
     ActivityInfo *BurnRate = [activities objectAtIndex:row];
-    SelectedCalorieBurnRate = BurnRate.CalorieRate;
+    SelectedCalorieBurnRate = BurnRate.CalorieRate;         //When the picker view is changed the selected calories rate is changed to what has been chosen
     
 }
 
@@ -71,23 +64,17 @@
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    
     return 1;           // Set the number of columns to 1
-    
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return activities.count;
-    
+    return activities.count;                //Number of rows is the number of items within the datamodel
 }
 
 
 #pragma Removing the background when return is pressed
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
     [textField resignFirstResponder];
-    
     return YES;
     
 }
@@ -102,20 +89,25 @@
 
 -(void)DatePickerViewInit {
     
+    //This makes it so that the Date picker view will only allow values between a range of dates. For this case i allowed upto 5 days before incase you forgot to add any previous data in.
+    
     NSDateComponents *minusfivedays = [[NSDateComponents alloc] init];
     minusfivedays.day = -5;
-    
     NSCalendar *Calendar = [NSCalendar currentCalendar];
-    
     NSDate *fivedaysago = [Calendar dateByAddingComponents: minusfivedays toDate:CurrentDate options:0];
     
     [self.DatePickerView setMaximumDate: CurrentDate];
     [self.DatePickerView setMinimumDate: fivedaysago];
     
+    //Reference used for this
+    //https://stackoverflow.com/questions/5611632/get-current-date-from-nsdate-date-but-set-the-time-to-1000-am
+    
 }
 
 
 #pragma mark Method for calculating how many calories were burnt
+
+//A method called to calculate the amount of calories burnt through the activity
 -(CGFloat)CalculateCaloriesBurnt {
     
     NSString *MinutesString = [NSString stringWithFormat:@"%@", self.MinuteTextField.text];
@@ -133,13 +125,12 @@
 #pragma Actions caused by buttons
 - (IBAction)SaveButtonPressed:(id)sender {
     [self SaveData];
-    
 }
 
 - (IBAction)CancelButtonPressed:(id)sender {
     
+    //if cancel button is pressed the add activity view will disappear and return to the bar chart
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 - (IBAction)BackgroundPressed:(id)sender {
@@ -151,7 +142,6 @@
     if ([self.MinuteTextField isFirstResponder]) {
         [self.MinuteTextField resignFirstResponder];
     }
-    
 }
 
 
@@ -161,7 +151,7 @@
     
     ChosenDate = self.DatePickerView.date;
     
-    //A function to make sure that the date it saves only saves the date and not the time
+    //A function to make sure that the date it saves is only the date and not the time specifically. If it does this there will be an issue when doing comparisons.
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:ChosenDate];
     components.hour = 00;
@@ -171,6 +161,8 @@
     
     if (self.TimeWorkedOut > 2.5) {
         //INVALID CODE
+        
+        //If the user has said they worked out for more than 2 and a half hours it will produce an error as this is deemed unreasonale
         
         UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry too large"
                                                                 message:@"The data that has been entered is considered too large."
@@ -184,12 +176,12 @@
         } else {
         //Sucessful save
         
+        //if the data is saved succesfully the data is saved into the activity entity within core data
         [DataMethods ACTIVITYAddToDatabase:&(CaloriesBurnt) :ChosenDate];
         
+        //Once saved the view will disappear showing the bar chart.
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
-    
 }
 
 @end

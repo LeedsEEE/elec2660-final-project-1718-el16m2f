@@ -19,6 +19,13 @@
     
         self.ActivityList = [NSMutableArray array];
         
+        /*
+        //ActivityInfo *'SomeActivity' = allocate and initialise the event before adding to it
+        //'SomeActivity'.ActivityID = Creates an id that can be used
+        //'SomeActivity'.Activity = Allows a name to be set as a string for a title of the event
+        //'SomeActivity'.CalorieRate = Sets the calories burnt per hour so calculations can be carried out
+        */
+        
         ActivityInfo *Jogging = [[ActivityInfo alloc]init];
         Jogging.ActivityID = 1;
         Jogging.Activity = @"Jogging";
@@ -54,9 +61,9 @@
         Squash.Activity = @"Squash";
         Squash.CalorieRate = 748;
         
-        [self.ActivityList addObject:Jogging];
-        [self.ActivityList addObject:Running];
-        [self.ActivityList addObject:SwimmingBreaststroke];
+        [self.ActivityList addObject:Jogging];                  //Index 0
+        [self.ActivityList addObject:Running];                  //Index 1
+        [self.ActivityList addObject:SwimmingBreaststroke];     //Index 2
         [self.ActivityList addObject:SwimmingButterfly];
         [self.ActivityList addObject:Cycling];
         [self.ActivityList addObject:Rowing];

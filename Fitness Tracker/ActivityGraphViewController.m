@@ -10,19 +10,7 @@
 #import "UserActivityData+CoreDataClass.h"
 
 @interface ActivityGraphViewController ()
-{
-    NSArray *ChartData;
-    NSArray *ChartLabels;
 
-    NSArray *WeekData;
-    NSArray *MonthData;
-    NSArray *YearData;
-    
-    NSDate *CurrentDate;
-    
-    NSDateFormatter *WordedDayFormat;
-    NSDateFormatter *WordedMonthFormat;
-}
 
 @end
 
@@ -34,15 +22,18 @@
     //Creating time objects and creating formats for the X-axis labels
     CurrentDate = [NSDate date];
     
+    //Creating locales to format the date into a GB format
+    //Refernce:
+    //https://www.cocoawithlove.com/2009/05/simple-methods-for-date-formatting-and.html
     NSLocale *Locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
     
     WordedDayFormat = [[NSDateFormatter alloc]init];
     [WordedDayFormat setLocale:Locale];
-    [WordedDayFormat setDateFormat:@"E"];
+    [WordedDayFormat setDateFormat:@"E"];               //this formats the date into a format like so: Mon,Tue,Wed etc
     
     WordedMonthFormat = [[NSDateFormatter alloc]init];
     [WordedMonthFormat setLocale:Locale];
-    [WordedMonthFormat setDateFormat:@"MMMM-YY"];
+    [WordedMonthFormat setDateFormat:@"MMMM-YY"];       //this formats the date into a format like so: January-2017, February-2017 etc
     
     //Initialising the graphs size. If this is not done the graph loads with an incorrect size. If this isn't implemented simply refreshing the graph will bring it to a correct size
     CGRect frame = self.ActivityBarChart.frame;
@@ -65,24 +56,30 @@
     
 }
 
-//http://pinkstone.co.uk/how-to-handle-device-rotation-since-ios-8/
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     
-    [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(GraphRefresh) userInfo:nil repeats:NO];
+    //When the screen is orientated this method will be called
+    //Method found at: http://pinkstone.co.uk/how-to-handle-device-rotation-since-ios-8/
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(GraphRefresh) userInfo:nil repeats:NO];     //An NSTimer was used as if it wasn't the chart would re-scale to some value inbetween vertical and horizontal
 
 }
 
 -(BOOL)prefersStatusBarHidden {
-    return YES;                                                 //This function removes the status bar, as it was getting in the way.
+    return YES;                                                                 //This function removes the status bar, as it was getting in the way.
     //https://stackoverflow.com/questions/32965610/hide-the-status-bar-in-ios-9
 }
 
 #pragma mark Function to move to the profile screen if this is the users first time!
 
 -(void)viewDidAppear:(BOOL)animated {
+    
     NSNumber *ShowProfileScreen = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserFirstTime"];
-    if(ShowProfileScreen == nil) {
-        [self performSegueWithIdentifier:@"ShowProfileSetup" sender:nil];
+    
+    if(ShowProfileScreen == nil) {                                              //The if statement asks if there is any NSUserDefaults data and if there isn't, it is because it's the users first time loading the app.
+        
+        [self performSegueWithIdentifier:@"ShowProfileSetup" sender:nil];       //This segue is performed if its the users first time and will take the user to a profile creation screen
+
     }
     
     [self GraphRefresh];
@@ -93,26 +90,20 @@
 #pragma mark Bar Graph delegate methods
 
 -(NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView {
-    
     return [ChartData count];
-    
 }
 
 -(CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtIndex:(NSUInteger)index {
-    
     return [[ChartData objectAtIndex:index]floatValue];
-    
 }
 
--(UIColor *)barSelectionColorForBarChartView:(JBBarChartView *)barChartView {
-    
+-(UIColor *)barSelectionColorForBarChartView:(JBBarChartView *)barChartView {                   //This method asks what color the selector will appear when bars are hovered over.
     return [UIColor whiteColor];
-    
 }
 
 -(UIColor *)barChartView:(JBBarChartView *)barChartView colorForBarViewAtIndex:(NSUInteger)index {
     
-    if ((index%2) == 1){
+    if ((index%2) == 1){                                                                        //This if statement means that the color of the bars are alternating
         return [UIColor orangeColor];
     } else {
         return [UIColor colorWithRed:1 green:0.294 blue:0.294 alpha:0.6];
@@ -121,15 +112,11 @@
 }
 
 -(void)barChartView:(JBBarChartView *)barChartView didSelectBarAtIndex:(NSUInteger)index {
-    
-    self.BarValueLabel.text = [NSString stringWithFormat:@"%.0f Calories",[[ChartData objectAtIndex:index]floatValue]];
-    
+    self.BarValueLabel.text = [NSString stringWithFormat:@"%.0f Calories",[[ChartData objectAtIndex:index]floatValue]];         //When a bar is selected a string is shown with the value contained in that bar
 }
 
 -(void)didDeselectBarChartView:(JBBarChartView *)barChartView {
-    
-    self.BarValueLabel.text = [NSString stringWithFormat:@" "];
-    
+    self.BarValueLabel.text = [NSString stringWithFormat:@" "];                                                                 //When the bar is let go the label is changed to be blank
 }
 
 #pragma mark Segmented Control
@@ -149,7 +136,7 @@
         
         ChartLabels = [NSArray arrayWithObjects:
                        [WordedDayFormat stringFromDate:TomorrowDay],
-                       @"Today", nil];
+                       @"Today", nil];                                              //The array chart lables is given two values to display on the x-axis. This is the same for other data ie. Month and Year
         
     } else if (self.BarChartType.selectedSegmentIndex ==1){
         
@@ -176,12 +163,13 @@
     
 }
 
+//When the segmented control is changed the following functions are called.
 - (IBAction)SegmentedControlChanged:(id)sender {
 
     [self SegmentedControlModifyData];
-    WeekData = [DataMethods GetActivityDataFromCoreData:1];
-    YearData = [DataMethods GetActivityDataFromCoreData:3];
     [self UpdateData];
+    
+    //Reload chart inserts the data into the chart. Setting reloadanimated to yes means that when the data is reloaded its animated in.
     [self.ActivityBarChart reloadDataAnimated:YES];
     
 }
@@ -199,9 +187,10 @@
 
 -(void) UpdateData {
     
+    //All the methods below are used to create the bounds of the chart  including the background color and the chart labels
+    
     self.ActivityBarChart.delegate = self;
     self.ActivityBarChart.dataSource = self;
-    
     self.ActivityBarChart.minimumValue = 0.0f;
     self.ActivityBarChart.headerPadding = 40.0f;
     self.ActivityBarChart.footerPadding = 0.0f;

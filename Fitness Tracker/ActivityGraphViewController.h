@@ -11,6 +11,19 @@
 #import "DataMethods.h"
 
 @interface ActivityGraphViewController : UIViewController <JBBarChartViewDelegate , JBBarChartViewDataSource>
+{
+    NSArray *ChartData;
+    NSArray *ChartLabels;
+    
+    NSArray *WeekData;
+    NSArray *MonthData;
+    NSArray *YearData;
+    
+    NSDate *CurrentDate;
+    
+    NSDateFormatter *WordedDayFormat;
+    NSDateFormatter *WordedMonthFormat;
+}
 
 @property (weak, nonatomic) IBOutlet JBBarChartView *ActivityBarChart;
 @property (weak, nonatomic) IBOutlet UILabel *BarValueLabel;
@@ -22,3 +35,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *RightFooterLabel;
 
 @end
+
+/*
+// To create the Bar Chart the Jawbone Chart framework was used as this allowed the ease of making a stunning chart 
+//JBJawbone charts: https://github.com/Jawbone/JBChartView 
+//How to display bar graphs: https://www.youtube.com/watch?v=2J-_YBXEhNU&t=2185s
+//How to display line graphs: https://www.youtube.com/watch?v=hMdMg3mcSCc
+*/

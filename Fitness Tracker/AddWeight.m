@@ -24,10 +24,9 @@
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component{
+numberOfRowsInComponent:(NSInteger)component{                                               //Creates a picker view where the amount of components depened on what row it belonds to
     
     NSInteger rows;
-    
     
     if(component == 0){
         rows = 2;
@@ -46,7 +45,7 @@ numberOfRowsInComponent:(NSInteger)component{
 #pragma mark WeightPickerView datasource
 -(NSString *)pickerView:(UIPickerView *)pickerView
             titleForRow:(NSInteger)row
-           forComponent:(NSInteger)component {
+           forComponent:(NSInteger)component {                                              //Sets the title for each cell in the picker view to a piece of data that is relevant to the component
     
     NSString *Title;
         
@@ -76,6 +75,8 @@ numberOfRowsInComponent:(NSInteger)component{
         didSelectRow:(NSInteger)row
         inComponent:(NSInteger)component {
 
+    //Hundreds, tens, singular and decimal are all combined to create a whole number
+    
     if (component == 0){
         hundreds = (row*100);
     } else if(component == 1){
@@ -93,6 +94,8 @@ numberOfRowsInComponent:(NSInteger)component{
         }
     }
     
+    
+    //An if statement is used here to convert the weight into kilograms if the user inputted their data in pounds
     if(MeasurementType == FALSE){
         Weight = (hundreds+tens+singular+decimal);
     } else {
@@ -119,7 +122,9 @@ numberOfRowsInComponent:(NSInteger)component{
         
         [self SavingOnTheSameDayAlert];                 //If the user is saving onto an allready saved date it shows an error
         
-    } else {
+    } else {                                            //If succesful the data will be saved into core data and then the view controller will be dismissed
+        
+        
         
         [DataMethods WEIGHTAddToDatabase:&(Weight) :CurrentDate];
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -128,6 +133,7 @@ numberOfRowsInComponent:(NSInteger)component{
     
 }
 
+//If the cancel button is pressed the view controller will be dismissed
 - (IBAction)CancelButtonPressed:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -136,6 +142,7 @@ numberOfRowsInComponent:(NSInteger)component{
 
 
 #pragma mark methods for creating alerts to show
+//A void function that craetes an alert if the user has exceeded the weight limits somehow.
 -(void) ExceededLimitsAlert {
     
     UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry out of range"
@@ -149,6 +156,7 @@ numberOfRowsInComponent:(NSInteger)component{
 
 }
 
+//A void function that creates an alert if the user is trying to save onto a day they have allready saved on
 -(void) SavingOnTheSameDayAlert{
     
     UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry allready made"

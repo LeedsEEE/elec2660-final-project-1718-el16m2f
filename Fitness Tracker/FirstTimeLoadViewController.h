@@ -10,8 +10,18 @@
 
 @interface FirstTimeLoadViewController : UIViewController <UITextFieldDelegate>
 
+{
+    NSDate *CurrentDate;
+    NSString *Name;
+    NSDate *DoB;
+}
+
+
 @property NSInteger WeightType;      //If NO measured in KG, if YES measured in lbs
 @property NSInteger HeightType;      //If No measured in cm, if YES measured in ft
+
+@property NSNumber *Height;
+@property NSNumber *Weight;
 
 #define KilogramToPounds 2.20462
 #define CentimetresToFeet 0.0328084
@@ -32,5 +42,7 @@
 
 - (IBAction)SaveButtonPressed:(id)sender;
 - (IBAction)BackgroundPressed:(id)sender;
+
+
 
 @end

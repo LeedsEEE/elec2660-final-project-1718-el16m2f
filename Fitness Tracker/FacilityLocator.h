@@ -19,6 +19,9 @@
     CGFloat Radius;
     CGFloat ConversionToLongAndLat;
     CLLocationCoordinate2D CurrentLocationCoords;
+    
+    NSArray *Gyms;
+    
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *Map;

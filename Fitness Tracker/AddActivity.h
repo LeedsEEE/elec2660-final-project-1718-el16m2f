@@ -11,6 +11,13 @@
 //#import "ActivityInfo.h"
 
 @interface AddActivity : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate , UITextFieldDelegate>
+{
+    NSArray *activities;
+    NSDate *CurrentDate;
+    NSDate *ChosenDate;
+    NSInteger SelectedCalorieBurnRate;
+    CGFloat CaloriesBurnt;
+}
 
 @property (strong, nonatomic) ActivityDataModel *DataModel;
 

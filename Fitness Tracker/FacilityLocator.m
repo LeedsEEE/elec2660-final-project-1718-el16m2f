@@ -9,10 +9,6 @@
 #import "FacilityLocator.h"
 
 @interface FacilityLocator ()
-{
-    
-    NSArray *Gyms;
-}
 
 @end
 
@@ -20,9 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
+
     //Creates a font so that the text inside the segment controllers can be larger
     UIFont *CustomFont = [UIFont systemFontOfSize:22.0f];
     NSDictionary *attributes = [NSDictionary dictionaryWithObject:CustomFont forKey:NSFontAttributeName];
