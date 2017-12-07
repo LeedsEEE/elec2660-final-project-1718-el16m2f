@@ -7,7 +7,7 @@
 //
 
 #import "AddActivity.h"
-#import "UserActivityData+CoreDataClass.h"
+#import "DataMethods.h"
 
 @interface AddActivity ()
 {
@@ -95,13 +95,9 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     if([string rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet].invertedSet].location != NSNotFound) {
-        
         return NO;
-        
     }
-    
     return YES;
-    
 }
 
 -(void)DatePickerViewInit {
@@ -185,28 +181,14 @@
         [AlertController addAction:OkButton];
         [self presentViewController:AlertController animated:YES completion:nil];
         
-    } else {
-        
+        } else {
         //Sucessful save
-        NSLog(@"Selected Date: %@", ChosenDate);
-        NSLog(@"Calories Burnt: %f", CaloriesBurnt);
         
-        [self AddToDatabase];
+        [DataMethods ACTIVITYAddToDatabase:&(CaloriesBurnt) :ChosenDate];
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     
-    
-}
-
-
--(void)AddToDatabase {
-
-    NSDictionary *UserActivityInfo = @{@"calories":[NSNumber numberWithFloat:CaloriesBurnt],
-                                           @"date":ChosenDate};
-    
-    [UserActivityData UpdateUserActivity:UserActivityInfo];
-    //NSLog(@"Core Data updated with %@",[UserActivityData UpdateUserActivity:UserActivityInfo].description);
     
 }
 

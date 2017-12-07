@@ -7,16 +7,9 @@
 //
 
 #import "AddWeight.h"
+#import "DataMethods.h"
 
 @interface AddWeight ()
-
-{
-    float hundreds;
-    float tens;
-    float singular;
-    float decimal;
-}
-
 @end
 
 @implementation AddWeight
@@ -112,10 +105,26 @@ numberOfRowsInComponent:(NSInteger)component{
 
 - (IBAction)SaveButtonPressed:(id)sender {
     
-    NSLog(@"Recorded weight = %.1f",Weight);
-    [self dismissViewControllerAnimated:YES completion:nil];
+    CurrentDate = [NSDate date];
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
+    components.hour = 00;
+    CurrentDate = [cal dateFromComponents:components];
     
+    if(Weight<40 || Weight>170){
+        
+        [self ExceededLimitsAlert];
+        
+    //} else if (Date saving to is allready in the database) {
+        
+    } else {
     
+        NSLog(@"Recorded weight = %.1f",Weight);
+    
+        [DataMethods WEIGHTAddToDatabase:&(Weight) :CurrentDate];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }
     
 }
 
@@ -123,6 +132,34 @@ numberOfRowsInComponent:(NSInteger)component{
     
     [self dismissViewControllerAnimated:YES completion:nil];
 
+}
+
+
+#pragma mark methods for creating alerts to show
+-(void) ExceededLimitsAlert {
+    
+    UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry out of range"
+                                                                             message:@"The data that has been entered is considered either too large or too small."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *OkButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    
+    [AlertController addAction:OkButton];
+    [self presentViewController:AlertController animated:YES completion:nil];
+
+}
+
+-(void) SavingOnTheSameDayAlert{
+    
+    UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry allready made"
+                                                                             message:@"You have allready made a data entry for today"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *OkButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    
+    [AlertController addAction:OkButton];
+    [self presentViewController:AlertController animated:YES completion:nil];
+    
 }
 
 @end

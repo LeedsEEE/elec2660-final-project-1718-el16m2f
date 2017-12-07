@@ -55,13 +55,14 @@
     frame.size.height = (PhoneScreenSize.height-z);           //The value of z determines the height of the graph.
     self.ActivityBarChart.frame = frame;
     
-    //Some test data
-    [self initfakedata];
+    
+    [self initfakedata];        //GET RID OF THIS ASAP
+    
     WeekData = [self initdata];
     
     self.BarValueLabel.text = [NSString stringWithFormat:@"Touch on the bars"];
     
-    [self InitialLoadUp];
+    [self GraphRefresh];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -79,14 +80,13 @@
 #pragma mark Function to move to the profile screen if this is the users first time!
 
 -(void)viewDidAppear:(BOOL)animated {
-    
     NSNumber *ShowProfileScreen = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserFirstTime"];
-    
     if(ShowProfileScreen == nil) {
-        
         [self performSegueWithIdentifier:@"ShowProfileSetup" sender:nil];
-        
     }
+    
+    [self GraphRefresh];
+    
     
 }
 
@@ -139,10 +139,10 @@
     
     if (self.BarChartType.selectedSegmentIndex == 0){
         
-        ChartData = WeekData;
+        ChartData = [DataMethods GetActivityDataFromCoreData:1];                    //-----FETCHES WEEK DATA-----//
         
         NSDateComponents *singularday = [[NSDateComponents alloc] init];
-        singularday.day = -6;                                                    //These two lines create a component of -6 days so that the far left label shows the day from a week ago.
+        singularday.day = -6;                                                       //These two lines create a component of -6 days so that the far left label shows the day from a week ago.
         
         NSCalendar *Calendar = [NSCalendar currentCalendar];
         NSDate *TomorrowDay = [Calendar dateByAddingComponents:singularday toDate:CurrentDate options:0];
@@ -153,12 +153,12 @@
         
     } else if (self.BarChartType.selectedSegmentIndex ==1){
         
-        ChartData = MonthData;
+        ChartData = [DataMethods GetActivityDataFromCoreData:2];                    //-----FETCHES MONTH DATA-----//
         ChartLabels = WeeksInAMonth;
         
     } else {
         
-        ChartData = YearData;
+        ChartData = [DataMethods GetActivityDataFromCoreData:3];                    //-----FETCHES YEAR DATA-----//
         
         NSDateComponents *elevenmonths = [[NSDateComponents alloc] init];
         elevenmonths.month = -11;                                                    //These two lines create a component of -11 months so that the graphs label displays the correct month with its year
@@ -177,7 +177,8 @@
 - (IBAction)SegmentedControlChanged:(id)sender {
 
     [self SegmentedControlModifyData];
-    WeekData = [self initdata];
+    WeekData = [DataMethods GetActivityDataFromCoreData:1];
+    YearData = [DataMethods GetActivityDataFromCoreData:3];
     [self UpdateData];
     [self.ActivityBarChart reloadDataAnimated:YES];
     
@@ -185,8 +186,8 @@
 
 #pragma mark Additional functions
 
-//This is required to initialize the view
--(void) InitialLoadUp {
+//This is required to initialize the view. Its updates the Data. Updates the bounds of the graph. Then reloads onto the graph.
+-(void) GraphRefresh {
     
     [self SegmentedControlModifyData];
     [self UpdateData];
@@ -202,9 +203,9 @@
                  @500.5,@600.4,@550.1,@400.0,@475.8, nil];
     YearData = [NSArray arrayWithObjects:
                 @2000,@3000,@2500,@3250,@3112,@1750,@3980,@3210,@4100,@2680,@2980,@3650, nil];
-    
+/*
     DaysInAWeek = [NSArray arrayWithObjects:
-                   @"Monday",@"Today", nil];
+                   @"Monday",@"Today", nil];*/
     
     WeeksInAMonth = [NSArray arrayWithObjects:
                      @"Week1",@"Week5", nil];

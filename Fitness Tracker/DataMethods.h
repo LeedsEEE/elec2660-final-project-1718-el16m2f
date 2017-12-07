@@ -12,8 +12,19 @@
 
 @interface DataMethods : NSObject
 
+//Methods for the Activity data
++(void) ACTIVITYAddToDatabase:(CGFloat *)CaloriesToSave :(NSDate *)DateOfActivity;
+
 +(NSArray *)GetActivityDataFromCoreData:(int)DateSorting;
 
-+(NSArray *) GetWeightDataFromCoreData;
+
+
+//Methods for the Weight data
+
++(void)WEIGHTAddToDatabase:(CGFloat *)WeightToSave :(NSDate *)DateOfRecording;
+
++(NSArray *)GetWeightDataFromCoreData;
+
+
 
 @end

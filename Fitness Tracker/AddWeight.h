@@ -11,10 +11,19 @@
 @interface AddWeight : UIViewController <UIPickerViewDataSource , UIPickerViewDelegate , UITextFieldDelegate>
 {
     BOOL MeasurementType;           //True in Kg, False in Lbs
-    float Weight;
+    
+    //Variables used to create the Weight
+    float hundreds;
+    float tens;
+    float singular;
+    float decimal;
+    
+    //Variables to save into core data
+    CGFloat Weight;
+    NSDate *CurrentDate;
 }
 
-#define KilogramsToPounds 2.20462
+#define KilogramsToPounds 2.20462                   //Definition of a conversion rate
 
 @property (weak, nonatomic) IBOutlet UIPickerView *WeightPickerView;
 

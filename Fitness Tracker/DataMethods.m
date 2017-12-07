@@ -32,19 +32,12 @@
     NSManagedObjectContext *context = applicationdelegate.persistentContainer.viewContext;
     
     NSFetchRequest *FetchData = [NSFetchRequest fetchRequestWithEntityName:@"UserActivityData"];
-    //FetchData.fetchLimit = 14;
-    
-    [FetchData setReturnsObjectsAsFaults:NO];
+    [FetchData setReturnsObjectsAsFaults:NO];                                   //When debugging this allows you to hover over the array that the fetch goes to and then see the data inside without displaying 'fault'
     
     NSError *error;
     NSArray *ActivityData = [context executeFetchRequest:FetchData error:&error];
     
-    //return ActivityData;
-    
-    
-    
-    //Everything under here is to sort the fetched array
-    
+    //-----Everything under here is to sort the fetched array-----
     
     
     //UserActivityData *EntityData;
@@ -52,50 +45,103 @@
     
     //Creating a calendar
     NSCalendar *Calendar = [NSCalendar currentCalendar];
-    NSDateComponents *PastWeek = [[NSDateComponents alloc]init];
+    NSDateComponents *CalculationDate = [[NSDateComponents alloc]init];
     NSDate *CurrentDate = [NSDate date];
-    NSDateComponents *components = [Calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
-    components.hour = 00;
-    NSDate *TodayAtMidnight = [Calendar dateFromComponents:components];
+
+    
     
     //SORTING DEFINITION
-    int CountTo = 0;
-    
-    if(DateSorting == 1) {
-        CountTo = 7;                    // 7 Days in a week
-    }else if(DateSorting == 2) {
-        CountTo = 4;                    // 4 Weeks in a month (Sometimes...)
-    }else if (DateSorting == 3){
-        CountTo = 12;                   // 12 Months in a year
+    if(DateSorting == 1) {                  //-----WEEK-----//
+        
+        NSDateComponents *components = [Calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
+        components.hour = 00;
+        NSDate *TodayAtMidnight = [Calendar dateFromComponents:components];
+        
+        for (int i=0 ;i<7; i++){
+            
+            CalculationDate.day = (-6+i);
+            
+            NSDate *DateToScan = [Calendar dateByAddingComponents:CalculationDate toDate:TodayAtMidnight options:0];
+            CGFloat DayCalories = 0.0;
+            
+            for(int a=0 ; a < [ActivityData count] ; a++){
+                
+                NSArray *IndividulEntryData = [ActivityData objectAtIndex:a];
+                
+                if (DateToScan == [IndividulEntryData valueForKey:@"date"]) {
+                    DayCalories = (DayCalories + [[IndividulEntryData valueForKey:@"calories"]floatValue]);
+                }
+            }
+            [CalorieData addObject:[NSNumber numberWithFloat:DayCalories]];
+        }
+        return CalorieData;
+        
+        
+    }else if(DateSorting == 2) {            //-----MONTH-----//
+        
+        NSDateComponents *components = [Calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:CurrentDate];
+        components.hour = 00;
+        components.day = 1;
+        NSDate *FirstDayOfMonth = [Calendar dateFromComponents:components];
+        
+        for (int i=0 ;i<5; i++){
+            
+            CalculationDate.day = (i*7);
+            NSDate *DateToScanLowerBounds = [Calendar dateByAddingComponents:CalculationDate toDate:FirstDayOfMonth options:0];
+            CalculationDate.day = ((i+1)*7);
+            NSDate *DateToScanUpperBounds = [Calendar dateByAddingComponents:CalculationDate toDate:FirstDayOfMonth options:0];
+            
+            CGFloat DayCalories = 0.0;
+            
+            for(int a=0 ; a < [ActivityData count] ; a++){
+                
+                NSArray *IndividulEntryData = [ActivityData objectAtIndex:a];
+                
+                if (DateToScanLowerBounds <= [IndividulEntryData valueForKey:@"date"] && DateToScanUpperBounds > [IndividulEntryData valueForKey:@"date"]) {
+                    DayCalories = (DayCalories + [[IndividulEntryData valueForKey:@"calories"]floatValue]);
+                }
+            }
+            [CalorieData addObject:[NSNumber numberWithFloat:DayCalories]];
+        }
+        return CalorieData;
+        
+        
+    }else if (DateSorting == 3){            //-----YEAR-----//
+        
+        NSDateComponents *components = [Calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:CurrentDate];
+        components.hour = 00;
+        components.day = 31;
+        NSDate *LastDayOfCurrentMonth = [Calendar dateFromComponents:components];
+        
+        for (int i=0 ;i<12; i++){
+            
+            CalculationDate.month = (i-12);
+            NSDate *FirstDayOfTheSearchingMonth = [Calendar dateByAddingComponents:CalculationDate toDate:LastDayOfCurrentMonth options:0];
+            CalculationDate.month = (i-11);
+            NSDate *LastDayOfTheSearchingMonth = [Calendar dateByAddingComponents:CalculationDate toDate:LastDayOfCurrentMonth options:0];
+            
+            CGFloat DayCalories = 0.0;
+            
+            for(int a=0 ; a < [ActivityData count] ; a++){
+                
+                NSArray *IndividulEntryData = [ActivityData objectAtIndex:a];
+                
+                if (FirstDayOfTheSearchingMonth < [IndividulEntryData valueForKey:@"date"] && LastDayOfTheSearchingMonth >= [IndividulEntryData valueForKey:@"date"]) {
+                    
+                    DayCalories = (DayCalories + [[IndividulEntryData valueForKey:@"calories"]floatValue]);
+                    
+                }
+            }
+            [CalorieData addObject:[NSNumber numberWithFloat:DayCalories]];
+        }
+        return CalorieData;
+        
+        
     }else{
         
-    }
-    
-    for (int i=0 ;i<CountTo; i++){
-        
-        
-        PastWeek.day = (-6+i);          //This needs to be in an if statement
-        
-        
-        
-        NSDate *DateToScan = [Calendar dateByAddingComponents:PastWeek toDate:TodayAtMidnight options:0];
-        CGFloat DayCalories = 0.0;
-        
-        for(int a=0 ; a < [ActivityData count] ; a++){
-            
-            NSArray *IndividulEntryData = [ActivityData objectAtIndex:a];
-            
-            if (DateToScan == [IndividulEntryData valueForKey:@"date"]) {
-                DayCalories = (DayCalories + [[IndividulEntryData valueForKey:@"calories"]floatValue]);
-            }
-            
-        }
-        
-        [CalorieData addObject:[NSNumber numberWithFloat:DayCalories]];
+        return nil;
         
     }
-    
-    return CalorieData;
     
 }
 
