@@ -65,6 +65,13 @@
     
 }
 
+//http://pinkstone.co.uk/how-to-handle-device-rotation-since-ios-8/
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(GraphRefresh) userInfo:nil repeats:NO];
+
+}
+
 -(BOOL)prefersStatusBarHidden {
     return YES;                                                 //This function removes the status bar, as it was getting in the way.
     //https://stackoverflow.com/questions/32965610/hide-the-status-bar-in-ios-9

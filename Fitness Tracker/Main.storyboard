@@ -280,10 +280,26 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oet-tP-Kie">
                                 <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="Hfx-kO-esB"/>
+                                    <constraint firstAttribute="height" constant="66" id="ppr-aR-75e"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Hfx-kO-esB"/>
+                                        <exclude reference="ppr-aR-75e"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Hfx-kO-esB"/>
+                                        <include reference="ppr-aR-75e"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
@@ -294,18 +310,47 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="yeb-dS-gze" firstAttribute="top" secondItem="zBb-vN-lb6" secondAttribute="bottom" constant="20" id="1P7-b4-dPf"/>
                             <constraint firstItem="Tzc-nT-pLa" firstAttribute="centerY" secondItem="G4F-JK-3a7" secondAttribute="centerY" id="9yj-my-hcC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tzc-nT-pLa" secondAttribute="trailing" constant="30" id="KBM-fA-Lqb"/>
                             <constraint firstItem="oet-tP-Kie" firstAttribute="width" secondItem="G4F-JK-3a7" secondAttribute="height" multiplier="157:618" id="NtW-b8-VWz"/>
                             <constraint firstItem="yeb-dS-gze" firstAttribute="centerX" secondItem="G4F-JK-3a7" secondAttribute="centerX" id="RRN-oH-NKt"/>
+                            <constraint firstItem="yeb-dS-gze" firstAttribute="leading" secondItem="G4F-JK-3a7" secondAttribute="leadingMargin" id="Zrl-gG-Eba"/>
                             <constraint firstItem="yeb-dS-gze" firstAttribute="top" secondItem="zBb-vN-lb6" secondAttribute="bottom" constant="107" id="eOO-hA-NdG">
                                 <variation key="heightClass=regular-widthClass=compact" constant="25"/>
                             </constraint>
+                            <constraint firstItem="oet-tP-Kie" firstAttribute="top" secondItem="yeb-dS-gze" secondAttribute="bottom" constant="63" id="k4A-ro-lbD"/>
+                            <constraint firstItem="oet-tP-Kie" firstAttribute="centerX" secondItem="yeb-dS-gze" secondAttribute="centerX" id="udQ-mm-OqX"/>
                             <constraint firstItem="Tzc-nT-pLa" firstAttribute="centerX" secondItem="G4F-JK-3a7" secondAttribute="centerX" id="wJO-VB-bzz"/>
                             <constraint firstItem="WwS-s3-jm8" firstAttribute="top" secondItem="oet-tP-Kie" secondAttribute="bottom" constant="64" id="yMj-6V-DW7">
                                 <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="oet-tP-Kie" firstAttribute="centerX" secondItem="G4F-JK-3a7" secondAttribute="centerX" id="zmT-0X-Xps"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1P7-b4-dPf"/>
+                                <exclude reference="Zrl-gG-Eba"/>
+                                <exclude reference="k4A-ro-lbD"/>
+                                <exclude reference="udQ-mm-OqX"/>
+                                <exclude reference="KBM-fA-Lqb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="1P7-b4-dPf"/>
+                                <exclude reference="RRN-oH-NKt"/>
+                                <include reference="Zrl-gG-Eba"/>
+                                <exclude reference="eOO-hA-NdG"/>
+                                <exclude reference="NtW-b8-VWz"/>
+                                <include reference="k4A-ro-lbD"/>
+                                <include reference="udQ-mm-OqX"/>
+                                <exclude reference="zmT-0X-Xps"/>
+                                <exclude reference="yMj-6V-DW7"/>
+                                <include reference="KBM-fA-Lqb"/>
+                                <exclude reference="wJO-VB-bzz"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <action selector="BackgroundPressed:" destination="vmf-Td-9Lj" eventType="touchUpInside" id="3xO-lO-49h"/>
                         </connections>
@@ -319,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsT-MN-wE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226.4000000000001" y="331.48425787106447"/>
+            <point key="canvasLocation" x="1225.6371814092954" y="330.39999999999998"/>
         </scene>
         <!--Facilities Map-->
         <scene sceneID="h5b-Ez-Z78">

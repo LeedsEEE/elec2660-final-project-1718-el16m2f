@@ -207,13 +207,13 @@
         NSDate *SearchDate = [Calendar dateByAddingComponents:CalculationDate toDate:FirstDayOfWeek options:0];
         
         //Finds the most recent piece of data outside of the
-        for( NSUInteger a=([FetchedWeightData count]-1) ; a > 0 && !DataFound ; a-- ){
+        for( NSUInteger a=([FetchedWeightData count]) ; a > 0 && !DataFound ; a-- ){
             
-            NSArray *IndividualWeightEntry = [FetchedWeightData objectAtIndex:a];
+            NSArray *IndividualWeightEntry = [FetchedWeightData objectAtIndex:(a-1)];
             
             if([[IndividualWeightEntry valueForKey:@"weight"]floatValue] != 0 && SearchDate > [IndividualWeightEntry valueForKey:@"data"]){
                 
-                WeightForDay = [[[FetchedWeightData objectAtIndex:(a)]valueForKey:@"weight"]floatValue];
+                WeightForDay = [[[FetchedWeightData objectAtIndex:(a-1)]valueForKey:@"weight"]floatValue];
                 DataFound = YES;
             }
         }

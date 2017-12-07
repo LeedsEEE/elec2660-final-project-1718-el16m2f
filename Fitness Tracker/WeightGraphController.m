@@ -47,16 +47,17 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.LineChart setState:JBChartViewStateExpanded];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
     [self GraphRefresh];
-    
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(GraphRefresh) userInfo:nil repeats:NO];
 }
 
 -(BOOL)prefersStatusBarHidden {
@@ -65,7 +66,6 @@
 
 #pragma mark Line Chart Data source
 -(NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView {                                                                                //Sets the number of lines within the chart
-    
     return 2;
 }
 

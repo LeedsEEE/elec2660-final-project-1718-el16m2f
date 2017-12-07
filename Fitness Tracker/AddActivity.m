@@ -169,7 +169,7 @@
     
     CaloriesBurnt = [self CalculateCaloriesBurnt];
     
-    if (self.TimeWorkedOut > 150) {
+    if (self.TimeWorkedOut > 2.5) {
         //INVALID CODE
         
         UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry too large"

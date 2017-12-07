@@ -61,35 +61,23 @@
 - (IBAction)HeightToggleSwitch:(id)sender {
     
     if([sender isOn]){
-        
         self.HeightType = 1;
         self.HeightToggleLabel.text = [NSString stringWithFormat:@"Feet"];
-        
     }else{
-        
         self.HeightType = 0;
         self.HeightToggleLabel.text = [NSString stringWithFormat:@"Cm"];
-        
     }
-  
-    
 }
 
 - (IBAction)WeightToggleSwitch:(id)sender {
     
     if([sender isOn]){
-        
         self.WeightType = 1;
         self.WeightToggleLabel.text = [NSString stringWithFormat:@"Lbs"];
-        
     }else{
-        
         self.WeightType = 0;
         self.WeightToggleLabel.text = [NSString stringWithFormat:@"Kgs"];
-        
     }
-    
-    
 }
 
 - (IBAction)SaveButtonPressed:(id)sender {
@@ -106,28 +94,23 @@
     NSNumber *WeightinKG = [NSNumber numberWithFloat: [WeightString floatValue]];
     
     if (self.HeightType == 0){        //If Height type is true set to metres
-        
         self.Height = HeightinM;
-
     } else {
-        
         self.Height = [NSNumber numberWithDouble:([HeightinM doubleValue]*CentimetresToFeet)]; //////////IMPLEMENT THE CONVERSION INTO ft
     }
-    
     if (self.WeightType == 0){
-        
         self.Weight = WeightinKG;
-        
     } else {
-        
         self.Weight = [NSNumber numberWithDouble:([WeightinKG doubleValue]*KilogramToPounds)];; //////////IMPLEMENT THE CONVERSION INTO Lbs
-        
     }
     
-    if (self.Weight == 0 || self.Height == 0 || [Name length] == 0){
+    int EnteredWeight = [self.Weight floatValue];
+    int EnteredHeight = [self.Height floatValue];
+    
+    if (EnteredWeight < 50 || EnteredHeight < 137 || [Name length] == 0){
         
-        UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry missing"
-                                                                                 message:@"A data entry is missing."
+        UIAlertController *AlertController = [UIAlertController alertControllerWithTitle:@"Entry error"
+                                                                                 message:@"A data entry is either missing or considered too small."
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *OkButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
         [AlertController addAction:OkButton];
@@ -156,15 +139,15 @@
     
     [UserProfile UpdateUserProfile:UserInfo];
     
-    NSCalendar *Calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [[NSDateComponents alloc]init];
-    components.hour = 00;                                               //Setting the time of the current day to midnight
-    CurrentDate = [Calendar dateFromComponents:components];
-    components.day = -20;
-    NSDate *DateToSave = [Calendar dateByAddingComponents:components toDate:CurrentDate options:0];
-                                                                        //Creating a date 20 days prior to making the account
+    NSCalendar *NewCalendar = [NSCalendar currentCalendar];
+    CurrentDate = [NSDate date];
+    NSDateComponents *components = [NewCalendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:CurrentDate];
+    components.hour = 00;
+    components.year = 2016;
+    NSDate *PastDate = [NewCalendar dateFromComponents:components];
+    
     CGFloat WeightToCoreData = [self.Weight floatValue];
-    [DataMethods WEIGHTAddToDatabase:&WeightToCoreData :DateToSave];    //Saving the weight inputted into the weight core data
+    [DataMethods WEIGHTAddToDatabase:&WeightToCoreData :PastDate];    //Saving the weight inputted into the weight core data
     
 }
 
