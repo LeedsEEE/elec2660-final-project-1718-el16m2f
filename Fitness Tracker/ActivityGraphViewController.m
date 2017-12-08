@@ -46,6 +46,8 @@
     
     self.BarValueLabel.text = [NSString stringWithFormat:@"Touch on the bars"];
     
+    //[self initFAKEdata];                                                                                                          //***[FAKEDATA]***
+    
     [self GraphRefresh];
 }
 
@@ -67,6 +69,7 @@
 
 -(BOOL)prefersStatusBarHidden {
     return YES;                                                                 //This function removes the status bar, as it was getting in the way.
+    //Reference:
     //https://stackoverflow.com/questions/32965610/hide-the-status-bar-in-ios-9
 }
 
@@ -104,9 +107,9 @@
 -(UIColor *)barChartView:(JBBarChartView *)barChartView colorForBarViewAtIndex:(NSUInteger)index {
     
     if ((index%2) == 1){                                                                        //This if statement means that the color of the bars are alternating
-        return [UIColor orangeColor];
+        return [UIColor orangeColor];                                                           //Creates bars of an orange color
     } else {
-        return [UIColor colorWithRed:1 green:0.294 blue:0.294 alpha:0.6];
+        return [UIColor colorWithRed:0.40 green:0.15 blue:0.20 alpha:0.9];                      //Creates bars of a dark red color
     }
     
 }
@@ -126,7 +129,8 @@
     
     if (self.BarChartType.selectedSegmentIndex == 0){
         
-        ChartData = [DataMethods GetActivityDataFromCoreData:1];                    //-----FETCHES WEEK DATA-----//
+        ChartData = [DataMethods GetActivityDataFromCoreData:1];                    //-----FETCHES WEEK DATA-----//             //***[COREDATA]***
+        //ChartData = WeekData;                                                                                                 //***[FAKEDATA]***
         
         NSDateComponents *singularday = [[NSDateComponents alloc] init];
         singularday.day = -6;                                                       //These two lines create a component of -6 days so that the far left label shows the day from a week ago.
@@ -140,14 +144,17 @@
         
     } else if (self.BarChartType.selectedSegmentIndex ==1){
         
-        ChartData = [DataMethods GetActivityDataFromCoreData:2];                    //-----FETCHES MONTH DATA-----//
+        ChartData = [DataMethods GetActivityDataFromCoreData:2];                    //-----FETCHES MONTH DATA-----//            //***[COREDATA]***
+        //ChartData = MonthData;                                                                                                //***[FAKEDATA]***
+        
         ChartLabels = [NSArray arrayWithObjects:
                        @"Week 1",
                        @"Week 5", nil];
         
     } else {
         
-        ChartData = [DataMethods GetActivityDataFromCoreData:3];                    //-----FETCHES YEAR DATA-----//
+        ChartData = [DataMethods GetActivityDataFromCoreData:3];                    //-----FETCHES YEAR DATA-----//             //***[COREDATA]***
+        //ChartData = YearData;                                                                                                 //***[FAKEDATA]***
         
         NSDateComponents *elevenmonths = [[NSDateComponents alloc] init];
         elevenmonths.month = -11;                                                    //These two lines create a component of -11 months so that the graphs label displays the correct month with its year
@@ -182,6 +189,18 @@
     [self SegmentedControlModifyData];
     [self UpdateData];
     [self.ActivityBarChart reloadDataAnimated:YES];
+    
+}
+
+-(void) initFAKEdata {
+    
+    WeekData = [NSArray arrayWithObjects:
+                @400,@450,@380,@525,@125,@0,@250, nil];
+    MonthData = [NSArray arrayWithObjects:
+                 @2130,@2320,@1975,@2230,@865, nil];
+    YearData = [NSArray arrayWithObjects:
+                @6800,@7250,@7880,@8821,@8492,@8484,@8797,@8491,@8190,@7662,@7768,@9040, nil];
+    
     
 }
 

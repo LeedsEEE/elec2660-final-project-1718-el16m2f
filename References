@@ -1,0 +1,45 @@
+Below is a list of the references used within the application:
+
+View Controller:
+ViewDidOrientate: http://pinkstone.co.uk/how-to-handle-device-rotation-since-ios-8/
+
+Core Data:
+Stanford University – Lecture 10. Core Data: https://www.youtube.com/watch?v=Uia6fMNq5e4
+Stanford University - Core Data Demo: https://www.youtube.com/watch?v=-4wvf3QjHiM
+HuxTex – Core Data I part 32: https://www.youtube.com/watch?v=EGO9XBFrZE0&t=1089s
+HuxTex – Core Data II part 33: https://www.youtube.com/watch?v=p_INW9noMDI
+
+Timer:
+Creating a stopwatch: https://www.youtube.com/watch?v=xp0dvmvh3Cw
+
+Map:
+Using Google Places API: https://www.raywenderlich.com/13160/using-the-google-places-api-with-mapkit
+Google Places Web service API key: https://developers.google.com/places/web-service/get-api-key
+Apple Developer Video: https://developer.apple.com/videos/play/wwdc2017/237/
+
+Graph:
+JBJawbone charts Framework: https://github.com/Jawbone/JBChartView
+
+How to display bar graphs: https://www.youtube.com/watch?v=2J-_YBXEhNU&t=2185s
+How to display line graphs: https://www.youtube.com/watch?v=hMdMg3mcSCc
+
+NSDate:
+Getting the current date but setting to a specific time: https://stackoverflow.com/questions/5611632/get-current-date-from-nsdate-date-but-set-the-time-to-1000-am
+Getting the current time: https://stackoverflow.com/questions/34688925/how-to-get-current-date
+Setting locales: https://www.cocoawithlove.com/2009/05/simple-methods-for-date-formatting-and.html
+
+#Defines:
+How to use #defines https://stackoverflow.com/questions/11153156/define-vs-const-in-objective-c
+
+Declaring instance variables:
+https://stackoverflow.com/questions/5826345/how-to-declare-instance-variables-and-methods-not-visible-or-usable-outside-of-t
+
+Moving Segue:
+Moving segue programmatically: https://stackoverflow.com/questions/39339774/move-to-next-view-controller-programmatically
+
+UI Items:
+Changing the shape of a UIButton: https://stackoverflow.com/questions/22601584/change-the-shape-of-button
+Increasing text size of UI items: https://stackoverflow.com/questions/2280391/change-font-size-of-uisegmentedcontrol
+
+Status Bar:
+Removing the status bar: https://stackoverflow.com/questions/32965610/hide-the-status-bar-in-ios-9

@@ -87,7 +87,7 @@ numberOfRowsInComponent:(NSInteger)component{                                   
         float rowvalue = row;
         decimal = (rowvalue/10);
     } else if(component == 5){
-        if (row == 0){
+        if (row == 0){                              //if the last component switches between its two states the variable measurement type changes so that calculations can adjust for this later
             MeasurementType = FALSE;
         }else{
             MeasurementType = TRUE;

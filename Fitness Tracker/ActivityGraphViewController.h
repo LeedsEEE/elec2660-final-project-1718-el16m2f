@@ -41,4 +41,8 @@
 //JBJawbone charts: https://github.com/Jawbone/JBChartView 
 //How to display bar graphs: https://www.youtube.com/watch?v=2J-_YBXEhNU&t=2185s
 //How to display line graphs: https://www.youtube.com/watch?v=hMdMg3mcSCc
+//
+//
+//To add in test data there is a few comments laying around like so [COREDATA] / [FAKEDATA]
+//For test data to load with no core data un-comment the lines with [FAKEDATA] in it and add comments to the begining of the lines with [COREDATA] and vice versa
 */

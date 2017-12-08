@@ -43,8 +43,10 @@
 		3D2D3E9E1FCC797F003D0329 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2D3E9D1FCC797F003D0329 /* CoreData.framework */; };
 		3D2D3EA21FCC7A7C003D0329 /* Core_Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D3EA01FCC7A79003D0329 /* Core_Data.xcdatamodeld */; };
 		3D38FF451FCDF38F004BC8AA /* WeightGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D38FF441FCDF38F004BC8AA /* WeightGraphController.m */; };
+		3D3F3B961FDAA617005468AD /* References in Resources */ = {isa = PBXBuildFile; fileRef = 3D3F3B951FDAA617005468AD /* References */; };
 		3D421D711FC4754D00D781FC /* ActivityGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */; };
 		3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */; };
+		3D67FCD11FDAB55F00F581BB /* READ ME in Resources */ = {isa = PBXBuildFile; fileRef = 3D67FCD01FDAB55F00F581BB /* READ ME */; };
 		3D70E4C51FD73C5C006EC364 /* DataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D70E4C41FD73C5C006EC364 /* DataMethods.m */; };
 		3D75B0621FC302E6003D3A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0611FC302E6003D3A5C /* main.m */; };
 		3D75B0651FC302E6003D3A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B0641FC302E6003D3A5C /* AppDelegate.m */; };
@@ -170,9 +172,11 @@
 		3D2D3EA11FCC7A7C003D0329 /* Core_Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Core_Data.xcdatamodel; sourceTree = "<group>"; };
 		3D38FF431FCDF38F004BC8AA /* WeightGraphController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightGraphController.h; sourceTree = "<group>"; };
 		3D38FF441FCDF38F004BC8AA /* WeightGraphController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightGraphController.m; sourceTree = "<group>"; };
+		3D3F3B951FDAA617005468AD /* References */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = References; sourceTree = "<group>"; };
 		3D421D6F1FC4754D00D781FC /* ActivityGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityGraphViewController.h; sourceTree = "<group>"; };
 		3D421D701FC4754D00D781FC /* ActivityGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityGraphViewController.m; sourceTree = "<group>"; };
 		3D6344D01FCC17B9000611D9 /* FitnessAppLogo(2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FitnessAppLogo(2).jpg"; sourceTree = "<group>"; };
+		3D67FCD01FDAB55F00F581BB /* READ ME */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "READ ME"; sourceTree = "<group>"; };
 		3D70E4C31FD73C5C006EC364 /* DataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMethods.h; sourceTree = "<group>"; };
 		3D70E4C41FD73C5C006EC364 /* DataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMethods.m; sourceTree = "<group>"; };
 		3D75B05D1FC302E6003D3A5C /* Fitness Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,6 +377,8 @@
 		3D75B0541FC302E6003D3A5C = {
 			isa = PBXGroup;
 			children = (
+				3D3F3B951FDAA617005468AD /* References */,
+				3D67FCD01FDAB55F00F581BB /* READ ME */,
 				3D75B05F1FC302E6003D3A5C /* Fitness Tracker */,
 				3D2D3E9F1FCC7A33003D0329 /* Resources */,
 				3D75B0791FC302E6003D3A5C /* Fitness TrackerTests */,
@@ -744,7 +750,9 @@
 				3DE3A1EA1FC32F90007FDBCA /* Heart_Icon.png in Resources */,
 				3DB5D7281FD5AE6900D09DBB /* 8ccb55af.png in Resources */,
 				3DE35A8E1FD0757000F68566 /* 40px x 40px in Resources */,
+				3D67FCD11FDAB55F00F581BB /* READ ME in Resources */,
 				3D6344D11FCC17B9000611D9 /* FitnessAppLogo(2).jpg in Resources */,
+				3D3F3B961FDAA617005468AD /* References in Resources */,
 				3DE3A1EC1FC3340C007FDBCA /* Location_Icon.png in Resources */,
 				3DE35A901FD0757000F68566 /* 156px x 156px in Resources */,
 				3DE3A1F01FC3341E007FDBCA /* Swimming_Icon.png in Resources */,

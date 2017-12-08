@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSNumber *weight;
 @property (nullable, nonatomic, copy) NSDate *data;
 
+//I just noticed that I miss labbeled date by spelling data. When UserWeightData data is being called its refering to the date
+
 @end
 
 NS_ASSUME_NONNULL_END

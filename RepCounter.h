@@ -14,9 +14,6 @@
     BOOL Running;
     NSTimer *Timer;
     NSInteger Time;
-
-    
-    
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *TimerLabel;

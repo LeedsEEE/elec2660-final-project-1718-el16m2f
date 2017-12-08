@@ -34,6 +34,11 @@
 //Stanford University - Core Data Demo: https://www.youtube.com/watch?v=-4wvf3QjHiM 
 //HuxTex – Core Data I part 32: https://www.youtube.com/watch?v=EGO9XBFrZE0&t=1089s
 //HuxTex – Core Data II part 33: https://www.youtube.com/watch?v=p_INW9noMDI
+//
+//For all of the NSdate, NSdateformatter and NSCalender was done using the following links.
+// 
+//Getting the current date but setting to a specific time: https://stackoverflow.com/questions/5611632/get-current-date-from-nsdate-date-but-set-the-time-to-1000-am
+//Getting the current time: https://stackoverflow.com/questions/34688925/how-to-get-current-date
 */
 
 

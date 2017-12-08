@@ -183,10 +183,22 @@
 
 -(void)GraphRefresh {
     
-    WeekData = [DataMethods GetWeightDataFromCoreData:false];           //By entering false it returns the current week
-    PreviousWeekData = [DataMethods GetWeightDataFromCoreData:true];    //By entering true it returns the previous week
+    WeekData = [DataMethods GetWeightDataFromCoreData:false];           //By entering false it returns the current week         //***[COREDATA]***
+    PreviousWeekData = [DataMethods GetWeightDataFromCoreData:true];    //By entering true it returns the previous week         //***[COREDATA]***
+    
+    //[self initFAKEdata];                                                                                                        //***[FAKEDATA]***
+    
     [self UpdateData];
     [self.LineChart reloadDataAnimated:YES];
+    
+}
+
+-(void) initFAKEdata {
+    
+    WeekData = [NSArray arrayWithObjects:
+                        @79,@79,@79,@80,@81,@81,@80, nil];
+    PreviousWeekData = [NSArray arrayWithObjects:
+                @80,@80,@81,@81,@83,@84,@84, nil];
     
 }
 

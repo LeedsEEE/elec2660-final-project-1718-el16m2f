@@ -20,3 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_END
 
 #import "UserWeightData+CoreDataProperties.h"
+
+/*
+ //References used for core data:
+ //References used to save data
+ //HuxTex – Core Data I part 32: https://www.youtube.com/watch?v=EGO9XBFrZE0&t=1089s
+ //HuxTex – Core Data II part 33: https://www.youtube.com/watch?v=p_INW9noMDI
+ */
+

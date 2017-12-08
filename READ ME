@@ -1,0 +1,21 @@
+The app was built and tested with:
+
+*   IPhone 7 series and IPhone 6 series
+
+The app will iniitally load in Core data mode, to access some fake data there are some lines that must be commented and un-commented. Here are the insctructions:
+[
+To add in test data there is a few comments laying around like so [COREDATA] / [FAKEDATA]
+
+For fake data to load with no core data un-comment the lines with ***[FAKEDATA]*** in it and add comments to the begining of the lines with ***[COREDATA]*** and vice versa.
+
+These appear in two files:
+    *ActivityGraphController.m      (Located through out)
+    *WeightGraphController.m        (Located near the bottom)
+]
+
+All the graphs have some form of user input. Holding on the graphs will show there value and a selector bar.
+
+The rep counter will start timing as soon as the background is pressed and will stop when either the reset button is pressed or the tab is left.
+
+The map will work where ever you are in the world since it uses an HTTPS request but it was tested in both San Francisco and Leeds. It will take second or two to load points onto the map due to the didmaprefresh feature
+
